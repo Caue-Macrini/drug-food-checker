@@ -1,0 +1,111 @@
+{
+  "version": "amostra-fda-2026-09-12",
+  "source": "https://www.fda.gov/consumers/consumer-updates/grapefruit-juice-and-some-drugs-dont-mix",
+  "rows": [
+    {
+      "drug": "Sinvastatina",
+      "drug_aliases": [
+        "simvastatin",
+        "Zocor"
+      ],
+      "food": "Toranja",
+      "food_aliases": [
+        "grapefruit",
+        "suco de toranja"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "Interferência no metabolismo intestinal por CYP3A4.",
+      "explanation": "A toranja pode aumentar a exposição ao medicamento e a ocorrência de efeitos adversos.",
+      "compound": "Componentes da toranja",
+      "interaction_type": "Farmacocinética",
+      "reference_title": "FDA · Grapefruit Juice and Some Drugs Don’t Mix",
+      "reference_url": "https://www.fda.gov/consumers/consumer-updates/grapefruit-juice-and-some-drugs-dont-mix",
+      "cyp450": true
+    },
+    {
+      "drug": "Atorvastatina",
+      "drug_aliases": [
+        "atorvastatin",
+        "Lipitor"
+      ],
+      "food": "Toranja",
+      "food_aliases": [
+        "grapefruit",
+        "suco de toranja"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "Interferência no metabolismo intestinal por CYP3A4.",
+      "explanation": "A toranja pode aumentar a exposição ao medicamento e a ocorrência de efeitos adversos.",
+      "compound": "Componentes da toranja",
+      "interaction_type": "Farmacocinética",
+      "reference_title": "FDA · Grapefruit Juice and Some Drugs Don’t Mix",
+      "reference_url": "https://www.fda.gov/consumers/consumer-updates/grapefruit-juice-and-some-drugs-dont-mix",
+      "cyp450": true
+    },
+    {
+      "drug": "Fexofenadina",
+      "drug_aliases": [
+        "fexofenadine",
+        "Allegra"
+      ],
+      "food": "Toranja",
+      "food_aliases": [
+        "grapefruit",
+        "suco de toranja"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "Interferência em transportadores envolvidos na absorção.",
+      "explanation": "Este suco pode reduzir a absorção da fexofenadina e prejudicar seu efeito.",
+      "compound": "Componentes do suco",
+      "interaction_type": "Farmacocinética",
+      "reference_title": "FDA · Grapefruit Juice and Some Drugs Don’t Mix",
+      "reference_url": "https://www.fda.gov/consumers/consumer-updates/grapefruit-juice-and-some-drugs-dont-mix"
+    },
+    {
+      "drug": "Fexofenadina",
+      "drug_aliases": [
+        "fexofenadine",
+        "Allegra"
+      ],
+      "food": "Suco de laranja",
+      "food_aliases": [
+        "orange juice"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "Interferência em transportadores envolvidos na absorção.",
+      "explanation": "Este suco pode reduzir a absorção da fexofenadina e prejudicar seu efeito.",
+      "compound": "Componentes do suco",
+      "interaction_type": "Farmacocinética",
+      "reference_title": "FDA · Grapefruit Juice and Some Drugs Don’t Mix",
+      "reference_url": "https://www.fda.gov/consumers/consumer-updates/grapefruit-juice-and-some-drugs-dont-mix"
+    },
+    {
+      "drug": "Fexofenadina",
+      "drug_aliases": [
+        "fexofenadine",
+        "Allegra"
+      ],
+      "food": "Suco de maçã",
+      "food_aliases": [
+        "apple juice"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "Interferência em transportadores envolvidos na absorção.",
+      "explanation": "Este suco pode reduzir a absorção da fexofenadina e prejudicar seu efeito.",
+      "compound": "Componentes do suco",
+      "interaction_type": "Farmacocinética",
+      "reference_title": "FDA · Grapefruit Juice and Some Drugs Don’t Mix",
+      "reference_url": "https://www.fda.gov/consumers/consumer-updates/grapefruit-juice-and-some-drugs-dont-mix"
+    }
+  ]
+}

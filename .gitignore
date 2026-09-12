@@ -1,0 +1,12 @@
+.venv/
+node_modules/
+frontend/dist/
+*.db
+.env
+__pycache__/
+.pytest_cache/
+test-results/
+playwright-report/
+.local-secret
+outbox/
+.npm-cache/
