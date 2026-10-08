@@ -12,7 +12,7 @@ from sqlalchemy import select, delete
 from sqlalchemy.exc import IntegrityError
 from models import Base, engine, Session, User, Profile, Consent, HistoryKey, History, Audit, Reset, Dataset, Drug, Food, now
 from schemas import Signup, Login, ClinicalProfile, Check, EmailRequest, ResetRequest, PasswordRequest, AccountAction, ImportDataset
-from services import uid, search_catalog, build_result, import_dataset
+from services import uid, search_catalog, build_result, import_dataset, library
 
 PRODUCTION = os.getenv('APP_ENV') == 'production'
 SECRET = os.getenv('JWT_SECRET')
@@ -36,7 +36,7 @@ async def lifespan(app):
     Base.metadata.create_all(engine)
     with Session() as db:
         if not db.scalar(select(Dataset)) and os.getenv('SEED_DATA', 'true') == 'true':
-            seed = Path(__file__).parent.parent / 'data' / 'starter.json'
+            seed = Path(__file__).parent.parent / 'data' / 'catalogo-oficial.json'
             import_dataset(db, ImportDataset.model_validate_json(seed.read_text(encoding='utf-8')))
             db.commit()
     yield
@@ -130,7 +130,7 @@ DUMMY_HASH = bcrypt.hashpw(secrets.token_bytes(24), bcrypt.gensalt(rounds=12)).d
 @app.get('/api/health')
 def health(db=Depends(db_session)):
     datasets = db.scalars(select(Dataset).where(Dataset.active == True)).all()
-    return {'status':'ok', 'datasets':[{'version':d.version, 'source':d.source, 'count':d.count} for d in datasets], 'mode':'educational', 'smtp_configured':bool(os.getenv('SMTP_HOST'))}
+    return {'status':'ok', 'datasets':[{'version':d.version, 'source':d.source, 'count':d.count} for d in datasets], 'coverage':library(db, limit=0)['counts'], 'mode':'educational', 'smtp_configured':bool(os.getenv('SMTP_HOST'))}
 
 @app.post('/api/auth/register', status_code=201)
 def register(data: Signup, response: Response, db=Depends(db_session)):
@@ -180,8 +180,9 @@ def forgot(data: EmailRequest, db=Depends(db_session)):
                 msg['From'] = os.getenv('SMTP_FROM', 'noreply@localhost')
                 msg['To'] = user.email
                 msg.set_content(f'Use este link em até 30 minutos: {link}\nSe não solicitou, ignore esta mensagem.')
-                with smtplib.SMTP(os.environ['SMTP_HOST'], int(os.getenv('SMTP_PORT','1025')), timeout=10) as smtp:
-                    if os.getenv('SMTP_TLS') == 'true':
+                smtp_class = smtplib.SMTP_SSL if os.getenv('SMTP_SSL') == 'true' else smtplib.SMTP
+                with smtp_class(os.environ['SMTP_HOST'], int(os.getenv('SMTP_PORT','1025')), timeout=10) as smtp:
+                    if os.getenv('SMTP_TLS') == 'true' and os.getenv('SMTP_SSL') != 'true':
                         smtp.starttls()
                     if os.getenv('SMTP_USER'):
                         smtp.login(os.environ['SMTP_USER'], os.environ['SMTP_PASSWORD'])
@@ -196,7 +197,7 @@ def forgot(data: EmailRequest, db=Depends(db_session)):
         except Exception:
             db.rollback()
             logger.error('Falha no serviço de recuperação de senha')
-    return {'message':'Se o e-mail estiver cadastrado, as instruções serão enviadas. Em desenvolvimento sem SMTP, consulte a pasta backend/outbox.'}
+    return {'message':'Se o e-mail estiver cadastrado, você receberá as instruções de recuperação.'}
 
 @app.post('/api/auth/reset')
 def reset_password(data: ResetRequest, db=Depends(db_session)):
@@ -228,6 +229,10 @@ def save_profile(data: ClinicalProfile, user=Depends(current_user), db=Depends(d
     audit(db, user.id, 'profile.updated')
     db.commit()
     return profile
+
+@app.get('/api/library')
+def browse_library(q: str = Query(default='', max_length=100), drug_id: str | None = Query(default=None, max_length=36), offset: int = Query(default=0, ge=0), limit: int = Query(default=12, ge=1, le=50), user=Depends(current_user), db=Depends(db_session)):
+    return library(db, q, drug_id, offset, limit)
 
 @app.get('/api/catalog/{kind}')
 def catalog(kind: str, q: str = Query(default='', max_length=100), user=Depends(current_user), db=Depends(db_session)):
@@ -297,6 +302,18 @@ def admin_import(data: ImportDataset, user=Depends(admin), db=Depends(db_session
     audit(db, user.id, 'dataset.imported')
     db.commit()
     return {'version':dataset.version,'count':dataset.count}
+
+@app.put('/api/admin/datasets/{dataset_id}/activate')
+def activate_dataset(dataset_id: str, user=Depends(admin), db=Depends(db_session)):
+    target = db.get(Dataset, dataset_id)
+    if not target:
+        raise HTTPException(404, 'Versão não encontrada')
+    for dataset in db.scalars(select(Dataset)):
+        dataset.active = dataset.id == target.id
+    audit(db, user.id, 'dataset.activated')
+    db.commit()
+    return {'version': target.version, 'count': target.count}
+
 
 @app.put('/api/admin/users/{user_id}')
 def admin_update(user_id: str, data: AccountAction, user=Depends(admin), db=Depends(db_session)):

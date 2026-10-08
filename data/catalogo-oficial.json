@@ -1,0 +1,1256 @@
+{
+  "version": "fontes-oficiais-2026-10-08",
+  "source": "FDA e MedlinePlus / ASHP · sínteses em português, fontes consultadas em 08/10/2026",
+  "rows": [
+    {
+      "drug": "Sinvastatina",
+      "drug_aliases": [
+        "simvastatin",
+        "Zocor"
+      ],
+      "food": "Toranja",
+      "food_aliases": [
+        "grapefruit",
+        "suco de toranja"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "Interferência no metabolismo intestinal por CYP3A4.",
+      "explanation": "A toranja pode aumentar a exposição ao medicamento e a ocorrência de efeitos adversos.",
+      "compound": "Componentes da toranja",
+      "interaction_type": "Farmacocinética",
+      "reference_title": "FDA · Grapefruit Juice and Some Drugs Don’t Mix",
+      "reference_url": "https://www.fda.gov/consumers/consumer-updates/grapefruit-juice-and-some-drugs-dont-mix",
+      "cyp450": true,
+      "source_checked_at": "2026-10-08",
+      "recommendation": "Confira a orientação específica da bula com o farmacêutico.",
+      "guidance": "Consultar profissional"
+    },
+    {
+      "drug": "Atorvastatina",
+      "drug_aliases": [
+        "atorvastatin",
+        "Lipitor"
+      ],
+      "food": "Toranja",
+      "food_aliases": [
+        "grapefruit",
+        "suco de toranja"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "Interferência no metabolismo intestinal por CYP3A4.",
+      "explanation": "A toranja pode aumentar a exposição ao medicamento e a ocorrência de efeitos adversos.",
+      "compound": "Componentes da toranja",
+      "interaction_type": "Farmacocinética",
+      "reference_title": "FDA · Grapefruit Juice and Some Drugs Don’t Mix",
+      "reference_url": "https://www.fda.gov/consumers/consumer-updates/grapefruit-juice-and-some-drugs-dont-mix",
+      "cyp450": true,
+      "source_checked_at": "2026-10-08",
+      "recommendation": "Confira a orientação específica da bula com o farmacêutico.",
+      "guidance": "Consultar profissional"
+    },
+    {
+      "drug": "Fexofenadina",
+      "drug_aliases": [
+        "fexofenadine",
+        "Allegra"
+      ],
+      "food": "Toranja",
+      "food_aliases": [
+        "grapefruit",
+        "suco de toranja"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "Interferência em transportadores envolvidos na absorção.",
+      "explanation": "Este suco pode reduzir a absorção da fexofenadina e prejudicar seu efeito.",
+      "compound": "Componentes do suco",
+      "interaction_type": "Farmacocinética",
+      "reference_title": "FDA · Grapefruit Juice and Some Drugs Don’t Mix",
+      "reference_url": "https://www.fda.gov/consumers/consumer-updates/grapefruit-juice-and-some-drugs-dont-mix",
+      "source_checked_at": "2026-10-08",
+      "recommendation": "Confira a orientação específica da bula com o farmacêutico.",
+      "guidance": "Consultar profissional"
+    },
+    {
+      "drug": "Fexofenadina",
+      "drug_aliases": [
+        "fexofenadine",
+        "Allegra"
+      ],
+      "food": "Suco de laranja",
+      "food_aliases": [
+        "orange juice"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "Interferência em transportadores envolvidos na absorção.",
+      "explanation": "Este suco pode reduzir a absorção da fexofenadina e prejudicar seu efeito.",
+      "compound": "Componentes do suco",
+      "interaction_type": "Farmacocinética",
+      "reference_title": "FDA · Grapefruit Juice and Some Drugs Don’t Mix",
+      "reference_url": "https://www.fda.gov/consumers/consumer-updates/grapefruit-juice-and-some-drugs-dont-mix",
+      "source_checked_at": "2026-10-08",
+      "recommendation": "Confira a orientação específica da bula com o farmacêutico.",
+      "guidance": "Consultar profissional"
+    },
+    {
+      "drug": "Fexofenadina",
+      "drug_aliases": [
+        "fexofenadine",
+        "Allegra"
+      ],
+      "food": "Suco de maçã",
+      "food_aliases": [
+        "apple juice"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "Interferência em transportadores envolvidos na absorção.",
+      "explanation": "Este suco pode reduzir a absorção da fexofenadina e prejudicar seu efeito.",
+      "compound": "Componentes do suco",
+      "interaction_type": "Farmacocinética",
+      "reference_title": "FDA · Grapefruit Juice and Some Drugs Don’t Mix",
+      "reference_url": "https://www.fda.gov/consumers/consumer-updates/grapefruit-juice-and-some-drugs-dont-mix",
+      "source_checked_at": "2026-10-08",
+      "recommendation": "Confira a orientação específica da bula com o farmacêutico.",
+      "guidance": "Consultar profissional"
+    },
+    {
+      "drug": "Levotiroxina",
+      "drug_aliases": [
+        "Levothyroxine"
+      ],
+      "food": "Soja",
+      "food_aliases": [
+        "soy",
+        "alimentos com soja"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "Esses alimentos podem interferir no efeito da levotiroxina.",
+      "recommendation": "Discuta o consumo com o profissional responsável pelo tratamento.",
+      "guidance": "Consultar profissional",
+      "compound": "Não especificado na fonte",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Levothyroxine",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a682461.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a682461-6",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Levotiroxina",
+      "drug_aliases": [
+        "Levothyroxine"
+      ],
+      "food": "Nozes",
+      "food_aliases": [
+        "walnuts"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "Esses alimentos podem interferir no efeito da levotiroxina.",
+      "recommendation": "Discuta o consumo com o profissional responsável pelo tratamento.",
+      "guidance": "Consultar profissional",
+      "compound": "Não especificado na fonte",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Levothyroxine",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a682461.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a682461-7",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Levotiroxina",
+      "drug_aliases": [
+        "Levothyroxine"
+      ],
+      "food": "Alimentos ricos em fibras",
+      "food_aliases": [
+        "fibras alimentares",
+        "fibra"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "Esses alimentos podem interferir no efeito da levotiroxina.",
+      "recommendation": "Discuta o consumo com o profissional responsável pelo tratamento.",
+      "guidance": "Consultar profissional",
+      "compound": "Não especificado na fonte",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Levothyroxine",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a682461.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a682461-8",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Levotiroxina",
+      "drug_aliases": [
+        "Levothyroxine"
+      ],
+      "food": "Toranja",
+      "food_aliases": [
+        "grapefruit",
+        "suco de toranja"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "A monografia inclui uma precaução alimentar para toranja.",
+      "recommendation": "Converse com o médico sobre a fruta e seu suco.",
+      "guidance": "Consultar profissional",
+      "compound": "Não especificado na fonte",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Levothyroxine",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a682461.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a682461-9",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Ciprofloxacino",
+      "drug_aliases": [
+        "Ciprofloxacin",
+        "ciprofloxacina"
+      ],
+      "food": "Leite",
+      "food_aliases": [
+        "leite de vaca"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "A restrição se refere à ingestão isolada com esses produtos.",
+      "recommendation": "Não tomar apenas com laticínios ou suco fortificado. A fonte permite uma refeição que os contenha.",
+      "guidance": "Observar forma de consumo",
+      "compound": "Cálcio",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Ciprofloxacin",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a688016.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a688016-10",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Ciprofloxacino",
+      "drug_aliases": [
+        "Ciprofloxacin"
+      ],
+      "food": "Iogurte",
+      "food_aliases": [
+        "yogurt",
+        "iogurte natural"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "A restrição se refere à ingestão isolada com esses produtos.",
+      "recommendation": "Não tomar apenas com laticínios ou suco fortificado. A fonte permite uma refeição que os contenha.",
+      "guidance": "Observar forma de consumo",
+      "compound": "Cálcio",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Ciprofloxacin",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a688016.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a688016-11",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Ciprofloxacino",
+      "drug_aliases": [
+        "Ciprofloxacin"
+      ],
+      "food": "Suco enriquecido com cálcio",
+      "food_aliases": [
+        "suco fortificado com cálcio"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "A restrição se refere à ingestão isolada com esses produtos.",
+      "recommendation": "Não tomar apenas com laticínios ou suco fortificado. A fonte permite uma refeição que os contenha.",
+      "guidance": "Observar forma de consumo",
+      "compound": "Cálcio",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Ciprofloxacin",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a688016.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a688016-12",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Ciprofloxacino",
+      "drug_aliases": [
+        "Ciprofloxacin"
+      ],
+      "food": "Café e bebidas com cafeína",
+      "food_aliases": [
+        "café",
+        "cafeina",
+        "chá com cafeína",
+        "energético",
+        "refrigerante de cola"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "A cafeína pode causar mais agitação, insônia e palpitações.",
+      "recommendation": "Evite grandes quantidades de produtos com cafeína.",
+      "guidance": "Limitar consumo",
+      "compound": "Cafeína",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Ciprofloxacin",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a688016.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a688016-13",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Linezolida",
+      "drug_aliases": [
+        "Linezolid"
+      ],
+      "food": "Queijos maturados",
+      "food_aliases": [
+        "queijo curado",
+        "queijos envelhecidos"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "A fonte destaca alimentos que podem conter tiramina.",
+      "recommendation": "Evite grandes quantidades; confirme as restrições com médico ou nutricionista.",
+      "guidance": "Limitar consumo",
+      "compound": "Tiramina",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Linezolid",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a602004.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a602004-14",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Linezolida",
+      "drug_aliases": [
+        "Linezolid"
+      ],
+      "food": "Carnes curadas ou defumadas",
+      "food_aliases": [
+        "carne defumada",
+        "carne curada"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "A fonte destaca alimentos que podem conter tiramina.",
+      "recommendation": "Evite grandes quantidades; confirme as restrições com médico ou nutricionista.",
+      "guidance": "Limitar consumo",
+      "compound": "Tiramina",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Linezolid",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a602004.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a602004-15",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Linezolida",
+      "drug_aliases": [
+        "Linezolid"
+      ],
+      "food": "Cerveja",
+      "food_aliases": [],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "A fonte destaca alimentos que podem conter tiramina.",
+      "recommendation": "Evite grandes quantidades; confirme as restrições com médico ou nutricionista.",
+      "guidance": "Limitar consumo",
+      "compound": "Tiramina",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Linezolid",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a602004.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a602004-16",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Linezolida",
+      "drug_aliases": [
+        "Linezolid"
+      ],
+      "food": "Vinho tinto",
+      "food_aliases": [],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "A fonte destaca alimentos que podem conter tiramina.",
+      "recommendation": "Evite grandes quantidades; confirme as restrições com médico ou nutricionista.",
+      "guidance": "Limitar consumo",
+      "compound": "Tiramina",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Linezolid",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a602004.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a602004-17",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Varfarina",
+      "drug_aliases": [
+        "Warfarin"
+      ],
+      "food": "Vegetais verdes ricos em vitamina K",
+      "food_aliases": [
+        "espinafre",
+        "brócolis",
+        "couve",
+        "folhas verdes",
+        "vitamina K"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "Mudanças na ingestão de vitamina K podem alterar o efeito da varfarina.",
+      "recommendation": "Mantenha quantidades consistentes e discuta mudanças na dieta. Não exclua vegetais automaticamente.",
+      "guidance": "Manter consumo consistente",
+      "compound": "Vitamina K",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Warfarin",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a682277.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a682277-18",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Varfarina",
+      "drug_aliases": [
+        "Warfarin"
+      ],
+      "food": "Toranja",
+      "food_aliases": [
+        "grapefruit",
+        "suco de toranja"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "A monografia recomenda discutir este consumo durante o tratamento.",
+      "recommendation": "Converse com o médico antes de mudar seu consumo.",
+      "guidance": "Consultar profissional",
+      "compound": "Não especificado na fonte",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Warfarin",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a682277.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a682277-19",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Varfarina",
+      "drug_aliases": [
+        "Warfarin"
+      ],
+      "food": "Bebidas alcoólicas",
+      "food_aliases": [
+        "álcool",
+        "alcool",
+        "cerveja",
+        "vinho",
+        "destilados"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "A monografia recomenda discutir este consumo durante o tratamento.",
+      "recommendation": "Converse com o médico antes de mudar seu consumo.",
+      "guidance": "Consultar profissional",
+      "compound": "Não especificado na fonte",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Warfarin",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a682277.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a682277-20",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Metronidazol",
+      "drug_aliases": [
+        "Metronidazole"
+      ],
+      "food": "Bebidas alcoólicas",
+      "food_aliases": [
+        "álcool",
+        "alcool",
+        "cerveja",
+        "vinho",
+        "destilados"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "A monografia alerta para náusea, vômitos e outros sintomas com álcool.",
+      "recommendation": "A fonte orienta evitar álcool durante o tratamento e por pelo menos três dias após a última dose.",
+      "guidance": "Evitar segundo a fonte",
+      "compound": "Etanol",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Metronidazole",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a689011.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a689011-21",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Tinidazol",
+      "drug_aliases": [
+        "Tinidazole"
+      ],
+      "food": "Bebidas alcoólicas",
+      "food_aliases": [
+        "álcool",
+        "alcool",
+        "cerveja",
+        "vinho",
+        "destilados"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "A monografia alerta para reações como vômitos e cólicas com álcool.",
+      "recommendation": "A fonte orienta evitar álcool durante o tratamento e por três dias depois.",
+      "guidance": "Evitar segundo a fonte",
+      "compound": "Etanol",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Tinidazole",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a604036.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a604036-22",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Tinidazol",
+      "drug_aliases": [
+        "Tinidazole"
+      ],
+      "food": "Toranja",
+      "food_aliases": [
+        "grapefruit",
+        "suco de toranja"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "A fonte inclui uma precaução para toranja.",
+      "recommendation": "Discuta o consumo da fruta ou do suco com o médico.",
+      "guidance": "Consultar profissional",
+      "compound": "Não especificado na fonte",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Tinidazole",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a604036.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a604036-23",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Espironolactona",
+      "drug_aliases": [
+        "Spironolactone"
+      ],
+      "food": "Substituto de sal com potássio",
+      "food_aliases": [
+        "sal light",
+        "cloreto de potássio",
+        "sal com potássio"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "O medicamento reduz a perda de potássio pelos rins.",
+      "recommendation": "A fonte orienta evitar substitutos de sal contendo potássio.",
+      "guidance": "Evitar segundo a fonte",
+      "compound": "Potássio",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Spironolactone",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a682627.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a682627-24",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Espironolactona",
+      "drug_aliases": [
+        "Spironolactone"
+      ],
+      "food": "Alimentos ricos em potássio",
+      "food_aliases": [
+        "banana",
+        "ameixa seca",
+        "uva passa"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "A quantidade de potássio na dieta requer orientação individual.",
+      "recommendation": "Confirme com o médico quanto desses alimentos pode consumir.",
+      "guidance": "Consultar profissional",
+      "compound": "Potássio",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Spironolactone",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a682627.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a682627-25",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Espironolactona",
+      "drug_aliases": [
+        "Spironolactone"
+      ],
+      "food": "Suco de laranja",
+      "food_aliases": [],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "A quantidade de potássio na dieta requer orientação individual.",
+      "recommendation": "Confirme com o médico quanto desses alimentos pode consumir.",
+      "guidance": "Consultar profissional",
+      "compound": "Potássio",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Spironolactone",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a682627.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a682627-26",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Espironolactona",
+      "drug_aliases": [
+        "Spironolactone"
+      ],
+      "food": "Bebidas alcoólicas",
+      "food_aliases": [
+        "álcool",
+        "alcool",
+        "cerveja",
+        "vinho",
+        "destilados"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "O álcool pode favorecer tontura e desmaio ao levantar.",
+      "recommendation": "Discuta o consumo de álcool com o médico.",
+      "guidance": "Consultar profissional",
+      "compound": "Etanol",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Spironolactone",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a682627.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a682627-27",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Lítio",
+      "drug_aliases": [
+        "Lithium"
+      ],
+      "food": "Sal de cozinha",
+      "food_aliases": [
+        "sódio",
+        "cloreto de sódio"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "O tratamento exige atenção às quantidades de sal e líquidos.",
+      "recommendation": "Siga o plano alimentar e de hidratação indicado pelo médico.",
+      "guidance": "Manter orientação individual",
+      "compound": "Sódio",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Lithium",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a681039.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a681039-28",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Lítio",
+      "drug_aliases": [
+        "Lithium"
+      ],
+      "food": "Café e bebidas com cafeína",
+      "food_aliases": [
+        "café",
+        "cafeina",
+        "chá com cafeína",
+        "energético",
+        "refrigerante de cola"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "A monografia recomenda discutir bebidas com cafeína.",
+      "recommendation": "Converse com o médico sobre seu consumo habitual.",
+      "guidance": "Consultar profissional",
+      "compound": "Cafeína",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Lithium",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a681039.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a681039-29",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Tacrolimo",
+      "drug_aliases": [
+        "Tacrolimus"
+      ],
+      "food": "Toranja",
+      "food_aliases": [
+        "grapefruit",
+        "suco de toranja"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "Há uma restrição explícita para a fruta e seu suco.",
+      "recommendation": "A fonte orienta evitar toranja durante o tratamento oral.",
+      "guidance": "Evitar segundo a fonte",
+      "compound": "Não especificado na fonte",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Tacrolimus",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a601117.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a601117-30",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Carbamazepina",
+      "drug_aliases": [
+        "Carbamazepine"
+      ],
+      "food": "Toranja",
+      "food_aliases": [
+        "grapefruit",
+        "suco de toranja"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "A monografia inclui uma precaução alimentar para toranja.",
+      "recommendation": "Converse com o médico sobre a fruta e seu suco.",
+      "guidance": "Consultar profissional",
+      "compound": "Não especificado na fonte",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Carbamazepine",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a682237.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a682237-31",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Enalapril",
+      "drug_aliases": [
+        "Enalapril"
+      ],
+      "food": "Substituto de sal com potássio",
+      "food_aliases": [
+        "sal light",
+        "cloreto de potássio",
+        "sal com potássio"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "A monografia apresenta uma precaução específica para esses substitutos de sal.",
+      "recommendation": "Não utilize sem conversar com o médico.",
+      "guidance": "Consultar profissional",
+      "compound": "Potássio",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Enalapril",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a686022.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a686022-32",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Losartana",
+      "drug_aliases": [
+        "Losartan"
+      ],
+      "food": "Substituto de sal com potássio",
+      "food_aliases": [
+        "sal light",
+        "cloreto de potássio",
+        "sal com potássio"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "A monografia apresenta uma precaução específica para esses substitutos de sal.",
+      "recommendation": "Não utilize sem conversar com o médico.",
+      "guidance": "Consultar profissional",
+      "compound": "Potássio",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Losartan",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a695008.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a695008-33",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Captopril",
+      "drug_aliases": [
+        "Captopril"
+      ],
+      "food": "Substituto de sal com potássio",
+      "food_aliases": [
+        "sal light",
+        "cloreto de potássio",
+        "sal com potássio"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "A monografia apresenta uma precaução específica para esses substitutos de sal.",
+      "recommendation": "Não utilize sem conversar com o médico.",
+      "guidance": "Consultar profissional",
+      "compound": "Potássio",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Captopril",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a682823.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a682823-34",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Lisinopril",
+      "drug_aliases": [
+        "Lisinopril"
+      ],
+      "food": "Substituto de sal com potássio",
+      "food_aliases": [
+        "sal light",
+        "cloreto de potássio",
+        "sal com potássio"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "A monografia apresenta uma precaução específica para esses substitutos de sal.",
+      "recommendation": "Não utilize sem conversar com o médico.",
+      "guidance": "Consultar profissional",
+      "compound": "Potássio",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Lisinopril",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a692051.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a692051-35",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Fenelzina",
+      "drug_aliases": [
+        "Phenelzine"
+      ],
+      "food": "Queijos maturados",
+      "food_aliases": [
+        "queijo curado",
+        "queijos envelhecidos"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "Alimentos ricos em tiramina podem provocar reação grave.",
+      "recommendation": "Defina com médico ou nutricionista quais alimentos evitar e quais quantidades são permitidas.",
+      "guidance": "Restrição individual necessária",
+      "compound": "Tiramina",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Phenelzine",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a682089.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a682089-36",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Fenelzina",
+      "drug_aliases": [
+        "Phenelzine"
+      ],
+      "food": "Carnes curadas ou defumadas",
+      "food_aliases": [
+        "carne defumada",
+        "carne curada"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "Alimentos ricos em tiramina podem provocar reação grave.",
+      "recommendation": "Defina com médico ou nutricionista quais alimentos evitar e quais quantidades são permitidas.",
+      "guidance": "Restrição individual necessária",
+      "compound": "Tiramina",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Phenelzine",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a682089.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a682089-37",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Fenelzina",
+      "drug_aliases": [
+        "Phenelzine"
+      ],
+      "food": "Café e bebidas com cafeína",
+      "food_aliases": [
+        "café",
+        "cafeina",
+        "chá com cafeína",
+        "energético",
+        "refrigerante de cola"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "A monografia também restringe a cafeína.",
+      "recommendation": "A fonte orienta evitar alimentos e bebidas com cafeína.",
+      "guidance": "Evitar segundo a fonte",
+      "compound": "Cafeína",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Phenelzine",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a682089.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a682089-38",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Nifedipino",
+      "drug_aliases": [
+        "Nifedipine"
+      ],
+      "food": "Toranja",
+      "food_aliases": [
+        "grapefruit",
+        "suco de toranja"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "Há restrição explícita para toranja e seu suco.",
+      "recommendation": "A fonte orienta evitar nos três dias anteriores e durante o tratamento.",
+      "guidance": "Evitar segundo a fonte",
+      "compound": "Não especificado na fonte",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Nifedipine",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a684028.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a684028-39",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Nifedipino",
+      "drug_aliases": [
+        "Nifedipine"
+      ],
+      "food": "Bebidas alcoólicas",
+      "food_aliases": [
+        "álcool",
+        "alcool",
+        "cerveja",
+        "vinho",
+        "destilados"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "O álcool pode agravar efeitos adversos.",
+      "recommendation": "Converse com o médico sobre o consumo.",
+      "guidance": "Consultar profissional",
+      "compound": "Etanol",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Nifedipine",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a684028.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a684028-40",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Ciclosporina",
+      "drug_aliases": [
+        "Cyclosporine"
+      ],
+      "food": "Toranja",
+      "food_aliases": [
+        "grapefruit",
+        "suco de toranja"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "A monografia restringe toranja nas formulações orais.",
+      "recommendation": "A fonte orienta evitar a fruta e seu suco.",
+      "guidance": "Evitar segundo a fonte",
+      "compound": "Não especificado na fonte",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Cyclosporine",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a601207.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a601207-41",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Ciclosporina",
+      "drug_aliases": [
+        "Cyclosporine"
+      ],
+      "food": "Alimentos ricos em potássio",
+      "food_aliases": [
+        "banana",
+        "ameixa seca",
+        "uva passa"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "Pode ser necessário limitar o potássio da dieta.",
+      "recommendation": "Confirme as quantidades e o uso de substitutos de sal com o médico.",
+      "guidance": "Consultar profissional",
+      "compound": "Potássio",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Cyclosporine",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a601207.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a601207-42",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Ciclosporina",
+      "drug_aliases": [
+        "Cyclosporine"
+      ],
+      "food": "Substituto de sal com potássio",
+      "food_aliases": [
+        "sal light",
+        "cloreto de potássio",
+        "sal com potássio"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "Pode ser necessário limitar o potássio da dieta.",
+      "recommendation": "Confirme as quantidades e o uso de substitutos de sal com o médico.",
+      "guidance": "Consultar profissional",
+      "compound": "Potássio",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Cyclosporine",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a601207.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a601207-43",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Buspirona",
+      "drug_aliases": [
+        "Buspirone"
+      ],
+      "food": "Toranja",
+      "food_aliases": [
+        "grapefruit",
+        "suco de toranja"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "A precaução da fonte se refere a grandes quantidades.",
+      "recommendation": "Evite grandes quantidades da fruta ou do suco.",
+      "guidance": "Limitar consumo",
+      "compound": "Não especificado na fonte",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Buspirone",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a688005.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a688005-44",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Buspirona",
+      "drug_aliases": [
+        "Buspirone"
+      ],
+      "food": "Bebidas alcoólicas",
+      "food_aliases": [
+        "álcool",
+        "alcool",
+        "cerveja",
+        "vinho",
+        "destilados"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "O álcool pode intensificar a sonolência.",
+      "recommendation": "A fonte orienta não beber álcool durante o tratamento.",
+      "guidance": "Evitar segundo a fonte",
+      "compound": "Etanol",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Buspirone",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a688005.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a688005-45",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Amiodarona",
+      "drug_aliases": [
+        "Amiodarone"
+      ],
+      "food": "Toranja",
+      "food_aliases": [
+        "grapefruit",
+        "suco de toranja"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "A restrição descrita se refere ao suco de toranja.",
+      "recommendation": "A fonte orienta não beber suco de toranja durante o tratamento.",
+      "guidance": "Evitar segundo a fonte",
+      "compound": "Não especificado na fonte",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Amiodarone",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a687009.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a687009-46",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Metformina",
+      "drug_aliases": [
+        "Metformin"
+      ],
+      "food": "Bebidas alcoólicas",
+      "food_aliases": [
+        "álcool",
+        "alcool",
+        "cerveja",
+        "vinho",
+        "destilados"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "O álcool pode aumentar o risco de acidose láctica ou queda da glicemia.",
+      "recommendation": "Informe consumo habitual e episódios de excesso; discuta limites com o médico.",
+      "guidance": "Consultar profissional",
+      "compound": "Etanol",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Metformin",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a696005.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a696005-47",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Sirolimo",
+      "drug_aliases": [
+        "Sirolimus"
+      ],
+      "food": "Toranja",
+      "food_aliases": [
+        "grapefruit",
+        "suco de toranja"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "A monografia restringe o suco e pede orientação sobre a fruta.",
+      "recommendation": "Evite o suco; discuta com o profissional o consumo da fruta.",
+      "guidance": "Observar forma de consumo",
+      "compound": "Não especificado na fonte",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Sirolimus",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a602026.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a602026-48",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    },
+    {
+      "drug": "Dronedarona",
+      "drug_aliases": [
+        "Dronedarone"
+      ],
+      "food": "Toranja",
+      "food_aliases": [
+        "grapefruit",
+        "suco de toranja"
+      ],
+      "base_risk": null,
+      "reviewed": false,
+      "risk_basis": "",
+      "mechanism": "A fonte apresenta uma orientação alimentar, sem detalhar o mecanismo desta associação.",
+      "explanation": "Há restrição explícita para toranja e seu suco.",
+      "recommendation": "A fonte orienta evitar a fruta e seu suco durante o tratamento.",
+      "guidance": "Evitar segundo a fonte",
+      "compound": "Não especificado na fonte",
+      "interaction_type": "Orientação alimentar documentada",
+      "reference_title": "MedlinePlus / ASHP · Dronedarone",
+      "reference_url": "https://medlineplus.gov/druginfo/meds/a609034.html",
+      "source_checked_at": "2026-10-08",
+      "source_record_id": "a609034-49",
+      "evidence_status": "Orientação da fonte conferida; sem validação clínica independente"
+    }
+  ]
+}

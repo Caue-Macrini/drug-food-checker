@@ -138,3 +138,86 @@ def test_admin_import_version_snapshot_and_management(client):
     data['rows'][0]['reviewed']=False
     assert client.post('/api/admin/import',json=data).status_code==200
     assert client.post('/api/check',json=pair(client)).json()['risk'] is None
+
+def test_active_catalog_and_alias_update(client):
+    from services import import_dataset, search_catalog
+    from schemas import ImportDataset
+    from models import Drug, Food
+    from pathlib import Path
+    import json
+    payload=json.loads((Path(__file__).parent.parent/'data/starter.json').read_text(encoding='utf-8'))
+    payload['version']='catalog-regression'
+    payload['rows']=payload['rows'][:1]
+    payload['rows'][0]['drug_aliases']=['Alias exclusivo atualizado']
+    with Session() as db:
+        import_dataset(db,ImportDataset.model_validate(payload))
+        assert [x['name'] for x in search_catalog(db,Drug,'')]==['Sinvastatina']
+        assert [x['name'] for x in search_catalog(db,Food,'')]==['Toranja']
+        assert search_catalog(db,Drug,'Alias exclusivo atualizado')[0]['name']=='Sinvastatina'
+        db.rollback()
+
+def test_profile_without_matching_rules_is_not_personalized(client):
+    signup(client,'profile-flags')
+    client.put('/api/profile',json={'weight':80,'height':180})
+    result=client.post('/api/check',json=pair(client)).json()
+    assert result['personalized'] is False
+
+def test_medication_case_variations_do_not_count_as_polypharmacy():
+    assert adjusted_risk(0,{'age':70,'medications':['A','a',' A ']},{})==(0,[])
+
+def test_whitespace_name_is_rejected(client):
+    assert client.post('/api/auth/register',json={'name':'   ','email':'spaces@example.com','password':'Senha-forte-123','consent':True}).status_code==422
+
+def test_import_blank_names_rejected():
+    from schemas import ImportRow
+    from pydantic import ValidationError
+    with pytest.raises(ValidationError):
+        ImportRow(drug=' ',food='Toranja',mechanism='M',explanation='E',reference_title='Fonte',reference_url='https://example.com')
+
+
+def test_admin_can_restore_dataset_without_rewriting_history(client):
+    u,_=signup(client,'restore')
+    with Session() as db:
+        db.get(User,u['id']).role='admin'
+        db.commit()
+    snapshot=client.post('/api/check',json=pair(client)).json()
+    versions=client.get('/api/admin/overview').json()['datasets']
+    original=next(d for d in versions if d['version']=='fontes-oficiais-2026-10-08')
+    assert client.put('/api/admin/datasets/'+original['id']+'/activate',json={}).status_code==200
+    assert client.get('/api/health').json()['datasets'][0]['version']==original['version']
+    saved=next(h for h in client.get('/api/history').json() if h['id']==snapshot['history_id'])
+    assert saved['result']['evidence'][0]['version']==snapshot['evidence'][0]['version']
+    assert client.put('/api/admin/datasets/missing/activate',json={}).status_code==404
+
+def test_library_search_pagination_and_guidance(client):
+    assert client.get('/api/library').status_code==401
+    signup(client,'library')
+    first=client.get('/api/library').json()
+    assert first['counts']=={'drugs':25,'foods':19,'associations':49,'sources':23}
+    pages=[client.get('/api/library',params={'offset':n}).json()['items'] for n in (0,12,24)]
+    ids=[d['id'] for page in pages for d in page]
+    assert len(ids)==len(set(ids))==25
+    result=client.get('/api/library?q=LEITE').json()
+    assert any(d['name']=='Ciprofloxacino' for d in result['items'])
+    assert client.get('/api/library?q=termo-inexistente-zzzz').json()['total']==0
+    drug=client.get('/api/library?q=ciprofloxacina').json()['items'][0]
+    assert drug['name']=='Ciprofloxacino'
+    food=next(f for f in drug['foods'] if f['name']=='Leite')
+    checked=client.post('/api/check',json={'drug_id':drug['id'],'food_id':food['id'],'personalize':False}).json()
+    assert checked['risk'] is None and not checked['personalized']
+    evidence=checked['evidence'][0]
+    assert 'refeição' in evidence['recommendation']
+    assert evidence['source_checked_at']=='2026-10-08'
+    assert evidence['reference_url']=='https://medlineplus.gov/druginfo/meds/a688016.html'
+    assert client.get('/api/library?limit=1000').status_code==422
+
+def test_library_excludes_archived_records(client):
+    from schemas import ImportDataset
+    from services import import_dataset, library
+    from pathlib import Path
+    payload=ImportDataset.model_validate_json((Path(__file__).parent.parent/'data/starter.json').read_text(encoding='utf-8'))
+    with Session() as db:
+        import_dataset(db,payload)
+        assert library(db)['counts']=={'drugs':3,'foods':3,'associations':5,'sources':1}
+        assert library(db,'levotiroxina')['total']==0
+        db.rollback()

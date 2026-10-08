@@ -22,6 +22,10 @@ class Login(BaseModel):
 class Signup(Login):
     name: str = Field(min_length=2, max_length=120)
     consent: Literal[True]
+    @field_validator('name', mode='before')
+    @classmethod
+    def trim_name(cls, value):
+        return value.strip() if isinstance(value, str) else value
     @field_validator('password')
     @classmethod
     def strong(cls, value):
@@ -74,6 +78,9 @@ class AccountAction(BaseModel):
     active: bool
 
 class ImportRow(BaseModel):
+    recommendation: str = Field(default='', max_length=1500)
+    guidance: str = Field(default='', max_length=100)
+    source_checked_at: str = Field(default='', max_length=10, pattern=r'^(\d{4}-\d{2}-\d{2})?$')
     source_record_id: str = Field(default='', max_length=100)
     source_text_id: str = Field(default='', max_length=100)
     evidence_status: str = Field(default='Associação documentada; classificação não validada', max_length=255)
@@ -93,10 +100,22 @@ class ImportRow(BaseModel):
     cyp450: bool = False
     renal_excretion: bool = False
     hepatotoxic: bool = False
+    @field_validator('drug', 'food', 'mechanism', 'explanation', 'reference_title', mode='before')
+    @classmethod
+    def trim_required(cls, value):
+        return value.strip() if isinstance(value, str) else value
+    @field_validator('drug_aliases', 'food_aliases')
+    @classmethod
+    def clean_aliases(cls, value):
+        if any(len(x) > 255 for x in value):
+            raise ValueError('Cada alias deve ter até 255 caracteres')
+        return list(dict.fromkeys(x.strip() for x in value if x.strip()))
     @field_validator('reference_url')
     @classmethod
     def safe_url(cls, value):
-        if not value.startswith('https://'):
+        from urllib.parse import urlsplit
+        parsed = urlsplit(value)
+        if parsed.scheme != 'https' or not parsed.hostname or parsed.username or parsed.password:
             raise ValueError('A referência deve usar HTTPS')
         return value
 

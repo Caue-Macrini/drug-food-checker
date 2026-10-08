@@ -1,0 +1,51 @@
+{
+  "version": "demonstracao-sintetica-2026-10-08",
+  "source": "Cenários fictícios para demonstração de software; não são uma base clínica.",
+  "rows": [
+    {
+      "drug": "DEMONSTRAÇÃO — Medicamento A",
+      "food": "DEMONSTRAÇÃO — Alimento fictício",
+      "base_risk": 0,
+      "reviewed": true,
+      "risk_basis": "Cenário sintético para verificar a interface. Revisão de software, não clínica.",
+      "explanation": "DADO FICTÍCIO: este registro serve somente para demonstrar o comportamento do software; não descreve uma interação real.",
+      "mechanism": "Não informado: cenário sintético sem mecanismo farmacológico.",
+      "compound": "Não informado",
+      "interaction_type": "Simulação de teste",
+      "reference_title": "Cenário sintético de demonstração — sem evidência clínica",
+      "reference_url": "https://github.com/Caue-Macrini/drug-food-checker",
+      "evidence_status": "SIMULAÇÃO; não utilizar para decisões de saúde",
+      "cyp450": true
+    },
+    {
+      "drug": "DEMONSTRAÇÃO — Medicamento B",
+      "food": "DEMONSTRAÇÃO — Alimento fictício",
+      "base_risk": 1,
+      "reviewed": true,
+      "risk_basis": "Cenário sintético para verificar a interface. Revisão de software, não clínica.",
+      "explanation": "DADO FICTÍCIO: este registro serve somente para demonstrar o comportamento do software; não descreve uma interação real.",
+      "mechanism": "Não informado: cenário sintético sem mecanismo farmacológico.",
+      "compound": "Não informado",
+      "interaction_type": "Simulação de teste",
+      "reference_title": "Cenário sintético de demonstração — sem evidência clínica",
+      "reference_url": "https://github.com/Caue-Macrini/drug-food-checker",
+      "evidence_status": "SIMULAÇÃO; não utilizar para decisões de saúde",
+      "cyp450": true
+    },
+    {
+      "drug": "DEMONSTRAÇÃO — Medicamento C",
+      "food": "DEMONSTRAÇÃO — Alimento fictício",
+      "base_risk": 2,
+      "reviewed": true,
+      "risk_basis": "Cenário sintético para verificar a interface. Revisão de software, não clínica.",
+      "explanation": "DADO FICTÍCIO: este registro serve somente para demonstrar o comportamento do software; não descreve uma interação real.",
+      "mechanism": "Não informado: cenário sintético sem mecanismo farmacológico.",
+      "compound": "Não informado",
+      "interaction_type": "Simulação de teste",
+      "reference_title": "Cenário sintético de demonstração — sem evidência clínica",
+      "reference_url": "https://github.com/Caue-Macrini/drug-food-checker",
+      "evidence_status": "SIMULAÇÃO; não utilizar para decisões de saúde",
+      "cyp450": true
+    }
+  ]
+}

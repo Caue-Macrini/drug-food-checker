@@ -1,5 +1,7 @@
 # Drug-Food Checker
 
+**Apresentação preparada em 08/10/2026:** consulte [APRESENTACAO.md](APRESENTACAO.md) para iniciar localmente, gerar o link temporário e usar a caixa de e-mails de teste.
+
 Sistema web em português baseado no TCC de Cauê Gaspar Macrini e João Pedro Alves Domingos (UDF). React + Vite, FastAPI + SQLAlchemy + RapidFuzz, grafo Cytoscape.js, PostgreSQL por Docker e SQLite para desenvolvimento local.
 
 ## Executar no Windows
@@ -42,7 +44,9 @@ Para ambiente público, configure `APP_ENV=production`, `DOMAIN` com domínio so
 - Cadastro, consentimento versionado, login, logout e recuperação de senha.
 - Perfil opcional com idade, peso, altura, IMC, condições, doença renal/hepática, medicamentos, suplementos e álcool.
 - Autocompletar por nomes e aliases com tolerância a acentos e erros de digitação; a consulta exige selecionar o termo, evitando substituição silenciosa de medicamentos.
-- Consulta por par, fontes, mecanismo, explicação, risco base e ajustado e razões dos modificadores.
+- Consulta por par, fontes, orientação alimentar, mecanismo quando informado, risco base e ajustado e razões dos modificadores.
+- Base de conhecimento com busca por medicamento/alimento/sinônimo, paginação, cobertura real e abertura direta da consulta.
+- Sugestões dos alimentos com associação cadastrada para o medicamento selecionado.
 - Grafo interativo com medicamento, alimento, composto, mecanismo e fonte; seleção também disponível por botões.
 - Histórico individual, filtros por risco/período e reabertura do resultado original.
 - Visualização/exportação JSON e exclusão com confirmação e senha.
@@ -50,9 +54,11 @@ Para ambiente público, configure `APP_ENV=production`, `DOMAIN` com domínio so
 
 ## Bases e interpretação dos resultados
 
-A instalação começa com **cinco associações** em `data/starter.json`, baseadas na página pública da FDA: [Grapefruit Juice and Some Drugs Don't Mix](https://www.fda.gov/consumers/consumer-updates/grapefruit-juice-and-some-drugs-dont-mix). É uma amostra identificada, não a base FooDrugs completa. A fonte descreve associações e não fornece a escala 0/1/2 do TCC; por isso o risco inicial fica **não classificado**.
+A instalação começa com **25 medicamentos, 19 alimentos/bebidas e 49 associações**, em `data/catalogo-oficial.json`. São sínteses em português de **23 referências da FDA e do MedlinePlus/ASHP**, consultadas em 08/10/2026. Cada registro informa fonte, orientação de consumo e data de consulta. As orientações não foram validadas por revisão clínica independente e não recebem automaticamente uma gravidade numérica. A cobertura não é exaustiva. Consulte [CATALOGO.md](CATALOGO.md) para escopo e procedência.
 
-`data/foodrugs-example.json` contém **100 registros reais** da tabela `TM_interactions`, extraídos de um fragmento do dump oficial FooDrugs 4.0.0. Mantém os identificadores de interação e texto e os termos originais, em inglês. São associações potenciais de mineração de texto, que podem conter erros; a fonte vinculada é o depósito da base, não uma alegação de validação de cada associação. O recorte não inclui os documentos da tabela `texts` nem inferências transcriptômicas. A ativação desse arquivo pela administração substitui a amostra FDA como versão ativa.
+O arquivo `data/starter.json` preserva a amostra FDA anterior (cinco associações). Bancos já existentes não são sobrescritos na inicialização; a atualização deve ser importada na Administração. O histórico mantém as evidências da data de cada consulta.
+
+`data/foodrugs-example.json` contém **100 registros reais** da tabela `TM_interactions`, extraídos de um fragmento do dump oficial FooDrugs 4.0.0. Mantém os identificadores de interação e texto e os termos originais, em inglês. São associações potenciais de mineração de texto, que podem conter erros; a fonte vinculada é o depósito da base, não uma alegação de validação de cada associação. O recorte não inclui os documentos da tabela `texts` nem inferências transcriptômicas. A ativação desse arquivo pela administração substitui o catálogo atual como versão ativa.
 
 Fonte e atribuição: Piette Gómez, Lacruz Pleguezuelos e colaboradores, IMDEA Food Institute, [FooDrugs 4.0.0 no Zenodo](https://doi.org/10.5281/zenodo.8192515), licença CC BY 4.0. As modificações consistem em recorte e normalização para JSON, sem inferência de gravidade. [Artigo original](https://doi.org/10.1093/database/baad075).
 
@@ -91,11 +97,12 @@ cd backend
 cd ../frontend
 npm run build -- --configLoader runner
 node e2e.mjs
+node library.e2e.mjs
 ```
 
 O E2E precisa da aplicação na porta 8000 e Google Chrome. Cria e exclui apenas sua própria conta de teste. Capturas: `preview-desktop.png` e `preview-mobile.png`. O backend usa banco temporário isolado nos testes. O parâmetro `--configLoader runner` contorna restrições de leitura dos diretórios ancestrais em ambientes Windows isolados.
 
-Validação realizada: testes automatizados da API, regras e conversor; compilação de produção; fluxo real no Chrome em desktop e largura de 390 px, sem erros JavaScript. PostgreSQL/Docker e HTTPS público não foram executados, pois o serviço Docker estava desligado. Metas de carga, milhões de registros e latência <3 s do TCC ainda exigem benchmark específico.
+Validação realizada: testes automatizados da API, regras e conversor; compilação de produção; fluxo real no Chrome em desktop e largura de 390 px, sem erros JavaScript. PostgreSQL/Docker não foram executados. O acesso HTTPS temporário foi validado em 08/10/2026 via Cloudflare Tunnel. Metas de carga, milhões de registros e latência <3 s do TCC ainda exigem benchmark específico.
 
 ## Organização
 
