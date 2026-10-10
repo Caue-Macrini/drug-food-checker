@@ -9,3 +9,8 @@ frontend/dist
 .env
 *.png
 *.zip
+
+.local-data
+.local-run
+.local-tools
+backups

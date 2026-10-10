@@ -13,6 +13,7 @@ from sqlalchemy.exc import IntegrityError
 from models import Base, engine, Session, User, Profile, Consent, HistoryKey, History, Audit, Reset, Dataset, Drug, Food, now
 from schemas import Signup, Login, ClinicalProfile, Check, EmailRequest, ResetRequest, PasswordRequest, AccountAction, ImportDataset
 from services import uid, search_catalog, build_result, import_dataset, library
+import foodrugs_store as foodrugs
 
 PRODUCTION = os.getenv('APP_ENV') == 'production'
 SECRET = os.getenv('JWT_SECRET')
@@ -130,7 +131,9 @@ DUMMY_HASH = bcrypt.hashpw(secrets.token_bytes(24), bcrypt.gensalt(rounds=12)).d
 @app.get('/api/health')
 def health(db=Depends(db_session)):
     datasets = db.scalars(select(Dataset).where(Dataset.active == True)).all()
-    return {'status':'ok', 'datasets':[{'version':d.version, 'source':d.source, 'count':d.count} for d in datasets], 'coverage':library(db, limit=0)['counts'], 'mode':'educational', 'smtp_configured':bool(os.getenv('SMTP_HOST'))}
+    if any(d.version==foodrugs.VERSION for d in datasets) and not foodrugs.PATH.exists():
+        raise HTTPException(503,'A versão FooDrugs está ativa, mas o banco completo não foi encontrado. Execute Instalar-FooDrugs.ps1.')
+    return {'status':'ok', 'datasets':[{'version':d.version, 'source':d.source, 'count':d.count} for d in datasets], 'coverage':foodrugs.coverage() if any(d.version==foodrugs.VERSION for d in datasets) else library(db, limit=0)['counts'], 'mode':'educational', 'smtp_configured':bool(os.getenv('SMTP_HOST'))}
 
 @app.post('/api/auth/register', status_code=201)
 def register(data: Signup, response: Response, db=Depends(db_session)):
@@ -230,23 +233,64 @@ def save_profile(data: ClinicalProfile, user=Depends(current_user), db=Depends(d
     db.commit()
     return profile
 
+def using_foodrugs(db):
+    active=bool(db.scalar(select(Dataset.id).where(Dataset.active==True,Dataset.version==foodrugs.VERSION)))
+    if active and not foodrugs.PATH.exists():raise HTTPException(503,'Banco FooDrugs completo indisponível; reinstale a base.')
+    return active
+
+@app.get('/api/foodrugs/manifest')
+def foodrugs_manifest(user=Depends(current_user)):
+    if not foodrugs.PATH.exists():raise HTTPException(503,'Base FooDrugs completa ainda não instalada')
+    return {**foodrugs.metadata(),'coverage':foodrugs.coverage()}
+
+@app.get('/api/foodrugs/tables/{table}')
+def foodrugs_table(table: str, offset: int=Query(default=0,ge=0), limit: int=Query(default=25,ge=1,le=50), record: str | None=Query(default=None,max_length=100), user=Depends(current_user)):
+    if not foodrugs.PATH.exists():raise HTTPException(503,'Base FooDrugs ainda não instalada')
+    try:return foodrugs.table_rows(table,offset,limit,record)
+    except ValueError as exc:raise HTTPException(404,str(exc))
+
+@app.get('/api/foodrugs/molecular')
+def foodrugs_molecular(q: str=Query(default='',max_length=100), offset: int=Query(default=0,ge=0), user=Depends(current_user)):
+    if not foodrugs.PATH.exists():raise HTTPException(503,'Base FooDrugs ainda não instalada')
+    return foodrugs.molecular(q,offset)
+
+@app.get('/api/foodrugs/foods')
+def foodrugs_foods(drug_id: str=Query(max_length=36), offset: int=Query(default=0,ge=0), user=Depends(current_user)):
+    if not foodrugs.PATH.exists():raise HTTPException(503,'Base FooDrugs ainda não instalada')
+    try:return foodrugs.get_foods(drug_id,offset)
+    except ValueError as exc:raise HTTPException(422,str(exc))
+
+@app.get('/api/foodrugs/evidence')
+def foodrugs_evidence(drug_id: str=Query(max_length=36), food_id: str=Query(max_length=36), offset: int=Query(default=0,ge=0), user=Depends(current_user)):
+    if not foodrugs.PATH.exists():raise HTTPException(503,'Base FooDrugs ainda não instalada')
+    try:return foodrugs.evidence(drug_id,food_id,offset)
+    except ValueError as exc:raise HTTPException(422,str(exc))
+
 @app.get('/api/library')
 def browse_library(q: str = Query(default='', max_length=100), drug_id: str | None = Query(default=None, max_length=36), offset: int = Query(default=0, ge=0), limit: int = Query(default=12, ge=1, le=50), user=Depends(current_user), db=Depends(db_session)):
+    if using_foodrugs(db):
+        try:return foodrugs.library(q, drug_id, offset, limit)
+        except ValueError as exc:raise HTTPException(422,str(exc))
     return library(db, q, drug_id, offset, limit)
 
 @app.get('/api/catalog/{kind}')
 def catalog(kind: str, q: str = Query(default='', max_length=100), user=Depends(current_user), db=Depends(db_session)):
     if kind not in ('drugs','foods'):
         raise HTTPException(404)
+    if using_foodrugs(db):return foodrugs.search('d' if kind=='drugs' else 'f',q)
     return search_catalog(db, Drug if kind == 'drugs' else Food, q)
 
 @app.post('/api/check')
 def check(data: Check, user=Depends(current_user), db=Depends(db_session)):
-    drug, food = db.get(Drug, data.drug_id), db.get(Food, data.food_id)
-    if not drug or not food:
-        raise HTTPException(422, 'Selecione medicamento e alimento nas sugestões')
-    profile = db.get(Profile, user.id).data if data.personalize else {}
-    result = build_result(db, drug, food, profile)
+    if using_foodrugs(db):
+        try:result=foodrugs.evidence(data.drug_id,data.food_id)
+        except ValueError as exc:raise HTTPException(422,str(exc))
+    else:
+        drug, food = db.get(Drug, data.drug_id), db.get(Food, data.food_id)
+        if not drug or not food:
+            raise HTTPException(422, 'Selecione medicamento e alimento nas sugestões')
+        profile = db.get(Profile, user.id).data if data.personalize else {}
+        result = build_result(db, drug, food, profile)
     month = now()[:7]
     key = db.scalar(select(HistoryKey).where(HistoryKey.user_id == user.id, HistoryKey.month == month))
     if not key:
@@ -308,6 +352,8 @@ def activate_dataset(dataset_id: str, user=Depends(admin), db=Depends(db_session
     target = db.get(Dataset, dataset_id)
     if not target:
         raise HTTPException(404, 'Versão não encontrada')
+    if target.version==foodrugs.VERSION and not foodrugs.PATH.exists():
+        raise HTTPException(503,'Instale o arquivo FooDrugs completo antes de ativar esta versão')
     for dataset in db.scalars(select(Dataset)):
         dataset.active = dataset.id == target.id
     audit(db, user.id, 'dataset.activated')

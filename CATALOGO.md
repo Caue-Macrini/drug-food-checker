@@ -1,5 +1,7 @@
 # Catálogo de fontes oficiais — 08/10/2026
 
+> **Desde 10/10/2026 este catálogo não é a base ativa.** O sistema usa a FooDrugs 4.0.0 completa (ver [FOODRUGS-COMPLETA.md](FOODRUGS-COMPLETA.md)). O catálogo continua disponível como versão inativa na Administração e é a base usada quando a FooDrugs não está instalada.
+
 Versão `fontes-oficiais-2026-10-08`: 25 medicamentos, 19 alimentos/bebidas, 49 pares únicos, 23 referências. A contagem inclui grupos alimentares; não é uma lista de todos os alimentos existentes.
 
 Critério: orientação explícita nas páginas citadas. Sínteses curtas em português, com preservação de condições como quantidade, formulação oral e forma de consumo. Datas são de consulta da página, não de publicação nem revisão clínica. `reviewed: false` e `base_risk: null` preservam a ausência de validação clínica independente e de escala de risco validada para o sistema.

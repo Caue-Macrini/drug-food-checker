@@ -1,0 +1,130 @@
+{
+  "version": "FooDrugs 4.0.0",
+  "doi": "10.5281/zenodo.8192515",
+  "md5": "3c8f26240dd571ded1e4b100d1dfc9d2",
+  "bytes": 1561331208,
+  "tables": {
+    "TM_interactions": {
+      "columns": [
+        "TM_interactions_ID",
+        "texts_ID",
+        "start_index",
+        "end_index",
+        "food",
+        "drug"
+      ],
+      "rows": 1108429
+    },
+    "cmap": {
+      "columns": [
+        "cmap_node_id",
+        "cell_line",
+        "compound",
+        "pert_type"
+      ],
+      "rows": 70895
+    },
+    "cmap_foodrugs": {
+      "columns": [
+        "node_id",
+        "cmap_node_id",
+        "tau"
+      ],
+      "rows": 26365254
+    },
+    "misc_sample": {
+      "columns": [
+        "sample_id",
+        "attribute_name",
+        "attribute_value"
+      ],
+      "rows": 6846
+    },
+    "misc_study": {
+      "columns": [
+        "study_id",
+        "attribute_name",
+        "attribute_value"
+      ],
+      "rows": 192
+    },
+    "nodes": {
+      "columns": [
+        "node_id",
+        "sample_id"
+      ],
+      "rows": 2617
+    },
+    "sample": {
+      "columns": [
+        "sample_id",
+        "study_id",
+        "treatment",
+        "origin_type",
+        "origin_name",
+        "GSM",
+        "time_point",
+        "concentration"
+      ],
+      "rows": 4559
+    },
+    "study": {
+      "columns": [
+        "study_id",
+        "contributor",
+        "entrez_id",
+        "accession",
+        "gpl",
+        "title",
+        "abstract",
+        "study_type",
+        "publication_date",
+        "pubmed_id"
+      ],
+      "rows": 150
+    },
+    "texts": {
+      "columns": [
+        "texts_ID",
+        "document",
+        "link",
+        "citation"
+      ],
+      "rows": 439338
+    },
+    "topTable": {
+      "columns": [
+        "entrez_Id",
+        "logFC",
+        "AveExpr",
+        "moderated_t",
+        "P_value",
+        "adjusted_P_value",
+        "B",
+        "node_id",
+        "geneSet",
+        "top150"
+      ],
+      "rows": 2799422
+    }
+  },
+  "complete": true,
+  "validation": {
+    "missing_text_references": 0,
+    "indexed_text_records": 1108429,
+    "unsearchable_text_records": 0
+  },
+  "coverage": {
+    "drugs": 161495,
+    "foods": 50796,
+    "associations": 1108429,
+    "sources": 437677,
+    "pairs": 632092,
+    "searchable_records": 1108429,
+    "documents": 439338,
+    "molecular_records": 26365254,
+    "total_rows": 30797702,
+    "tables": 10,
+    "dataset": "foodrugs-4.0.0-completa"
+  }
+}
