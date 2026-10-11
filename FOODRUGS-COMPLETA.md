@@ -33,7 +33,7 @@ Desempenho medido na camada de dados, no computador da apresentação: busca de 
 - **Dados FooDrugs:** mostra integridade e contagens, relações moleculares vinculadas a estudos/amostras e todas as tabelas originais, navegáveis por páginas ou identificador. Células longas são abreviadas apenas na interface; o banco contém os valores integrais.
 - A normalização de caixa e acentos agrupa termos somente nos índices de busca. As tabelas originais não são alteradas, e registros sem par pesquisável permanecem acessíveis no explorador.
 
-Associações textuais são candidatas produzidas pela mineração de texto original da FooDrugs. O sistema não executa MLP e não transforma escore tau, coocorrência ou contexto textual em risco clínico. Os dados moleculares mantêm seu contexto experimental e são apresentados separadamente. Usar a base completa não significa ter uma base clinicamente validada ou cobertura de todas as interações existentes.
+Associações textuais são candidatas produzidas pela mineração de texto original da FooDrugs. O nível de risco exibido (verde, amarelo, vermelho) é derivado por regras explícitas sobre esses trechos e gravado nas tabelas derivadas `_tm_signal` e `_pair_risk`; ver [CLASSIFICACAO-RISCO.md](CLASSIFICACAO-RISCO.md). O escore tau dos dados moleculares não é convertido em risco. Os dados moleculares mantêm seu contexto experimental e são apresentados separadamente. Usar a base completa não significa ter uma base clinicamente validada ou cobertura de todas as interações existentes.
 
 ## Instalação reproduzível
 

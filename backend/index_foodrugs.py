@@ -3,6 +3,36 @@ import argparse, json, sqlite3, time
 from pathlib import Path
 from foodrugs_full import norm
 
+# Search-only Portuguese translations, matched exactly against the original English terms.
+# They only help users find a term; the original FooDrugs names are never rewritten.
+DRUG_LABELS={'cafeína':'caffeine','teofilina':'theophylline','omeprazol':'omeprazole','paracetamol':'acetaminophen',
+    'ibuprofeno':'ibuprofen','aspirina':'aspirin','ácido acetilsalicílico':'aspirin','amiodarona':'amiodarone',
+    'tacrolimo':'tacrolimus','ciclosporina':'cyclosporine','atorvastatina':'atorvastatin','sinvastatina':'simvastatin',
+    'lovastatina':'lovastatin','felodipino':'felodipine','nifedipino':'nifedipine','anlodipino':'amlodipine',
+    'fenelzina':'phenelzine','lítio':'lithium','digoxina':'digoxin','metronidazol':'metronidazole',
+    'tetraciclina':'tetracycline','doxiciclina':'doxycycline','alendronato':'alendronate','levotiroxina':'levothyroxine',
+    'varfarina':'warfarin','metformina':'metformin','ciprofloxacino':'ciprofloxacin','clopidogrel':'clopidogrel',
+    'sildenafila':'sildenafil','midazolam':'midazolam','carbamazepina':'carbamazepine','fenitoína':'phenytoin',
+    'colchicina':'colchicine','buspirona':'buspirone','espironolactona':'spironolactone','captopril':'captopril',
+    'enalapril':'enalapril','losartana':'losartan','isoniazida':'isoniazid','metotrexato':'methotrexate'}
+FOOD_LABELS={'toranja':'grapefruit','suco de toranja':'grapefruit juice','leite':'milk','soja':'soy','café':'coffee',
+    'chá':'tea','chá verde':'green tea','álcool':'alcohol','bebidas alcoólicas':'alcohol','etanol':'ethanol',
+    'vinho':'wine','vinho tinto':'red wine','cerveja':'beer','cálcio':'calcium','ferro':'iron','potássio':'potassium',
+    'magnésio':'magnesium','zinco':'zinc','sal':'salt','sódio':'sodium','suco de laranja':'orange juice',
+    'suco de maçã':'apple juice','suco':'juice','fibras':'fiber','nozes':'walnuts','queijo':'cheese',
+    'vitamina K':'vitamin k','iogurte':'yogurt','alho':'garlic','gengibre':'ginger','cúrcuma':'turmeric',
+    'curcumina':'curcumin','oxicoco':'cranberry','suco de oxicoco':'cranberry juice','tiramina':'tyramine',
+    'espinafre':'spinach','brócolis':'broccoli','romã':'pomegranate','alcaçuz':'licorice','chocolate':'chocolate',
+    'banana':'banana','mel':'honey','teofilina':'theophylline','cafeína':'caffeine','alimento':'food','refeição':'meal'}
+
+def add_translations(c):
+    added=0
+    for kind,table,labels in (('d','_drugs',DRUG_LABELS),('f','_foods',FOOD_LABELS)):
+        for label,term in labels.items():
+            entity=c.execute(f'SELECT id FROM {table} WHERE norm=? ORDER BY occurrences DESC LIMIT 1',(norm(term),)).fetchone()
+            if entity:added+=c.execute('INSERT OR IGNORE INTO _aliases VALUES (?,?,?,?)',(kind,norm(label),label,entity[0])).rowcount
+    return added
+
 def index(path):
     c=sqlite3.connect(path);c.create_function('normalize',1,norm,deterministic=True)
     c.execute('PRAGMA journal_mode=OFF');c.execute('PRAGMA synchronous=OFF');c.execute('PRAGMA cache_size=-100000')
@@ -37,11 +67,7 @@ def index(path):
             for candidate in candidates:
                 entity=c.execute(f'SELECT id FROM {table} WHERE norm=?',(norm(candidate),)).fetchone()
                 if entity:c.execute('INSERT OR IGNORE INTO _aliases VALUES (?,?,?,?)',(kind,norm(name),name,entity[0]))
-    # Search-only translations, with exact matching against original English terms.
-    food_labels={'toranja':'grapefruit','leite':'milk','soja':'soy','café':'coffee','chá':'tea','álcool':'alcohol','etanol':'ethanol','cálcio':'calcium','potássio':'potassium','sal':'salt','sódio':'sodium','suco de laranja':'orange juice','suco de maçã':'apple juice','fibras':'fiber','nozes':'walnuts','queijo':'cheese','vitamina K':'vitamin k'}
-    for label,term in food_labels.items():
-        entity=c.execute('SELECT id FROM _foods WHERE norm=?',(term,)).fetchone()
-        if entity:c.execute('INSERT OR IGNORE INTO _aliases VALUES (?,?,?,?)',('f',norm(label),label,entity[0]))
+    add_translations(c)
     count=lambda query:c.execute(query).fetchone()[0]
     coverage={'drugs':count('SELECT count(*) FROM _drugs'),'foods':count('SELECT count(*) FROM _foods'),
         'associations':manifest['tables']['TM_interactions']['rows'],'sources':count('SELECT count(DISTINCT texts_ID) FROM TM_interactions'),
@@ -58,6 +84,12 @@ def index(path):
     Path(path).with_suffix('.manifest.json').write_text(json.dumps({**manifest,'coverage':coverage},indent=2,ensure_ascii=False),encoding='utf-8')
     print('READY',json.dumps(coverage),flush=True)
     return coverage
+
+def update_translations(path):
+    """Add new Portuguese search labels to an installed database without rebuilding it."""
+    with sqlite3.connect(path) as c:
+        c.create_function('normalize',1,norm,deterministic=True)
+        return add_translations(c)
 
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('database');a=p.parse_args();index(a.database)

@@ -9,9 +9,9 @@
 | RF005 perfil | Campos opcionais persistidos com validação |
 | RF006 IMC | Cálculo visual e no servidor, sem interpretação diagnóstica |
 | RF007 consulta | Busca indexada sobre os 161.495 termos de medicamentos e 50.796 termos alimentares da FooDrugs, com sinônimos em português; IDs confirmados e busca por par indexado (RapidFuzz no catálogo complementar) |
-| RF008 cores | Verde/amarelo/vermelho quando risco revisado existe; cinza para desconhecido |
-| RF009 personalização | Quatro regras da p. 31; saturação em 2; sem ajustes se base é nula |
-| RF010 explicação | Trecho original do documento de cada registro FooDrugs, com aviso de que é associação textual potencial |
+| RF008 cores | Indicador circular verde/amarelo/vermelho (Figura 16) com resposta direta em português. Nível base 0–2 derivado por regras explícitas sobre os trechos da FooDrugs (ver CLASSIFICACAO-RISCO.md); par ausente fica verde com ressalva (fluxo alternativo, p. 39) |
+| RF009 personalização | Quatro modificadores da Tabela 2 (p. 31) aplicados ao nível base, limitados a 0–2; propriedades CYP450, excreção renal e hepatotoxicidade vêm de listas explícitas e do mecanismo detectado nos trechos |
+| RF010 explicação | Explicação simplificada em português (como a interação acontece, tipo farmacocinética/farmacodinâmica, mecanismo detectado), "por que esta classificação" e o trecho original de cada documento, marcado como "indica interação", "apenas menciona" ou "sem efeito observado" |
 | RF011 referência | Identificador do registro e do documento, link para a referência original, versão da base e DOI do depósito FooDrugs |
 | RF012 grafo | Cytoscape.js, zoom, arrastar, selecionar e alternativa por botões |
 | RF013 histórico | Histórico isolado por conta, filtros e snapshot original |
@@ -24,4 +24,4 @@
 
 RNF: BCrypt custo 12, consentimento, design responsivo, validações, índice por par, testes, cookies protegidos, controle de acesso, rate limit e auditoria implementados. HTTPS está configurado via Caddy para implantação. O limitador é de processo único; distribuição entre réplicas requer armazenamento compartilhado. Com a base completa, consultas de par e buscas de termos levam milissegundos na camada de dados (medição de 10/10/2026), dentro da meta de 3 s; não foram feitos teste de carga com usuários simultâneos, comprovação de disponibilidade operacional ou conformidade regulatória integral.
 
-Diferenças deliberadas: resultado ausente não recebe sinal verde; a FooDrugs não é tratada como catálogo de gravidade clínica; as regras do TCC são apresentadas como heurísticas. A base integral FooDrugs está implementada; revisão clínica, SMTP real e operação pública permanente dependem de dados/infraestrutura adicionais. Os esquemas do DER foram simplificados com campos JSON onde adequado.
+Diferenças em relação ao texto do TCC: a FooDrugs não fornece nível de risco pronto (p. 31 afirma que sim); o sistema o deriva por regras explícitas e auditáveis, coerente com a justificativa da própria p. 31 para preferir regras a modelos probabilísticos. A classificação e as regras do perfil são heurísticas acadêmicas, sem validação clínica; o desempenho medido (80% de concordância com o Drugs.com; 86,7% de precisão e 70,3% de sensibilidade em avaliação cega de pares realistas) está em CLASSIFICACAO-RISCO.md. A base integral FooDrugs está implementada; revisão clínica, SMTP real e operação pública permanente dependem de dados/infraestrutura adicionais. Os esquemas do DER foram simplificados com campos JSON onde adequado.

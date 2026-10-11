@@ -283,7 +283,8 @@ def catalog(kind: str, q: str = Query(default='', max_length=100), user=Depends(
 @app.post('/api/check')
 def check(data: Check, user=Depends(current_user), db=Depends(db_session)):
     if using_foodrugs(db):
-        try:result=foodrugs.evidence(data.drug_id,data.food_id)
+        profile = db.get(Profile, user.id).data if data.personalize else {}
+        try:result=foodrugs.evidence(data.drug_id,data.food_id,profile=profile,personalize=data.personalize)
         except ValueError as exc:raise HTTPException(422,str(exc))
     else:
         drug, food = db.get(Drug, data.drug_id), db.get(Food, data.food_id)

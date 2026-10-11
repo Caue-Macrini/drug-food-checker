@@ -1,0 +1,1915 @@
+{
+ "data": "2026-10-11",
+ "regras": "regras-evidencia-1.5",
+ "metodo": "Avaliação cega com amostras não usadas no ajuste das regras. Cada item foi julgado por dois juízes automatizados independentes (instâncias de modelo de linguagem), sem acesso à saída das regras; divergências foram decididas por um terceiro juiz. A: 120 trechos sorteados da base inteira, estratificados pela saída das regras (60 \"indica interação\", 60 demais). B: 60 pares realistas (medicamento comum + alimento comum presentes na base), 30 amarelos/vermelhos e 30 verdes; os juízes leram até 8 trechos sorteados de cada par. Recomenda-se revisão humana; a planilha amostra-revisao-trechos.csv serve para isso.",
+ "metricas": {
+  "A_sentencas": {
+   "amostra": 120,
+   "regra_interacao": 60,
+   "regra_outros": 60,
+   "precisao_interacao": 0.267,
+   "acertos_interacao": 16,
+   "interacoes_entre_mencoes": 5,
+   "taxa_omissao_por_trecho": 0.0833,
+   "cobertura_estimada_na_base": 0.132,
+   "acordo_juizes": 111
+  },
+  "B_pares_realistas": {
+   "pares": 60,
+   "vp": 26,
+   "fp": 4,
+   "fn": 11,
+   "vn": 19,
+   "precisao": 0.867,
+   "sensibilidade": 0.703,
+   "especificidade": 0.826,
+   "acuracia": 0.75,
+   "acordo_juizes": 57
+  }
+ },
+ "A_trechos": [
+  {
+   "registro": 343710,
+   "medicamento": "zafirlukast",
+   "alimento": "theophylline",
+   "trecho": "ne explanation for the noted increase in the theophylline level is that metabolism occurs mainly by cytochrome P450 (CYP 1A2), an enzyme that is known to be inhibited with high concentrations of zafirlukast. ",
+   "regras": "apenas menciona",
+   "juizes": "yes",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 741828,
+   "medicamento": "interleukin-6",
+   "alimento": "l-serine",
+   "trecho": "Moreover, the administration of 0.5% l-serine decreased the concentrations of leptin, malondialdehyde, interleukin-1β, and interleukin-6, while it increased those of superoxide dismutase and glutathione, in both the serum and hypothalamus.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 972821,
+   "medicamento": "P-286",
+   "alimento": "physostigmine",
+   "trecho": "P-286 (N-diethylaminoethyl-N-isopentyl-NN-di-isopropylurea) produced an early and a late block of the pressor effect of physostigmine; the initial block was due to an adrenergic blocking action while the late block was probably due to a dual action of the drug in abolishing the effects of both the nicotinic and non-nicotinic ganglion stimulants. P",
+   "regras": "indica interação",
+   "juizes": "yes",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 695496,
+   "medicamento": "cisplatin",
+   "alimento": "pyridoxine",
+   "trecho": "Altogether, these results suggest that the combined regimen of cisplatin plus pyridoxine mediates immune-dependent antineoplastic effects against NSCLC.",
+   "regras": "apenas menciona",
+   "juizes": "yes",
+   "juizes_concordaram": false
+  },
+  {
+   "registro": 245001,
+   "medicamento": "mustard oil-induced",
+   "alimento": "somatostatin",
+   "trecho": "or with the somatostatin depleting agent cysteamine (280 mg kg(-1), s.c.) prevented the inhibitory action of mustard oil-induced inflammation on subsequent neurogenic plasma extravasation and strongly diminished the inhibition of non-neurogenic oedema formation evoked by dextran.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 289,
+   "medicamento": "iron",
+   "alimento": "folic acid",
+   "trecho": "Moderate Drug Interaction||MONITOR:  Exogenous pancreatic enzymes may interfere with the gastrointestinal absorption of folic acid and iron.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 5884,
+   "medicamento": "Oxymorphone",
+   "alimento": "grapefruit",
+   "trecho": "Oxymorphone AUC(0-∞) increased by 1.6-fold (p<0.01) after grapefruit juice, but the AUC(m)/AUC(p) remained unchanged.",
+   "regras": "indica interação",
+   "juizes": "yes",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 664354,
+   "medicamento": "UVJ explants",
+   "alimento": "Agaricus bisporus",
+   "trecho": "When ejaculated spermatozoa were co-incubated with UVJ explants, the lectins derived from Agaricus bisporus and Canavalia ensiformis had marked inhibitory effects on sperm passage into SSTs.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 818424,
+   "medicamento": "Golden jackals",
+   "alimento": "spread",
+   "trecho": "Golden jackals may be carriers and may play a nonnegligible role in the spread of Pneumocystis spp.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 887438,
+   "medicamento": "EEEG",
+   "alimento": "nitric oxide",
+   "trecho": "This study showed that EEEG and its ButFr have important vasodilatory effects by endothelial M3-muscarinic and B2-bradykininergic receptors inducing nitric oxide and prostacyclin release followed by K+ channels activation in the vascular smooth muscle.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 925489,
+   "medicamento": "lectin",
+   "alimento": "d-glucose",
+   "trecho": "In inflammatory tests, ConV elicited paw edema, but incubation of lectin with glucose beforehand was able to reduce the edematogenic effect, indicating the involvement of the carbohydrate recognition domain in this process.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 543856,
+   "medicamento": "ursodeoxycholic acid",
+   "alimento": "alpha-tocopherol",
+   "trecho": "Although there is no approved pharmacological therapy for NASH, it seems that long lasting administration of vitamin E in association with high dose ursodeoxycholic acid may be beneficial.",
+   "regras": "apenas menciona",
+   "juizes": "yes",
+   "juizes_concordaram": false
+  },
+  {
+   "registro": 395256,
+   "medicamento": "hexanic",
+   "alimento": "extracts",
+   "trecho": "ruit methanolic (IC50=2.76mg/mL) and aqueous (IC50=2.08 mg/mL) extracts showed higher inhibitory effects than chloroformic (IC50=7.62 mg/mL) and hexanic (IC50=12.93 mg/mL) extracts on egg hatching (p<0.05). ",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 1005444,
+   "medicamento": "lipoprotein lipase",
+   "alimento": "catecholamine",
+   "trecho": "Beta-adrenergic activity suppresses transcription of LPL in adipocytes; this phenomenon may contribute to the favorable impact of exercise training on visceral obesity; conceivably, preadministration of safe drugs that boost catecholamine activity (caffeine, yohimbine) could potentiate this beneficial effect of exercise.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 819289,
+   "medicamento": "histamine-induced",
+   "alimento": "tertiary butylhydroperoxide",
+   "trecho": "Studies with clinically used asthma drugs like isoprenaline, terbutaline, budesonide, theophylline and cromoglycate have shown that they all counteract histamine-induced permeability increase in postcapillary venules and, furthermore, that budesonide and terbutaline inhibit increased permeability caused by bradykinin, LTB4 and phorbol-dibutyrate, tertiary butylhydroperoxide and ischaemia.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 994490,
+   "medicamento": "bilirubin",
+   "alimento": "iron",
+   "trecho": "Although peak serum iron level (340 microg/dL) was significantly lower than that reported to cause hepatotoxicity (>1,700 microg/dL), rapid and significant elevations in aminotransferases (>4,000 U/L), total bilirubin (5 mg/dL), and prothrombin time (50 seconds) occurred within 48 hours.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 879249,
+   "medicamento": "l-methionine",
+   "alimento": "cobalamin",
+   "trecho": "Homocysteine remethylation to methionine is catalysed by methionine synthase activity which requires vitamin B12, regenerating methionine to allow synthesis of the universal methyl donor S-adenosylmethionine required for methylation and gene transcription regulation.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 810809,
+   "medicamento": "indinavir",
+   "alimento": "hypericum",
+   "trecho": "cent clinical studies demonstrate that hypericum extracts increase the metabolism of various drugs, including combined oral contraceptives, cyclosporin, and indinavir. I",
+   "regras": "indica interação",
+   "juizes": "yes",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 931970,
+   "medicamento": "acetaldehyde",
+   "alimento": "alcohol",
+   "trecho": "The risk of development of acetaldehyde pathology, including neoplasms, is associated with genetic polymorphism with enhanced alcohol dehydrogenase (ADH) or reduced ALDH activity leading to increased acetaldehyde levels in the tissues.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 184514,
+   "medicamento": "anti-NNH1",
+   "alimento": "aristolochic acid I",
+   "trecho": "However, the potentiation of toxicity was inhibited dose-dependently by anti-NNH1 and aristolochic acid.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 968505,
+   "medicamento": "selenite",
+   "alimento": "selenomethionine",
+   "trecho": "The relatively large amounts of selenomethionine or Se-methylselenocysteine needed to produce apoptosis in cancer cells compared with selenite or methylseleninic acid are a probable consequence of low tissue levels of the required enzymes.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 965351,
+   "medicamento": "hydroxyl",
+   "alimento": "Bi2O3",
+   "trecho": "Experimental combined with theoretical studies reveal that Bi2O3 prefers to interact with the middle hydroxyl of glycerol that facilitates the selective oxidation of glycerol to DHA.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 270532,
+   "medicamento": "muscimol-induced",
+   "alimento": "[3H]GABA",
+   "trecho": "Diazepam, clonazepam and pentobarbital potentiated the muscimol-induced inhibition of high K+-evoked release of [3H]GABA.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 344385,
+   "medicamento": "Butorphanol",
+   "alimento": "κ-Opioid",
+   "trecho": "Molecular Interaction Between Butorphanol and κ-Opioid Receptor.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 600370,
+   "medicamento": "DSS-induced",
+   "alimento": "Dehydroepiandrosterone",
+   "trecho": "In conclusion, our data demonstrated that DHEA reduces oxidative damage through regulating antioxidant enzyme activity; inhibits pro-inflammatory cytokines production by blocking the activation of p38 MAPK and NF-κB signal pathway; protects colon barrier integrity via increasing tight junction protein expression and modulating gut microbiota taxa; all that finally alleviates DSS-induced experimental colitis in mice.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 171950,
+   "medicamento": "anticonvulsant agents",
+   "alimento": "alcohol",
+   "trecho": "Among the advantages of using anticonvulsant agents in this capacity is their purported lack of interaction with alcohol (i.e., interactions that could increase psychomotor deficits, cognitive impairment, and increase intoxication).",
+   "regras": "indica interação",
+   "juizes": "no_effect",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 143477,
+   "medicamento": "l-methionine",
+   "alimento": "vitamin",
+   "trecho": "Despite an adequate vitamin status, the supplementation of 1500 mg of L-methionine daily significantly increases homocysteine plasma concentrations by an average of 2.0 micromol/l in patients and in control subjects.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 668864,
+   "medicamento": "chloroquine",
+   "alimento": "protein",
+   "trecho": "Knockdown of autophagy-related protein 5 or inhibit the lysosomal degradation by chloroquine (CQ) decreased the effect of RSV.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 266323,
+   "medicamento": "sodium",
+   "alimento": "carbohydrates",
+   "trecho": "Following intervention, all of the patients recorded significant increases in the consumption of fruit and vegetables and decreases in red meat and poultry consumption, with closer adherence to the MedDiet and a reduction in the daily intake of calories, carbohydrates, and sodium.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 401477,
+   "medicamento": "endocrine disruptors",
+   "alimento": "beverage",
+   "trecho": "Compared to all food categories, EEDs from beverage consumption accounted for ~ 0.1% (parabens) to 20% (phthalates) of total exposure from diet.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 616667,
+   "medicamento": "apomorphine",
+   "alimento": "lysergic acid diethylamide",
+   "trecho": "antagonized the behavioural effects of lysergic acid diethylamide (LSD) and apomorphine, but not 5-methoxy-N,N-dimethyltryptamine, in cats.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 1089007,
+   "medicamento": "dopamine",
+   "alimento": "yohimbine",
+   "trecho": "Interestingly, a behaviorally ineffective dose of yohimbine markedly reduced the inhibitory effects of DA when injected 15min before.",
+   "regras": "indica interação",
+   "juizes": "yes",
+   "juizes_concordaram": false
+  },
+  {
+   "registro": 578630,
+   "medicamento": "steroids",
+   "alimento": "sucrose",
+   "trecho": "Indiscriminate use of steroids in patients needs to be avoided and focus needs to be put on tight blood sugar control in diabetic patients.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 598958,
+   "medicamento": "auxin",
+   "alimento": "colchicine",
+   "trecho": "Low concentrations of auxin (1 and 10 µM) caused an increase in growth and the amount of chlorophyll, carotenoid, sugar, starch, glycerol, and protein in the cells treated with colchicine.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 233427,
+   "medicamento": "methyl-4-phenyl-1,2,3,6-tetrahydropyridine",
+   "alimento": "zinc",
+   "trecho": "TP (20 mg/kg) was injected four times every 2 h into the peritoneum of mice, which resulted in a massive loss of DA neurons as well as an increase in neuronal death and cytosolic labile zinc overload. T",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 434373,
+   "medicamento": "ammonium",
+   "alimento": "protein",
+   "trecho": "Increasing dietary protein concentrations increased the relative abundance of Fusobacterium and Bacteroides as well as the concentrations of ammonium and n-valerate in the feces of the cats, independently of the dietary protein quality.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 848023,
+   "medicamento": "1BER-1MA",
+   "alimento": "hydrochloric",
+   "trecho": "In particular, the MAS of 1BER-1MA in dilute hydrochloric solution is as high as 34 times that of the commercial form.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 908374,
+   "medicamento": "fatty acid",
+   "alimento": "snails",
+   "trecho": "Elevation of the free fatty acid fraction in the high dose snail group suggested that some changes occurred in the lipid metabolism of the snails in that group as a function of miracidia dose.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 368572,
+   "medicamento": "chelators",
+   "alimento": "copper",
+   "trecho": "uring the initial phase, progressive increase of chelators doses adjusted to exchangeable copper and urinary copper might help to avoid neurological deterioration. L",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 169698,
+   "medicamento": "Heparin",
+   "alimento": "Contrycal (Aprotinin) and Heparin",
+   "trecho": "Patients (n=104) with acute myocardium infarction were divided into 4 groups: treatment with early TLT infusing Contrycal (Aprotinin) and Heparin (CH) during the first 2 hrs from the onset of disease (Gr.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 898386,
+   "medicamento": "triglyceride",
+   "alimento": "fat",
+   "trecho": "There were decreases in muscle and fat nicotinamide N-methyltransferase (NNMT), which were associated with decreases in mass and triglyceride, low-density lipoprotein cholesterol (LDLc), and total cholesterol content.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 165272,
+   "medicamento": "radioaerosol",
+   "alimento": "(99m)Tc-DTPA",
+   "trecho": "Our results suggest that the deposition of radioaerosol in the hilar region affects the clearance rate of (99m)Tc-DTPA from the alveoli in damaged lungs.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 208252,
+   "medicamento": "oxygen",
+   "alimento": "N-acetylcysteine",
+   "trecho": "Promising results in terms of cardiac and renal protection have been reported in a recent trial with the use of high-dose N-acetylcysteine acting as an oxygen free radical scavenger: an intravenous bolus of 1200 mg N-acetylcysteine was given before coronary angiography followed by 1200 mg orally twice a day for 48 hours after the procedure.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 1003815,
+   "medicamento": "adenosine triphosphate",
+   "alimento": "d-tryptophan",
+   "trecho": "Both ATP and GTP also dissolve clusters of di- and tripeptides containing tryptophan but with equal potency.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 1647,
+   "medicamento": "trypsin",
+   "alimento": "naringenin",
+   "trecho": "The direct interactions between naringenin or naringin and catalytic amino acid residues will inhibit the catalytic activity of trypsin and pepsin, respectively.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 1001467,
+   "medicamento": "2,4-dinitrophenol",
+   "alimento": "hexyl 2-methylpropanoate",
+   "trecho": "Accumulation of benzylpenicillin was against an electrochemical potential gradient via a saturable process (Km = 58 microM and Vmax = 84 nmol/ml of tissue per min) that was inhibited by sulfhydryl reagents (p-hydroxymercuribenzoate and N-ethylmaleimide), metabolic inhibitors (KCN and 2,4-dinitrophenol) and anion exchange inhibitors (4-acetamide-4-isothiocyanatostilbene-2,2-disulfonic acid and 4,4-diisothiocyanatostilbene-2,2-disulfonic acid), but is major transport system did not require the inward Na+ gradient. Org",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 487644,
+   "medicamento": "leucoagglutinin",
+   "alimento": "Phaseolus vulgaris",
+   "trecho": "ontophoretic injection of Phaseolus vulgaris leucoagglutinin into the medial septum and the nucleus of the diagonal band of Broca or the lateral entorhinal cortex showed contacts between Phaseolus vulgaris leucoagglutinin immunopositive en passant and terminal boutons and surviving calcium binding protein immunopositive neurons in the hippocampus. ",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 33844,
+   "medicamento": "l-leucine",
+   "alimento": "Diet",
+   "trecho": "Further addition of L-leucine (Diet LTM + Leu) decreased the b(0,+) expression in jejunum and CAT-1 in the Longissimus dorsi muscle (p < 0.05), increased the serum concentration ofleucine and arginine and decreased the concentration of isoleucine (p < 0.05).",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 1102523,
+   "medicamento": "HCO3-",
+   "alimento": "chloride",
+   "trecho": "Cl- efflux could be stimulated by external Cl- and HCO3- and was inhibited by DIDS.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 610267,
+   "medicamento": "d-glucose",
+   "alimento": "insulin",
+   "trecho": "Glucose given together with the insulin abolished the stimulatory effect of the latter.",
+   "regras": "indica interação",
+   "juizes": "yes",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 545069,
+   "medicamento": "polyunsaturated fatty acids",
+   "alimento": "amino acids",
+   "trecho": "It is hypothesized that there is an interaction between amino acids and polyunsaturated fatty acids, possibly via the CaMKII signaling pathway to upregulate MEF2 and mitochondrial biogenesis.",
+   "regras": "indica interação",
+   "juizes": "yes",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 261405,
+   "medicamento": "quipazine",
+   "alimento": "cocaine",
+   "trecho": "In drug interaction studies, the 5HT uptake inhibitors and quipazine produced an insurmountable attenuation of the behavioral-stimulant effects of cocaine, whereas the 5HT antagonists (ketanserin, mianserin and ritanserin) with high affinity for 5HT2 binding sites enhanced the behavioral-stimulant effects of low or intermediate doses of cocaine.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 75332,
+   "medicamento": "potassium",
+   "alimento": "salts",
+   "trecho": "From these data we conclude (1) that increased excretion of sodium, potassium and chloride and decreased excretion of protons after administration of potassium salts are the specific effects of the potassium component; (2) that potassium also appears to have secondary, indirect effects on proton excretion, the mechanism of which remains to be clarified.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 26295,
+   "medicamento": "Bortezomib",
+   "alimento": "carboplatin",
+   "trecho": "Bortezomib may help carboplatin work better by making tumor cells more sensitive to the drug.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 351114,
+   "medicamento": "CO2",
+   "alimento": "acetate",
+   "trecho": "While the addition of iron(II) increased growth rates and ethanol production, added nickel(II) increased WLP activity and acetate formation, reducing net CO2 production by 28%.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 384515,
+   "medicamento": "Iversen",
+   "alimento": "amino acid glutamate",
+   "trecho": "The excitatory amino acid glutamate is known to interact with three subclasses of receptors, N-methyl-D-aspartate (NMDA), quisqualate and kainate (Cotman and Iversen, 1987).",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 731408,
+   "medicamento": "sildenafil citrate",
+   "alimento": "8-bromo-cGMP",
+   "trecho": "Our results also demonstrate that supplementation with NO, sildenafil citrate (phosphodiesterase inhibitor), and 8-bromo-cGMP (cGMP analog) partially recovers activated-pericyte-mediated endothelium dysfunction.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 2283,
+   "medicamento": "ticagrelor",
+   "alimento": "epigallocatechin-3-gallate",
+   "trecho": "TPE effectively inhibited the metabolism of ticagrelor in vitro, with epigallocatechin-3-gallate as the major constituent responsible for the observed inhibitory effects in human liver microsomes and intestinal microsomes (IC50 = 4.23 ± 0.18 µM).",
+   "regras": "indica interação",
+   "juizes": "yes",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 479174,
+   "medicamento": "methotrexate",
+   "alimento": "folic acid",
+   "trecho": "Known risk factors for methotrexate toxicity include dosing errors, metabolic syndrome, hypoalbuminemia, renal dysfunction, lack of folate supplementation, and the concomitant use of drugs that interfere with methotrexate metabolism.",
+   "regras": "indica interação",
+   "juizes": "yes",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 100567,
+   "medicamento": "amprenavir",
+   "alimento": "gelatin",
+   "trecho": "Administration of soft gelatin capsules of amprenavir with a high-fat breakfast resulted in a 14% decrease in the mean AUC0-infinity (from 9.58 to 8.26 microg.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 44911,
+   "medicamento": "serotonin",
+   "alimento": "branched-chain amino acids",
+   "trecho": "Supplementation with branched-chain amino acids (BCAAs) should prevent the exercise-induced increase in the plasma concentration ratio of free tryptophan to other large neutral amino acids (including BCAAs) and thereby prevent an elevation in the level of 5-HT in the brain.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 438518,
+   "medicamento": "U-50,488E",
+   "alimento": "reserpine",
+   "trecho": "U-50,488E (s.c.)-induced antinociception was attenuated by reserpine, DSP-4, 6-OHDA, PCPA and 5,7-DHT.",
+   "regras": "apenas menciona",
+   "juizes": "yes",
+   "juizes_concordaram": false
+  },
+  {
+   "registro": 591596,
+   "medicamento": "tryptophan-containing",
+   "alimento": "whey protein",
+   "trecho": "Plasma concentrations and ACE-inhibitory effects of tryptophan-containing peptides from whey protein hydrolysate in healthy volunteers.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 580739,
+   "medicamento": "AMPA receptors",
+   "alimento": "proteins",
+   "trecho": "AMPAR surface expression involves interactions between the GluR2 carboxy tail and various proteins including glutamate receptor-interacting protein (GRIP), AMPA receptor-binding protein (ABP), protein interacting with C kinase 1 (PICK1), N-ethyl-maleimide-sensitive fusion protein (NSF).",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 1051826,
+   "medicamento": "glyceraldehyde 3-phosphate",
+   "alimento": "protein",
+   "trecho": "Proteomics analysis revealed overproduction of glyceraldehyde 3-phosphate dehydrogenase (GapA), universal stress protein A2 (UspA2), and formamidopyrimidine-DNA glycosylase (MutM) under aerated conditions in evolved strains, proteins with putative functions in redox reactions, universal stress response, and DNA damage repair, all of which could contribute to the enhanced oxidative stress resistance.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 965733,
+   "medicamento": "1-methylhistidine",
+   "alimento": "3,5-dihydroxybenzoic acid",
+   "trecho": "Integrated analysis showed that benzoic acid reduced the content of l-histidine (from 1.27 to 0.49 mg/L) and 1-methylhistidine (from 1.40 to 0.68 mg/L), due to the increase of benzoic acid (0-30 mg/L) concentration significantly reduced the level and activity of N-methyltransferase.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 90812,
+   "medicamento": "lutein+zeaxanthin",
+   "alimento": "diet",
+   "trecho": "Following consumption of a high-antioxidant diet for 2 weeks, plasma concentrations of ascorbic acid, alpha- and beta-carotene and lutein+zeaxanthin were all significantly increased (P < 0.05) over the depletion period.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 1040769,
+   "medicamento": "acamprosate",
+   "alimento": "spermidine",
+   "trecho": "This inhibitory effect of acamprosate was not affected by arcaine, and was associated with a significant reduction in Bmax and binding affinity for spermidine, suggesting an allosteric interaction between acamprosate and a spermidine binding site.",
+   "regras": "indica interação",
+   "juizes": "yes",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 288691,
+   "medicamento": "high-dose methotrexate",
+   "alimento": "5-formyltetrahydrofolic acid",
+   "trecho": "Low doses of folinic acid (FA) rescue after high-dose methotrexate (HD-MTX) have been associated with increased toxicity, whereas high doses may be related to a decreased antileukemic effect.",
+   "regras": "indica interação",
+   "juizes": "yes",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 560532,
+   "medicamento": "BDZ receptor",
+   "alimento": "parachlorophenylalanine",
+   "trecho": "h the BDZ receptor antagonist flumazenil and the GABAA receptor antagonist bicuculline counteracted the PCPA induced anticonflict effect in doses which did not affect the behavior per se.(AB",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 985153,
+   "medicamento": "H2O2",
+   "alimento": "delphinidin",
+   "trecho": "MTT (3-(4,5-dimethylthiazol-2-yl)-2,5-diphenyltetrazolium bromide) assay and flow cytometry demonstrated that pretreatment of ARPE-19 cells with delphinidin (25, 50, and 100 μg/ml) significantly increased cell viability and reduced the apoptosis from H2O2 (0.5 mM)-induced oxidative stress in a concentration-dependent manner, which was achieved by the inhibition of Bax, cytochrome c, and caspase-3 protein expression and enhancement of Bcl-2 protein.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 404893,
+   "medicamento": "adenosine diphosphate",
+   "alimento": "adenosine triphosphate",
+   "trecho": "Exposure of tissues to high concentrations of either ATP or adenosine desensitized the tissue to further exposure to ATP, ADP, AMP and adenosine, whilst the inhibitory effects of noradrenaline, phenylephrine and isoprenaline and of perivascular and intramural stimulation were unaffected.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 974617,
+   "medicamento": "Silver NPs",
+   "alimento": "calcium",
+   "trecho": "Silver NPs are the most cytotoxic and induce significant cellular changes in oxidative stress, Ca2+ flux and mitochondria function, leading to cellular junction disruption at the lowest exposure concentration.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 537718,
+   "medicamento": "Non-insulin-dependent diabetes mellitus",
+   "alimento": "nicotinic acid",
+   "trecho": "Treatment of hypertension and dyslipidemia in high-risk patients for NIDDM should avoid agents that further worsen insulin resistance (nicotinic acid, beta blockers, and thiazides), as subjects with hypertension and dyslipidemia are already at increased risk of NIDDM.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 72444,
+   "medicamento": "l-threonine",
+   "alimento": "diet",
+   "trecho": "Patients receiving the high protein diet had significantly higher plasma levels of valine, lysine, threonine, leucine, aginine, isoleucine, proline, serine, asparagine, tryptophane, and tyrosine.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 747660,
+   "medicamento": "antioxidants",
+   "alimento": "alpha-tocopherol",
+   "trecho": "The results also demonstrated that treatment with the antioxidants N-acetylcysteine and a derivative of vitamin E (tocopherol succinate, propofol), both in vitro and in vivo, reduced the oxidative stress.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 15741,
+   "medicamento": "hAMSCs",
+   "alimento": "ART",
+   "trecho": "Transplantation of hAMSCs for Woman With DOR Patients with Diminished ovarian response (DOR）have a poor in vitro fertilization（IVF） outcome, and is considered one of most challenging tasks in artificial reproductive treatment (ART).",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 780080,
+   "medicamento": "5-HT-induced",
+   "alimento": "adenosine",
+   "trecho": "The 5-HT-induced platelet activation is inhibited by stimulators of adenylate cyclase (PGE1, PGE2, isoprenaline, adenosine) and inhibitors of cAMP phosphodiesterase (papaverine, anagrelide, RA233), indicating that also for this type of platelet activation cAMP behaves as a unidirectional, inhibitory regulator.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 36360,
+   "medicamento": "confidence interval",
+   "alimento": "fortified",
+   "trecho": "Children who had received the fortified drink had significantly lower odds of being ID (0.15; 95% confidence interval (CI): 0.09-0.27), IDA (0.14; 95% CI: 0.04-0.52), vitamin B₁₂ deficient (0.36; 95% CI: 0.18-0.73) and vitamin C deficient (0.24; 95% CI: 0.13-0.46), after adjusting for baseline age, gender and weight.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 715752,
+   "medicamento": "Bay-K-8644",
+   "alimento": "D600",
+   "trecho": "Interaction between Bay-K-8644 and nifedipine, D600, diltiazem, papaverine or W-7 on a K+-contracture of the guinea pig taenia coli have been investigated.",
+   "regras": "apenas menciona",
+   "juizes": "yes",
+   "juizes_concordaram": false
+  },
+  {
+   "registro": 216977,
+   "medicamento": "cadmium",
+   "alimento": "amino acids",
+   "trecho": "Cd treatments also increased the contents of phytochelatins as well as a number of amino acids.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 1081483,
+   "medicamento": "ankyrin",
+   "alimento": "chicken",
+   "trecho": "Fatty acid acylation of ankyrin is constitutive in erythroid cells throughout chicken embryo development.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 314097,
+   "medicamento": "diphenyldiselenide",
+   "alimento": "glutamic acid",
+   "trecho": "hese results indicate that diphenyl diselenide produced antinociception in several models of pain through mechanisms that involve an interaction with not only nitrergic system but also via interaction with redox modulatory sites of glutamate receptors.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 678329,
+   "medicamento": "benzodiazepines",
+   "alimento": "gamma-aminobutyric acidA",
+   "trecho": "The anxiolytic and anticonvulsant effects of benzodiazepines, barbiturates, ethanol and neuroactive steroids are mediated by selective interactions with gamma-aminobutyric acidA (GABA(A)) receptors.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 75080,
+   "medicamento": "Interleukin 2",
+   "alimento": "calcium",
+   "trecho": "Among the many physiologic effects of IL-2, decreased serum levels of the divalent cations magnesium (Mg) and calcium have been demonstrated, with corresponding decreases in their urinary excretion.",
+   "regras": "indica interação",
+   "juizes": "yes",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 231612,
+   "medicamento": "vitamin B5",
+   "alimento": "4-cresol sulfate",
+   "trecho": "Although the minority of changes were observed in bone and plasma (<20), increased p-cresol sulfate was increased >4 fold in plasma (the largest increase in all tissues), and pantothenate (vitamin B5) decreased >2-fold.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 117942,
+   "medicamento": "gamma-aminobutyric acid",
+   "alimento": "ethanol",
+   "trecho": "The depressant actions of ethanol in the brain are related in part to facilitation of gamma-aminobutyric acid (GABA) neurotransmission via its interaction with the benzodiazepine/GABA receptor complex.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 993604,
+   "medicamento": "taurine",
+   "alimento": "act",
+   "trecho": "In conclusion, by activating non-synaptic GlyRs, taurine may act as an excitatory extra-synaptic neurotransmitter in the VTA during early development.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 162228,
+   "medicamento": "potassium",
+   "alimento": "water",
+   "trecho": "AQP2 excretion increased during potassium supplementation, and free water clearance fell.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 171938,
+   "medicamento": "losartan",
+   "alimento": "essential",
+   "trecho": "Switching to a fixed-dose combination therapy of amlodipine/losartan 5 mg/100 mg was associated with significantly greater reductions in BP and superior achievement of BP goals compared with a maintenance dose of losartan 100 mg in Korean patients with essential hypertension inadequately controlled on losartan 100 mg.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 346190,
+   "medicamento": "Superoxide anion",
+   "alimento": "nitric oxide",
+   "trecho": "uperoxide anion (O2-) avidly interacts with nitric oxide, an endogenous vasodilator that inhibits growth factor stimulated MC growth and matrix production. ",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 110559,
+   "medicamento": "sonidegib",
+   "alimento": "paclitaxel",
+   "trecho": "Methods Patients with advanced solid tumors were enrolled in cohorts of escalating sonidegib dose levels (400mg, 600mg and 800mg orally, once daily on days 1-28) in combination with paclitaxel 80 mg/m2 on days 1, 8 and 15 in 4-weekly cycles.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 587963,
+   "medicamento": "TSH",
+   "alimento": "iodine",
+   "trecho": "Hydrogen peroxide (0.5 mmol/l) augmented the iodide transport and iodine organification induced by TSH (333 U/l) by two- and threefold, respectively.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 482201,
+   "medicamento": "dasatinib",
+   "alimento": "quercetin",
+   "trecho": "A combination of the senolytic drugs dasatinib and quercetin (D+Q) reduced hepatic lipid accumulation and alleviated age-associated physical dysfunction in mice.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 638691,
+   "medicamento": "betaine",
+   "alimento": "diosmetin",
+   "trecho": "treatments of diosmetin and betaine showed the most robust additive effects, as confirmed by three independent functional assays in primary PEX1-G843D patient cells, but neither agent was active alone or in combination in patient cells homozygous for the PEX1 c.2097_2098insT null allele. M",
+   "regras": "indica interação",
+   "juizes": "yes",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 629951,
+   "medicamento": "keratinase",
+   "alimento": "protein",
+   "trecho": "The keratinase could also hydrolyze both soluble and insoluble complex protein substrates.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 371287,
+   "medicamento": "NPR1",
+   "alimento": "proteins",
+   "trecho": "Studies attempting to reveal the function of NPR1 and how it mediates SA signaling have led to isolation of two classes of proteins that interact with NPR1: the first class includes rice NRR, Arabidopsis NIMIN1, NIMIN2, and NIMIN3, and tobacco NIMIN2-like proteins; the second class belongs to TGA transcription factors.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 165727,
+   "medicamento": "anhydrous",
+   "alimento": "coffee",
+   "trecho": "This study examined whether the prior consumption of coffee (COF) decreased the ergogenic effect of the subsequent ingestion of anhydrous caffeine (CAF).",
+   "regras": "indica interação",
+   "juizes": "yes",
+   "juizes_concordaram": false
+  },
+  {
+   "registro": 149730,
+   "medicamento": "25-hydroxycholecalciferol",
+   "alimento": "vitamin d3",
+   "trecho": "Adjunctive vitamin D3 accelerated sputum culture conversion in patients with one or more minor alleles for SNPs in genes encoding the vitamin D receptor (rs4334089, rs11568820) and 25-hydroxyvitamin D 1α-hydroxylase (CYP27B1: rs4646536) (adjusted hazard ratio ≥ 1.47; P for interaction ≤ 0.02).",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 1097344,
+   "medicamento": "FFA-induced",
+   "alimento": "fat",
+   "trecho": "In conclusion, OF and CM possess hepatoprotective activity by inhibiting hepatic fat load and inflammation and renal protection by preventing FFA-induced mesangial extracellular matrix formation.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 1041500,
+   "medicamento": "cocaine",
+   "alimento": "insulin",
+   "trecho": "Prenatal cocaine exposure impairs cognitive function of progeny via insulin growth factor II epigenetic regulation.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 688057,
+   "medicamento": "nitrite",
+   "alimento": "proteins",
+   "trecho": "However, nitrite is a potential carcinogen that combines with secondary amines, which are breakdown products of proteins, to produce N-nitroso compounds that are strongly carcinogenic.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": false
+  },
+  {
+   "registro": 963717,
+   "medicamento": "barbiturates",
+   "alimento": "lithium",
+   "trecho": "Because of the danger to the neonate, drugs such as diazepam, lithium, bromides, reserpine, and opium alkaloids should not be given to lactating women, and barbiturates, haloperidol, and penfluridol should be administered with caution.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 512359,
+   "medicamento": "eicosapentaenoic acid",
+   "alimento": "arginine",
+   "trecho": "E and C; supplementation with L-arginine, tetrahydrobiopterin-BH4 or sepiapterin (precursor of BH4), SOD mimetic tempol, statins which apart from lowering cholesterol improve NO production, selective beta1 adrenoreceptor antagonists such as nebivolol; suppression of angiotensin-mediated endothelin production by ACE inhibitors and ATR blockers; CB1 receptor blockers, PKCb inhibitors, nitric oxide donors (glyceryl trinitrate and isosorbide dinitrate), dietary supplements of EPA/DHA and regular physical exercise and control of mental stress.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 353468,
+   "medicamento": "etoposide",
+   "alimento": "quinidine",
+   "trecho": "ntravenous infusion of quinidine at either 1 or 2 mg/h increased the serum level of etoposide in a dose-dependent manner. ",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": false
+  },
+  {
+   "registro": 708339,
+   "medicamento": "indomethacin",
+   "alimento": "N omega-nitro-L-arginine",
+   "trecho": "N omega-nitro-L-arginine pretreatment abolished ACh-induced relaxation of arteries and caused ACh-induced contraction of veins, whereas indomethacin markedly augmented ACh-induced relaxation of arteries (maximal relaxation: 48.5 +/- 4.7 vs. 19.2 +/- 5.1% without it) and induced a dose-dependent relaxation of veins (maximal relaxation: 17.0 +/- 4.1%).",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 793039,
+   "medicamento": "Acipimox",
+   "alimento": "insulin",
+   "trecho": "Lipid oxidation was inhibited by Acipimox in all patients in the basal state (20 +/- 2 vs. 33 +/- 3 mg/m2 per min, P less than 0.01) and during insulin infusion (8 +/- 2 vs. 17 +/- 2 mg/m2 per min, P less than 0.01).",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 338444,
+   "medicamento": "pentylenetetrazol",
+   "alimento": "ursolic acid",
+   "trecho": "The oral administration of ursolic acid (2.3 mg/kg) produced a significant depressant effect on CNS by reducing spontaneous motor activity and the number and lethality of pentylenetetrazol (PTZ)-induced seizures.",
+   "regras": "indica interação",
+   "juizes": "yes",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 269027,
+   "medicamento": "pyridoxal 5-phosphate",
+   "alimento": "pyridoxine",
+   "trecho": "We have previously observed that pyridoxine treatment reduced plasma total cholesterol (TC) and low-density lipoprotein (LDL) cholesterol concentrations and increased antithrombin III (AT III) activity in atherosclerotic patients with subnormal plasma pyridoxal 5-phosphate (PLP) levels.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 767525,
+   "medicamento": "CO",
+   "alimento": "EMA",
+   "trecho": "In high-risk gestational choriocarcinoma patients, a weekly schedule of chemotherapy, alternating EMA (VP-16, methotrexate, actinomycin D, and folinic acid) with CO (vincristine and cyclophosphamide), has resulted in an overall survival of 84%; survival in patients who received previous chemotherapy is 73%; and survival in those who did not receive previous chemotherapy, 93%.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 360832,
+   "medicamento": "acetaminophen",
+   "alimento": "garlic",
+   "trecho": "Allium sativum (garlic) decreased the area under the plasma concentration-time curve (AUC) and maximum plasma concentration of saquinavir, but not ritonavir and paracetamol (acetaminophen), in volunteers.",
+   "regras": "indica interação",
+   "juizes": "no_effect",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 475303,
+   "medicamento": "iron",
+   "alimento": "protein",
+   "trecho": "nactivation of the iron-using protein Adi1 leads to defects in the utilization of MTA. ",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 885545,
+   "medicamento": "zinc",
+   "alimento": "triiodide ions",
+   "trecho": "Nevertheless, the lifespan of Zn/I2 batteries is severely limited by the uncontrolled shuttling of triiodide ions (I3-) and unfavorable side reactions on Zn anodes.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 1108272,
+   "medicamento": "MK-801",
+   "alimento": "ethanol",
+   "trecho": "Consistent with this, administration of NMDA receptor antagonists (e.g., MK-801) during withdrawal can attenuate ethanols teratogenic effects. ",
+   "regras": "indica interação",
+   "juizes": "yes",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 108535,
+   "medicamento": "itraconazole",
+   "alimento": "bread",
+   "trecho": "The consumption of a bread meal before the administration of itraconazole caused a significant increase in its bioavailability, as well as increases in the peak plasma concentration and lag time for itraconazole absorption.",
+   "regras": "indica interação",
+   "juizes": "yes",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 18696,
+   "medicamento": "ticagrelor",
+   "alimento": "adenosine",
+   "trecho": "Therefore, it has been hypothesized that the degree of hyperemia obtained with adenosine infusion may be greater in patients on ticagrelor than that obtained in patients taking clopidogrel or prasugrel.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": false
+  },
+  {
+   "registro": 582011,
+   "medicamento": "P. brassicae",
+   "alimento": "Brassica",
+   "trecho": "Here, we found that treatment with P. brassicae egg extract (EE) triggered changes in expression of sphingolipid metabolism genes in Arabidopsis and black mustard (Brassica nigra).",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 809900,
+   "medicamento": "copper-based fungicides",
+   "alimento": "copper",
+   "trecho": "Improper application of copper-based fungicides has made copper stress critical in viticulture, necessitating the need to identify substances that can mitigate it.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 466308,
+   "medicamento": "4-PBA+H",
+   "alimento": "l-histidine",
+   "trecho": "The apoptosis ratio, the expression of GRP78, CHOP and Caspase-12 mRNA and protein and p-JNK protein increase in the H/R and TG groups, weaken in the lycopene+H/R, 4-PBA+H/R and lycopene+TG groups.",
+   "regras": "apenas menciona",
+   "juizes": "no",
+   "juizes_concordaram": true
+  },
+  {
+   "registro": 18687,
+   "medicamento": "oxygen",
+   "alimento": "water",
+   "trecho": "The radiation is harmful to human tissues and cells mainly because it can interact with water (which makes up to 80% of cells) to generate reactive oxygen species (ROS), especially the formation of hydroxyl radicals.",
+   "regras": "indica interação",
+   "juizes": "no",
+   "juizes_concordaram": true
+  }
+ ],
+ "B_pares": [
+  {
+   "medicamento": "Midazolam",
+   "alimento": "Ethanol",
+   "registros_no_par": 4,
+   "nivel_regras": 1,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Ethanol increased caffeine AUC0-t 1.38-fold (90% CI 1.25-1.52) and reduced intestinal midazolam extraction 0.77-fold (90% CI 0.69-0.86).",
+    "ICV injections of AP and midazolam shortened the latency and prolonged the duration of sleep induced by IP injections of ethanol (5.0 g/kg).",
+    "The intraperitoneal injection of midazolam produced statistically significant decreases in levels of DOPAC and ratio of turnover values (P < 0.01) in rats 48 hr after withdrawal of ethanol, with respect to control and chronically ethanol-treated animals, in contrast to the absence of changes produced when injecting thiopental or somatostatin.",
+    "Differential effects of ethanol and midazolam upon the devaluation of an aversive memory in infant rats."
+   ]
+  },
+  {
+   "medicamento": "Rifampicin",
+   "alimento": "IRON",
+   "registros_no_par": 1,
+   "nivel_regras": 0,
+   "juizes": "no",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Dexamethasone (4.2-fold) and toxaphene (3.5-fold) significantly induced CYP3A77 gene transcript, whereas rifampicin (2.8-fold) and metyrapone (2.1-fold) up-regulated ERbeta after 24h."
+   ]
+  },
+  {
+   "medicamento": "Tacrolimus",
+   "alimento": "Ginger",
+   "registros_no_par": 1,
+   "nivel_regras": 1,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "An increase in the serum concentration of tacrolimus can be caused by CYP3A4 inhibitors, such as grapefruit, pomelo, clementine, pomegranate, ginger and turmeric, revealing the side effects of this drug, particularly nephrotoxicity."
+   ]
+  },
+  {
+   "medicamento": "Cyclosporine",
+   "alimento": "Juice",
+   "registros_no_par": 9,
+   "nivel_regras": 1,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Grapefruit juice has been reported to markedly improve the bioavailability of triazolam, midazolam, terfenadine, cyclosporine and several dihydropyridine calcium channel blockers including felodipine, nifedipine, nitrendipine and nisoldipine.",
+    "Grapefruit juice increased the peak concentration of cyclosporine by 185 ng/ml (95% confidence interval, 60 to 310; p = 0.008).",
+    "apefruit juice may also inhibit intestinal P-glycoprotein-mediated efflux transport of drugs such as cyclosporine to increase its oral bioavailability. H",
+    "efruit juice increases the oral bioavailability of many CYP3A4 substrates, including cyclosporine (INN, ciclosporin), but intestinal P-glycoprotein may be a more important determinant of cyclosporine availability. To ",
+    "Administration of pomelo juice with cyclosporine increased the area under the curve from time 0 to the last measurable concentration (AUCt), area under the curve from time 0 to infinity (AUCinf), and maximum blood concentration (Cmax) of cyclosporine with ratios of least squares means of 119.4% (95% confidence interval [CI], 113.4%-125.8%), 118.9% (95% CI, 113.8%-124.3%), and 112.1% (95% CI, 102.3%-122.8%), respectively.",
+    "Grapefruit juice inhibits the metabolism of cyclosporine for a brief period after administration, which may be explained by the inhibition of cytochrome P450 enzymes in the gut wall and to a lesser extent by inhibition of these enzymes in the liver.",
+    "Grapefruit juice can be one of the factors leading to intraindividual variability in the pharmacokinetics of cyclosporine.",
+    "Grapefruit juice causes an increase in both parent and metabolite profiles, indicating an alteration in the disposition of cyclosporine and metabolites."
+   ]
+  },
+  {
+   "medicamento": "Diazepam",
+   "alimento": "WATER",
+   "registros_no_par": 5,
+   "nivel_regras": 0,
+   "juizes": "no",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "The transformation of DZP in water chlorination disinfection process has aroused new concern because the toxic disinfection byproducts (DBPs) might be produced.",
+    "However, rats treated with diazepam at 15 min post-injury had significantly shorter latencies to reach the goal platform in the Morris water maze than injured, vehicle-treated rats.",
+    "Diazepam has been detected in water sources around the world affecting the quality of drinking water.",
+    "Dynamics of Soil Microbial Communities During Diazepam and Oxazepam Biodegradation in Soil Flooded by Water From a WWTP.",
+    "A minimum of 0.1 mg.kg-1 of diazepam was needed to significantly reduce dreaming when compared with water (67.5% vs. 94.6%; p < 0.0001), and to significantly lower median (95% CI) emergence delirium scores (4 (3-4) vs. 6 (5-7))."
+   ]
+  },
+  {
+   "medicamento": "Losartan",
+   "alimento": "Alcohol",
+   "registros_no_par": 2,
+   "nivel_regras": 0,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Responders among alcohol-abusing patients were significantly higher with losartan (81.8%) compared to those on propranolol (27.2%; p < 0.05).",
+    "Dietary alcohol caused diffuse gland atrophy and interlobular and intralobular fibrosis with mild structural distortion in the pancreas, an effect that was blunted by captopril or losartan treatment."
+   ]
+  },
+  {
+   "medicamento": "Triazolam",
+   "alimento": "CALCIUM",
+   "registros_no_par": 1,
+   "nivel_regras": 0,
+   "juizes": "no",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "In decreasing order of potency, the following PAF-acether antagonists inhibited the change in platelet cytosolic free calcium elicited by 10 nM PAF-acether: L-652,731, kadsurenone, triazolam, diltiazem and alprazolam."
+   ]
+  },
+  {
+   "medicamento": "Disulfiram",
+   "alimento": "CURCUMIN",
+   "registros_no_par": 1,
+   "nivel_regras": 0,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Combination Therapy of Curcumin and Disulfiram Synergistically Inhibits the Growth of B16-F10 Melanoma Cells by Inducing Oxidative Stress."
+   ]
+  },
+  {
+   "medicamento": "Midazolam",
+   "alimento": "CURCUMIN",
+   "registros_no_par": 2,
+   "nivel_regras": 1,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "P3A4-mediated 4-hydroxylation of MDZ was inhibited by curcumin at 30, 45, and 60 microM (4-hydroxy-MDZ formation was decreased to 52, 30, and 29%, respectively, compared with control), by 6-gingerol at 60, 100, and 500 microM (71, 68, and 38%), by AMD at 1 and 4 mM (29 and 14%), by d-limonene (from coriander) at 4 mM (65%), by 1,8-cineole at 0.5, 1, and 4 mM (74, 64, and 59%), and by citral (from lemongrass) at 1 mM (59%). A",
+    "Curcumin increased oral midazolam exposure without affecting systemic clearance, presumably owing to partial inhibition of intestinal CYP3A."
+   ]
+  },
+  {
+   "medicamento": "Felodipine",
+   "alimento": "Wine",
+   "registros_no_par": 2,
+   "nivel_regras": 1,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Red wine can cause dose dumping of extended-release felodipine in certain individuals.",
+    "Red wine prolonged mean felodipine time to plasma peak drug concentration."
+   ]
+  },
+  {
+   "medicamento": "Fentanyl",
+   "alimento": "MILK",
+   "registros_no_par": 2,
+   "nivel_regras": 0,
+   "juizes": "no",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "[13] Once the mothers milk comes in, it is best to provide pain control with a nonnarcotic analgesic and limit maternal intake of fentanyl to a few days at a low dosage with close infant monitoring. ",
+    "The amount of midazolam, propofol, and fentanyl excreted into milk within 24 hours of induction of anesthesia provides insufficient justification for interrupting breast-feeding."
+   ]
+  },
+  {
+   "medicamento": "Amiodarone",
+   "alimento": "Alcohol",
+   "registros_no_par": 1,
+   "nivel_regras": 0,
+   "juizes": "no",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Patients with known risk factors for steatosis, such as excessive alcohol consumption, hepatitis C infection, treatment with amiodarone, perhexiline maleate, tamoxifen, antiviral drugs (didanosine, zidovudine) methotrexate, sodium valproate or total parenteral nutrition, Wilsons disease and organ transplant were subsequently excluded. "
+   ]
+  },
+  {
+   "medicamento": "Fexofenadine",
+   "alimento": "Grapefruit",
+   "registros_no_par": 9,
+   "nivel_regras": 1,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "The discovery was based on an opposite to anticipated finding when assessing the possibility of grapefruit juice increasing oral fexofenadine bioavailability in humans through inhibition of intestinal MDR1-mediated efflux transport.",
+    "In WT mice, coadministration of fexofenadine with grapefruit juice (GFJ) or apple juice (AJ) was associated with reduced C max by 80% and 88%, respectively, while the AUC0-last values were lower by 35% and 70%, respectively.",
+    "A review of clinical trials indicates that grapefruit juice (GFJ), orange juice (OJ), and apple juice can reduce oral bioavailability of fexofenadine, potentially reducing pharmacodynamic effects of fexofenadine.",
+    "Comparing the ratio of the pharmacokinetic parameter means (C(max) and AUC) with and without grapefruit juice (expressed as a percentage), the rate (C(max)) and extent (AUC) of absorption of fexofenadine were reduced by 30% by consumption of grapefruit juice.",
+    "Interactions with Fruit Juices Fruit juices such as grapefruit, orange and apple may reduce the bioavailability and exposure of fexofenadine.",
+    "Moderate Food Interaction||GENERALLY AVOID:  Coadministration with large amounts of certain fruit juices, including grapefruit, orange and apple, may decrease the oral bioavailability of fexofenadine.",
+    "However, results from studies using histamine-induced skin wheals and flares found that the size of wheal and flare was significantly larger when fexofenadine was administered with either grapefruit or orange juices compared to water.",
+    "The stereoselective pharmacokinetics of fexofenadine are associated with OATP2B1-mediated transport, and grapefruit juice (GFJ) is an inhibitor of OATP2B1."
+   ]
+  },
+  {
+   "medicamento": "Fentanyl",
+   "alimento": "Potassium",
+   "registros_no_par": 1,
+   "nivel_regras": 0,
+   "juizes": "no",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "These results extend previously reported data on the peripheral analgesic effect of morphine and fentanyl, suggesting for the first time that the peripheral micro-opioid receptor-mediated antinociceptive effect of fentanyl depends on activation of ATP-sensitive, but not other, K+ channels."
+   ]
+  },
+  {
+   "medicamento": "Aspirin",
+   "alimento": "MILK",
+   "registros_no_par": 1,
+   "nivel_regras": 0,
+   "juizes": "no",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Results from this study suggest that treating cows with ASP after calving may help improve milk yields and udder health, increase activity, and enhance fertility in dairy cattle under certified organic management."
+   ]
+  },
+  {
+   "medicamento": "Lovastatin",
+   "alimento": "Grapefruit",
+   "registros_no_par": 3,
+   "nivel_regras": 1,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "MANAGEMENT:  Patients receiving therapy with lovastatin, simvastatin, or red yeast rice (which contains lovastatin) should be advised to avoid the consumption of grapefruit and grapefruit juice.",
+    "Major Food Interaction||GENERALLY AVOID:  Coadministration with grapefruit juice may significantly increase the plasma concentrations of lovastatin and simvastatin and their active acid metabolites.",
+    "The mean peak serum concentration (Cmax) of lovastatin was increased about 12-fold (range, 5.2-fold to 19.7-fold; p < 0.001) and the area under the concentration-time curve [AUC(0-12)] was increased 15-fold (range, 5.7-fold to 26.3-fold; p < 0.001) by grapefruit juice."
+   ]
+  },
+  {
+   "medicamento": "Colchicine",
+   "alimento": "CALCIUM",
+   "registros_no_par": 28,
+   "nivel_regras": 1,
+   "juizes": "no",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Calcium supplement therapy, nonsteroidal anti-inflammatory drugs and colchicine (1 mg/day) suppressed the acute attack.",
+    "Thus, the addition of colchicine or oryzalin, which are known to disrupt microtubule organization, leads to a 6-10-fold increase in calcium channel activities and half-life.",
+    "Removal of extracellular calcium, phorbol 12,13-dibutyrate (1 microM) and colchicine (100 microM) reduced the acetylcholine release between 30% and 50%.",
+    "When the microtubule network was disrupted by pretreatment of the cells with colchicine, we observed a significant decrease in PMCA activity (~40-60% inhibition) in agreement with the previously reported role of acetylated tubulin on the calcium pump.",
+    "Eggs injected with colchicine to inhibit cleavage showed periodic oscillations in the calcium levels similar to those of normal eggs.",
+    "Colchicine in healthy cells mimics the failing condition by stiffening the cells, disrupting microtubules, shifting mitochondria, and causing calcium release.",
+    "A thrombin-induced increase in the intracellular Ca2+ concentration of endothelial cells was inhibited by treatment with either colchicine or vinblastine.",
+    "Colchicine and reduced calcium concentration inhibited binding to beads and eosinophil degranulation in a concentration-dependent manner but did not decrease the percentages of dead bound eosinophils."
+   ]
+  },
+  {
+   "medicamento": "Amlodipine",
+   "alimento": "IRON",
+   "registros_no_par": 11,
+   "nivel_regras": 1,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Thus, in TM patients with cardiac siderosis, amlodipine combined with chelation therapy reduced cardiac iron more effectively than chelation therapy alone.",
+    "Secondary outcomes include the effect of amlodipine therapy on systolic and diastolic function, strain and strain rate and liver iron content.",
+    "The use of amlodipine in conjunction with standard chelation therapy may suggest a new strategy in preventing and treating iron overload in patients with thalassemia major, especially in organs where iron absorption depends on active uptake by calcium channels like the heart.",
+    "Amlodipine reduces cardiac iron overload in patients with thalassemia major: a pilot trial.",
+    "This study is designed to see if patients receiving amlodipine along with their regular chelation therapy have a slower rate of iron buildup in the heart when compared with patients who are receiving chelation only.",
+    "Amlodipine, L-type calcium channel blocker with regular chelation therapy may reduce myocardial iron overload.",
+    "However, current research has shown that another drug, amlodipine, also helps to slow down the deposition of iron in the heart.",
+    "Amlodipine, perindopril and indapamide affected the release of magnesium, iron, zinc and copper from buckwheat groats in vitro enzymatic digestion."
+   ]
+  },
+  {
+   "medicamento": "Allopurinol",
+   "alimento": "Ethanol",
+   "registros_no_par": 4,
+   "nivel_regras": 0,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Furthermore, enteral ethanol caused free radical adduct formation, values that were reduced by approximately 40% by allopurinol.",
+    "Allopurinol also inhibits the activation of the enzyme in vitro by ascorbate, ethanol plus NAD(+), NADH, hypoxanthine or xanthine.",
+    "The raised total pyrrolase activity observed after the administration of cortisol, cyclic AMP, tryptophan, salicylate or ethanol is lowered by allopurinol in vitro to the corresponding holoenzyme values.",
+    "Pretreatment of rats with allopurinol completely prevents the enhancement of the pyrrolase activities by tryptophan, salicylate or ethanol."
+   ]
+  },
+  {
+   "medicamento": "Duloxetine",
+   "alimento": "Ethanol",
+   "registros_no_par": 2,
+   "nivel_regras": 1,
+   "juizes": "yes",
+   "juizes_concordaram": false,
+   "trechos_mostrados": [
+    "When duloxetine and ethanol were administered several hours apart so that peak concentrations of each would coincide, duloxetine did not increase the impairment of mental and motor skills caused by alcohol.",
+    "Duloxetine May Have a Clinically Important Interaction with the Following Other Drugs: Alcohol: When Duloxetine and ethanol were administered several hours apart so that peak concentrations of each would coincide, Duloxetine did not increase the impairment of mental and motor skills caused by alcohol."
+   ]
+  },
+  {
+   "medicamento": "Isoniazid",
+   "alimento": "IRON",
+   "registros_no_par": 1,
+   "nivel_regras": 0,
+   "juizes": "no",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "However, metyrapone now prevented and SKF525A delayed the cytotoxicity whereas ethanol, acetone, allyl isocyanate, isoniazid or trichloroethylene had no effect on the susceptibility of phenobarbital-induced hepatocytes."
+   ]
+  },
+  {
+   "medicamento": "Aspirin",
+   "alimento": "Caffeine",
+   "registros_no_par": 20,
+   "nivel_regras": 1,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "The aim of this research is to explore the association between caffeine and aspirin in causing lethal intracranial hemorrhage in the older population.",
+    "Minor Drug Interaction||One study has reported that coadministration of caffeine and aspirin lead to a 25% increase in the rate of appearance and 17% increase in maximum concentration of salicylate in the plasma.",
+    "Other migraine headache characteristics, such as nausea, photophobia, phonophobia, and functional disability, were significantly improved 2 to 6 hours after treatment with the acetaminophen, aspirin, and caffeine combination compared with placebo (P< or =.01).",
+    "Caffeine enhanced the effect of ephedrine on platelet function, and phenylpropanolamine amplified the inhibitory effect of aspirin on platelet aggregation.",
+    "The results do not support the suggestion that caffeine increases the potential for abuse of aspirin.",
+    "We hypothesized that administration of a prostaglandin inhibitor such as acetylsalicylic acid (aspirin) along with caffeine would prevent caffeine-induced hypercalciuria.",
+    "To assess whether codeine and caffeine enhance the analgesic effect of aspirin in post-operative pain.",
+    "This study therefore demonstrated that the addition of caffeine to aspirin, in a dose commonly employed in over-the-counter drugs, has significant beneficial consequences with respect to mood and performance."
+   ]
+  },
+  {
+   "medicamento": "Valproate",
+   "alimento": "SODIUM",
+   "registros_no_par": 1,
+   "nivel_regras": 0,
+   "juizes": "no",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Studies in invertebrates and cultured mammalian neurons suggested that valproate (VPA) mediates its main antiepileptic effect by slowing the recovery from inactivation of voltage-dependent sodium channels."
+   ]
+  },
+  {
+   "medicamento": "Dronedarone",
+   "alimento": "Grapefruit",
+   "registros_no_par": 3,
+   "nivel_regras": 2,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "According to the product labeling, administration with grapefruit juice resulted in a 2.5-fold increase in dronedarone peak plasma concentration and a 3-fold increase in systemic exposure.",
+    "MANAGEMENT:  Patients treated with dronedarone should avoid consumption of grapefruit, grapefruit juice, and any supplement containing grapefruit extract.",
+    "Major Food Interaction||GENERALLY AVOID:  Grapefruit juice may increase the plasma concentrations of dronedarone."
+   ]
+  },
+  {
+   "medicamento": "Alendronate",
+   "alimento": "WATER",
+   "registros_no_par": 4,
+   "nivel_regras": 1,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "In women, oral bioavailability of alendronate was independent of dose (5 to 80 mg) and averaged (90% confidence interval) 0.76% (0.58, 0.98) when taken with water in the fasting state, followed by a meal 2 hours later.",
+    "MANAGEMENT:  Alendronate should be administered with 6 to 8 ounces of plain water, at least 30 minutes before the first food, beverage, or medication of the day.",
+    "In conclusion, mineral water containing high levels of calcium is not recommended when alendronate is taken.",
+    "Alendronate, an oral bisphosphonate (e.g., Fosamax(®)), is effective in the treatment of osteoporosis, and the Fosamax(®) package insert advises that the bioavailability is reduced when taken with mineral water containing high levels of metal cations (Ca(2+), Mg(2+), etc.)."
+   ]
+  },
+  {
+   "medicamento": "Phenytoin",
+   "alimento": "CALCIUM",
+   "registros_no_par": 11,
+   "nivel_regras": 0,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "The results of this study, in conjunction with reported data, suggest that phenytoin inhibits Na and Ca conductances in nervous tissue by separate and probably independent mechanisms.",
+    "To determine (a) onset of derangements in serum total ALP and its isoenzymes (liver, bone), calcium and 25-hydroxy vitamin D (25-OHD) concentrations after initiation of treatment with phenytoin or valproic acid monotherapy and (b) the effect of simultaneous supplementation with calcium and 25-OHD at recommended daily allowance (RDA) dosage, on these biochemical parameters.",
+    "This report illustrates a case of a 69-year-old woman under treatment with phenytoin for more than 10 years, who presented persistent hypocalcemia despite calcium correction, and seizures refractory to treatment with four combined antiepileptic drugs.",
+    "Phenytoin at 0.1 mM reduced the Ca2+ uptake induced by veratridine or by depolarization.",
+    "hese results suggest that phenytoin has favorable protective effects on ischemic brain and that phenytoin may inhibit calcium-mediated phenomena, especially the inositol cycle, in cerebral ischemia.",
+    "Enhancement of receptor-mediated calcium responses by phenytoin through the suppression of calcium excretion in human gingival fibroblasts.",
+    "Gingival overgrowth caused by phenytoin is proposed to be associated with Ca2+ signaling; however, the mechanisms that increase the intracellular Ca2+ concentration ([Ca2+ ]i ) are controversial.",
+    "We conclude that phenytoin could effectively inhibit RyR2-mediated release of Ca2+ in a manner paralleling that of dantrolene."
+   ]
+  },
+  {
+   "medicamento": "Methotrexate",
+   "alimento": "TEA",
+   "registros_no_par": 1,
+   "nivel_regras": 1,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "In conclusion, it is suggested that when FA or MTX is ingested with tea, it is likely that the intestinal absorption of these compounds by PCFT is inhibited, which could result in insufficient efficacy."
+   ]
+  },
+  {
+   "medicamento": "Tenofovir",
+   "alimento": "Potassium",
+   "registros_no_par": 1,
+   "nivel_regras": 0,
+   "juizes": "no",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "In addition, we suggest regular follow-up of patients taking tenofovir with urine analysis and serum potassium to detect this complication earlier as it is reversible."
+   ]
+  },
+  {
+   "medicamento": "Verapamil",
+   "alimento": "Garlic",
+   "registros_no_par": 2,
+   "nivel_regras": 0,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Verapamil and diltiazem (10(-7)M), but not nifedipine increased the inhibitory chronotropism of garlic in right atria; (c) negative inotropic and chronotropic effects demonstrated by nifedipine (1 x 10(-10) to 1.1 x 10(-6) M) were antagonized as expected by preincubation with Bay K-8644.",
+    "None of these treatments modified the negative chronotropism of garlic; (b) nifedipine (10(-9) to 10(-7) M, verapamil (10(-9) to 10(-7) M) and diltiazem (10(-9) to 10(-7) M) induced a concentration-dependent synergism of the log concentration-effect of garlic dialysate on left atria."
+   ]
+  },
+  {
+   "medicamento": "Valproate",
+   "alimento": "Caffeine",
+   "registros_no_par": 1,
+   "nivel_regras": 0,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Interestingly, animal data have demonstrated that caffeine, at doses far below its convulsive potential, diminishes the protective effects of conventional antiepileptic drugs (AEDs--carbamazepine, phenobarbital, phenytoin, valproate) and the newer AED, topiramate against electroconvulsions in mice."
+   ]
+  },
+  {
+   "medicamento": "Diclofenac",
+   "alimento": "FOOD",
+   "registros_no_par": 3,
+   "nivel_regras": 1,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Only a high dose of the E. aquea extract or diclofenac significantly alleviated (P < 0.05-0.001) all complications observed in arthritic rats, including body weight loss, articular/extra-articular oxidative injury and synovial joint inflammation by increasing food intake as well as improving the antioxidant defense system and inflammatory marker.",
+    "DCF also lowered food intake, enhanced locomotion activity and reduced the number of eggs/egg mass in the F1 generation.",
+    "Feeding also led to lower body burden of DCF in fish tissues (6-55%) with the increasing food amount."
+   ]
+  },
+  {
+   "medicamento": "Aspirin",
+   "alimento": "Ginger",
+   "registros_no_par": 1,
+   "nivel_regras": 1,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Non-steroidal anti-inflammatory drugs (NSAIDs), particularly aspirin, have the potential to interact with herbal supplements that are known to possess antiplatelet activity (ginkgo, garlic, ginger, bilberry, dong quai, feverfew, ginseng, turmeric, meadowsweet and willow), with those containing coumarin (chamomile, motherworth, horse chestnut, fenugreek and red clover) and with tamarind, enhancing the risk of bleeding."
+   ]
+  },
+  {
+   "medicamento": "Verapamil",
+   "alimento": "TEA",
+   "registros_no_par": 7,
+   "nivel_regras": 0,
+   "juizes": "no",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Both TEA and verapamil were ineffective.",
+    "CGRP(8-37) (10-6 M), L-NAME (10-4 M), ODQ (10-5 M), SQ22536 (10-4 M), H89 (10-6 M), TEA (10-2 M), iberiotoxin (3 × 10-7 M), and verapamil (10-5 M), all partly or completely inhibited the vasorelaxation.",
+    "In contrast to [Ca2+]i oscillations and localized [Ca2+]i spikes, the global events immediately stopped when cells were perfused either with a Ca2+-free solution, or a solution with TTX, TEA and verapamil.",
+    "In addition, Na(+) secretion was significantly inhibited by orthovanadate, ouabain, TEA and verapamil, and K(+) secretion was significantly inhibited by ouabain, TEA and verapamil.",
+    "Both TEA and verapamil were ineffective.",
+    "SP and a selective NK(2) agonist, [betaAla(8)]-neurokinin A (4-10) also inhibited low threshold inactivating K(+) currents isolated by blocking non-inactivating currents with a combination of high TEA, (-) verapamil and nifedipine.",
+    "During cooling, the sensitivity, but not the maximal response, was significantly higher than 37 degrees C. Cooling to 28 degrees C after treatment with verapamil or pilsicainide decreased the sensitivity, whereas treatment with TEA and ouabain significantly increased sensitivity."
+   ]
+  },
+  {
+   "medicamento": "Linezolid",
+   "alimento": "Tyramine",
+   "registros_no_par": 6,
+   "nivel_regras": 1,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "The current practice at most hospitals is to place patients receiving linezolid on a tyramine-restricted diet.",
+    "hese studies demonstrate that high-dose linezolid only moderately potentiates the cardiovascular effects of tyramine and validate these models for evaluating such MAO inhibitory interactions.",
+    "In conscious rats, 30 mg/kg/day oral linezolid (8 microg/ml plasma concentration) minimally affected the pressor response to 20 mg/kg oral tyramine, whereas 100 mg/kg/day linezolid (20 microg/ml plasma concentration) moderately potentiated this response similar to 3 mg/kg per day moclobemide.",
+    "The ratio of mean greatest SBP and heart rate at the time of greatest SBP (GSBP/HR) increased linearly with tyramine dose both pretreatment and during treatment with linezolid and moclobemide.",
+    "tyramine between linezolid and placebo.",
+    "Because linezolid also competitively inhibits human monoamine oxidase-A (MAO-A; Ki = 55 microM), we monitored its effects on the cardiovascular responses to tyramine and amine cold remedies in comparison with standard MAO inhibitors."
+   ]
+  },
+  {
+   "medicamento": "Ciprofloxacin",
+   "alimento": "IRON",
+   "registros_no_par": 5,
+   "nivel_regras": 1,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "A combination of the microgel and iron magnetic nanoparticle (FeMNP) significantly reduced the concentration of four organic dyes (Alizarin Red S, Rhodamine B, Crystal Violet, and Malachite Green) and an antibiotic drug, ciprofloxacin, dissolved in solution.",
+    "Multivalent Cation-Containing Products: Concurrent administration of a quinolone, including ciprofloxacin, with multivalent cation-containing products such as magnesium or aluminum antacids, sucralfate, VIDEX chewable/buffered tablets or pediatric powder, or products containing calcium, iron, or zinc may substantially decrease the absorption of ciprofloxacin, resulting in serum and urine levels considerably lower than desired.",
+    "When ferrous ion was mixed with ciprofloxacin, rapid spectral changes occurred (t1/2 = 1.9 min).",
+    "Clinical and chemical interactions between iron preparations and ciprofloxacin.",
+    "CIP at 2× MIC caused a rapid initial killing which was not influenced by initial bacterial iron status and which was followed by robust recovery growth over 96 h exposure."
+   ]
+  },
+  {
+   "medicamento": "Lithium",
+   "alimento": "Green Tea",
+   "registros_no_par": 1,
+   "nivel_regras": 0,
+   "juizes": "no",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "The bioaccessible lithium contributed to 0.01%, 0.02%, and 0.03% of the recommended dietary allowances of lithium for black, Earl Grey, and green tea samples, respectively."
+   ]
+  },
+  {
+   "medicamento": "Methotrexate",
+   "alimento": "CALCIUM",
+   "registros_no_par": 2,
+   "nivel_regras": 0,
+   "juizes": "no",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "The involvement of calcium in release of methotrexate from the hepatocyte is substantiated by a dose-dependent response to the calcium ionophore, A23187, in the presence of calcium, with a lack of response in the absence of calcium.",
+    "The results of the study suggested that the therapeutical doses (10-15 μM) of methotrexate may lead to increase in eryptotic and hemolytic activity of erythrocytes through free radical generation and subsequent calcium entry."
+   ]
+  },
+  {
+   "medicamento": "Lithium",
+   "alimento": "Tyramine",
+   "registros_no_par": 2,
+   "nivel_regras": 1,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Lithium reduced the mydriatic response to tyramine of the pupil contralateral to the pain, thus restoring the equilibrium between both pupils; this therapy may correct the asymmetric sympathetic function by attenuating the activity in the asymptomatic side.",
+    "Lithium also induced a symmetric response to tyramine by increasing tyramine mydriasis on the symptomatic pupil while reducing it on the asymptomatic pupil."
+   ]
+  },
+  {
+   "medicamento": "Gentamicin",
+   "alimento": "SODIUM",
+   "registros_no_par": 5,
+   "nivel_regras": 1,
+   "juizes": "yes",
+   "juizes_concordaram": false,
+   "trechos_mostrados": [
+    "However, rats administered a single dose of gentamicin show immediate dose-related calcium and magnesium renal wasting without sodium or potassium wasting days before other evidence of tubular dysfunction or structural injury can be shown.",
+    "Gentamicin caused a statistically significant post-infusion increase in fractional excretion of sodium and magnesium and in the urine calcium to urine creatinine ratio.",
+    "Administration of GEM (40 mg/kg, s.c. for 10 consecutive days) significantly increased blood urea nitrogen (BUN), N-acetyl β-d-glucosaminidase (NAG), thiobarbituric acid reactive substances (TBARS) and total calcium whereas, decreased body weight, fractional excretion of sodium (FrNa), creatinine clearance (CrCl), reduced glutathione (GSH), mitochondrial cytochrome c oxidase (Cyt-C oxidase) and ATP levels resulting in nephrotoxicity.",
+    "In conclusion, therapeutic doses of gentamicin result in urinary loss of sodium, calcium, and magnesium in neonates immediately after the infusion of the drug.",
+    "Gentamicin was seen to cause a serious nephrotoxicity which was proved by a plasma urea, plasmacreatinine, plasma uric acid, plasma Na+, plasma K+, intra-erythrocyte Na+ and intra-erythrocyte K+ levels."
+   ]
+  },
+  {
+   "medicamento": "Caffeine",
+   "alimento": "ZINC",
+   "registros_no_par": 2,
+   "nivel_regras": 0,
+   "juizes": "no",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "ive candidates strongly inhibited yeast growth upon expression, and 6 additional proteins showed toxicity in the presence of zinc and caffeine. ",
+    "Micronucleus frequency tends to increase with higher intake of caffeine, calcium, magnesium, zinc, and protein (P < .05, Spearman correlation)."
+   ]
+  },
+  {
+   "medicamento": "Terbinafine",
+   "alimento": "Caffeine",
+   "registros_no_par": 1,
+   "nivel_regras": 1,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Terbinafine decreases the clearance of caffeine by 19%."
+   ]
+  },
+  {
+   "medicamento": "Triazolam",
+   "alimento": "Ethanol",
+   "registros_no_par": 8,
+   "nivel_regras": 1,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Thus, triazolam produced response rate slowing at relatively lower doses than ethanol.",
+    "Triazolam produced dose-related decreases in response rate while ethanol produced only slight decreases at the highest baseline rates of responding.",
+    "The findings of the present study suggest that even a moderate amount of ethanol in combination with a clinical dose of triazolam or temazepam can cause performance impairment that might diminish an individuals ability to respond adequately to unexpected demands (e.g. ",
+    "Effects of triazolam and ethanol on proactive interference: evidence for an impairment in retrieval inhibition.",
+    "Acute performance-impairing and subject-rated effects of triazolam and temazepam, alone and in combination with ethanol, in humans.",
+    "The potential pharmacodynamic interaction of triazolam and ethanol is more important than the minimal pharmacokinetic interaction.",
+    "hese data suggest that ethanol and triazolam impair an inhibitory process that normally operates as one component of intentional retrieval, playing an important role in the suppression of unwanted information during a memory task.",
+    "Pharmacokinetic noninteraction of triazolam and ethanol."
+   ]
+  },
+  {
+   "medicamento": "Triazolam",
+   "alimento": "Caffeine",
+   "registros_no_par": 7,
+   "nivel_regras": 1,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Triazolam blocked the discriminative effects of the caffeine training dose in a dose-related manner in five out of six subjects; whereas buspirone did so in only one out of four subjects.",
+    "On a performance battery presented at 1300 most measures of performance were impaired by triazolam; in general the caffeine dose of 4 mg/kg partially reversed the effect while the dose of 8 mg/kg completely restored performance.",
+    "Functional antagonism of the caffeine-discriminative stimulus by triazolam in humans.",
+    "The participant-rated and performance-impairing effects of zolpidem, triazolam, pentobarbital, and caffeine were assessed concurrently.",
+    "Different doses of caffeine alone generally produced dose-related increases in caffeine-appropriate responding; when administered concomitantly with triazolam, the caffeine dose-effect curve shifted significantly to the right.",
+    "Caffeine moderately antagonizes the effects of triazolam and zopiclone on the psychomotor performance of healthy subjects.",
+    "These results indicate that, at the doses tested, the caffeine discriminative stimulus can be blocked, at least partly by triazolam, but not by buspirone, which is consistent with the pharmacological actions of these compounds."
+   ]
+  },
+  {
+   "medicamento": "Midazolam",
+   "alimento": "Orange Juice",
+   "registros_no_par": 1,
+   "nivel_regras": 0,
+   "juizes": "no",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "s a preanaesthetic medication, the 1 mg.kg(-1) dose of orally given midazolam especially in a volume of orange juice and can optimize the childrens behavior during skin laser treatment with no serious adverse effects, enhancing their parents satisfactions about the sedative protocol."
+   ]
+  },
+  {
+   "medicamento": "Felodipine",
+   "alimento": "Potassium",
+   "registros_no_par": 4,
+   "nivel_regras": 1,
+   "juizes": "yes",
+   "juizes_concordaram": false,
+   "trechos_mostrados": [
+    "Felodipine attenuated the hypoxia-induced loss of cellular potassium.",
+    "It is concluded that short-term Ca2+ antagonism with felodipine is not accompanied by major alterations in the intracellular concentrations and transmembrane fluxes of Na+ and K+ in red blood cells of normotensive subjects.",
+    "Calcium entry blockers such as felodipine induce natriuresis without a parallel rise of potassium excretion.",
+    "Metoclopramide increased plasma aldosterone concentration from 0.17 +/- 0.03 to 0.60 +/- 0.14 nmol/L, and subsequent felodipine infusion clearly increased urinary potassium excretion by 23 +/- 6 and 35 +/- 8 mumol/min (low and therapeutic doses, respectively)."
+   ]
+  },
+  {
+   "medicamento": "Aspirin",
+   "alimento": "SODIUM",
+   "registros_no_par": 4,
+   "nivel_regras": 0,
+   "juizes": "no",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Aspirin and ethanol alone each produced significant changes in net hydrogen and sodium fluxes, potential difference, and endoscopic changes.",
+    "Aspirin and its major metabolite sodium salicylate induced apoptosis and decreased colon cancer cell growth and the sodium salt of aspirin also inhibited tumor growth in an athymic nude mouse xenograft model.",
+    "Daily nutrient intake associated with aspirin was <2,000 mg sodium (P = 0.06) and ≥850 μg retinol equivalent (P = 0.05) among men, indicating a marginal effect on adenoma suppression.",
+    "Aspirin and its major metabolite sodium salicylate induced apoptosis and decreased colon cancer cell growth and the sodium salt of aspirin also inhibited tumor growth in an athymic nude mouse xenograft model."
+   ]
+  },
+  {
+   "medicamento": "Phenelzine",
+   "alimento": "Ethanol",
+   "registros_no_par": 1,
+   "nivel_regras": 1,
+   "juizes": "no",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Panax ginseng (ginseng) reduced the blood concentrations of alcohol (ethanol) and warfarin, and induced mania when used concomitantly with phenelzine, but ginseng increased the efficacy of influenza vaccination."
+   ]
+  },
+  {
+   "medicamento": "Disulfiram",
+   "alimento": "CALCIUM",
+   "registros_no_par": 4,
+   "nivel_regras": 0,
+   "juizes": "no",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Disulfiram lowers Ca2+, Mg(2+)-ATPase activity of rat brain synaptosomes.",
+    "Disulfiram inhibited the calcium ionophore-induced release of LTB4 by human leukocytes in vitro with an IC50 of 4.6 +/- 0.3 microM, a value similar to that observed with the 5-lipoxygenase inhibitor A-64077 (IC50 = 1.2 +/- 0.3 microM).",
+    "In vitro studies indicated that DS (ID50 = 20 microM) produced a dose-dependent inhibition of Ca2+, Mg(2+)-ATPase.",
+    "Approved drugs ezetimibe and disulfiram enhance mitochondrial Ca2+ uptake and suppress cardiac arrhythmogenesis."
+   ]
+  },
+  {
+   "medicamento": "Diazepam",
+   "alimento": "Ethanol",
+   "registros_no_par": 20,
+   "nivel_regras": 1,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "The amplitude of the central component 60 minutes after ingestion of ethanol was decreased significantly (P = 0.029) compared with diazepam.",
+    "Peak effects on percent errors and response rates varied between 30 and 70 min and 45 and 80 min postdrug for ethanol and diazepam, respectively, and the duration of effects of the higher doses was greater than 3 hr.",
+    "Only two hours after application of ethanol in combination with diazepam, a marked decrease of systolic and diastolic blood pressure was registered in comparison with the values observed after application of placebo.",
+    "The higher doses of ethanol (67 g) and diazepam (20 and 40 mg) increased overall percent errors above placebo levels; the lower doses of these compounds had no significant effect.",
+    "Pentobarbital and diazepam completely suppressed ethanol withdrawal reactions.",
+    "The method involves the extraction of diazepam with ethanol at room temperature, and the extract is filtered, evaporated to dryness, and redissolved in the mobile phase, methanol-acetonitrile-tetrahydrofuran-water (15 + 55 + 4 + 26, v/v).",
+    " is concluded that diazepam, as well as either benzodiazepine with ethanol, may reduce the ability to drive vehicles or operate machinery.",
+    "The area under the curve (AUC) for total diazepam increased in all subjects (30.1 +/- 10.7%, mean = SD, p < 0.02) after ethanol."
+   ]
+  },
+  {
+   "medicamento": "Rifampicin",
+   "alimento": "Honey",
+   "registros_no_par": 2,
+   "nivel_regras": 0,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "We have previously demonstrated strong synergistic activity between NZ manuka-type honey and rifampicin against growth and biofilm formation of multiple S. arueus strains.",
+    "Our results suggest that honey has potential as an adjunct treatment with rifampicin for chronic wounds infected with staphylococcal biofilms."
+   ]
+  },
+  {
+   "medicamento": "Lovastatin",
+   "alimento": "Ethanol",
+   "registros_no_par": 2,
+   "nivel_regras": 1,
+   "juizes": "no",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Ethanol decreased liver alpha-tocopherol from 28 to 12 micrograms/g wet weight and lovastatin diminished it to 12 micrograms; no additive effect was evident.",
+    "This was seen (by flow cytometry) in 16.6 +/- 7.3% (mean +/- SD) of BPH cells treated with lovastatin at 72 h vs. 2.5 +/- 1.2% of cells treated with ethanol."
+   ]
+  },
+  {
+   "medicamento": "Statins",
+   "alimento": "ZINC",
+   "registros_no_par": 3,
+   "nivel_regras": 1,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Statins have multiple antiatherosclerotic effects, but can reduce blood plasma concentrations of minerals, including zinc.",
+    "Statins treatment may modify the levels of zinc and selenium, minerals that can improve vascular function and reduce oxidative damage and inflammation in atherosclerotic patients.",
+    "HRAS-induced epithelial-to-mesenchymal transition (EMT) through activation of zinc finger E-box binding homeobox 1 (ZEB1) sensitized tumor cells to the antiproliferative activity of statins, and induction of EMT by ZEB1 was sufficient to phenocopy the increase in fluvastatin sensitivity; knocking out ZEB1 reversed this effect."
+   ]
+  },
+  {
+   "medicamento": "Amiodarone",
+   "alimento": "CURCUMIN",
+   "registros_no_par": 2,
+   "nivel_regras": 0,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Based on literature and our own experience we propose new interventions, including the use of amiodarone, simvastatin, pioglitazone and curcumin.",
+    "Furthermore, curcumin inhibited the increases in lung MPO activity, TGF-beta1 expression, lung hydroxyproline content, expression of type I collagen and c-Jun protein in amiodarone rats."
+   ]
+  },
+  {
+   "medicamento": "Gentamicin",
+   "alimento": "Potassium",
+   "registros_no_par": 4,
+   "nivel_regras": 0,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Subcutaneous injection of rats with gentamicin (80 mg/kg body weight/day) for six consecutive days induced marked acute renal toxicity, manifested by a significant increase in serum urea, creatinine and uric acid levels, along with a significant depletion of serum potassium level, compared to normal controls.",
+    "[Potassium transport in erythrocytes from patients with gentamicin intolerance].",
+    "Intramuscular injection of rats with GM (80 mg/kg body weight/day) for six consecutive days induced marked acute renal failure, manifested by a sharp significant increase in serum urea and creatinine levels, along with a significant depletion of serum potassium level, compared to normal controls.",
+    "Gentamicin was seen to cause a serious nephrotoxicity which was proved by a plasma urea, plasmacreatinine, plasma uric acid, plasma Na+, plasma K+, intra-erythrocyte Na+ and intra-erythrocyte K+ levels."
+   ]
+  },
+  {
+   "medicamento": "Oxycodone",
+   "alimento": "MILK",
+   "registros_no_par": 3,
+   "nivel_regras": 0,
+   "juizes": "no",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Over the subsequent 48 h, the relationship between plasma and milk levels was less strong (R(2) = 0.59) and there was a larger range of M:P levels with evidence of persistence of oxycodone in the breast milk of some mothers.",
+    "Once the mothers milk comes in, it is best to provide pain control with a nonnarcotic analgesic and limit maternal intake of oral oxycodone (and combinations) to a 2 to 3 days, especially in the outpatient setting.[",
+    "However, maternal oxycodone intake up to 72-h post-CS poses only minimal risk to the breast-feeding infant as low volumes of breast milk are ingested during this period."
+   ]
+  },
+  {
+   "medicamento": "Amiodarone",
+   "alimento": "SODIUM",
+   "registros_no_par": 8,
+   "nivel_regras": 0,
+   "juizes": "no",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "However, amiodarone inhibited the decreasing sodium, L-type calcium, and transient outward potassium currents further.",
+    "Recently we have reported that class III antiarrhythmic drugs including amiodarone inhibit the Na+-activated K+ (KNa) channels in isolated cardiac cells.",
+    "iodarone caused an average 49% reduction of the T3-dependent 3H-ouabain binding and decreased the Western blot signal for the Na+/K(+)-ATPase alpha1 subunit. T",
+    "Amiodarone inhibits the 3,5,3-triiodothyronine-dependent increase of sodium/potassium adenosine triphosphatase activity and concentration in human atrial myocardial tissue. ",
+    "Purpose: Although amiodarone is classified as a Vaughan-Williams class Ⅲ antiarrhythmic drug, it has inhibitory effects on voltage-gated sodium and calcium channels and on β-adrenergic receptors.",
+    "The ability of amiodarone to decrease EADs via sodium-channel blockade is more likely the explanation for its lower incidence of drug-induced TdP.",
+    "Conclusion: Amiodarone induced analgesic responses in a dose-dependent manner, likely by blocking voltage-gated sodium channels.",
+    "RGPU-207 compound and amiodarone in concentrations of 1, 10, 100 and 1000 microM produce dose-dependent and reversible effects on trans-membrane sodium, calcium, and potassium ion currents of neurons in pond snail and orb snail shellfish."
+   ]
+  },
+  {
+   "medicamento": "Alendronate",
+   "alimento": "CURCUMIN",
+   "registros_no_par": 2,
+   "nivel_regras": 0,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "The combination of curcumin and alendronate has beneficial effects on BMD and bone turnover markers among postmenopausal women with osteoporosis.",
+    "Combination therapy of curcumin and alendronate modulates bone turnover markers and enhances bone mineral density in postmenopausal women with osteoporosis."
+   ]
+  },
+  {
+   "medicamento": "Sulfasalazine",
+   "alimento": "FOOD",
+   "registros_no_par": 1,
+   "nivel_regras": 0,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "These results indicate that food components in the intestinal lumen can have a significant impact on the intestinal absorption characteristics of sulfasalazine by modulating the biochemical barrier function of the intestinal mucosa."
+   ]
+  },
+  {
+   "medicamento": "Simvastatin",
+   "alimento": "Juice",
+   "registros_no_par": 6,
+   "nivel_regras": 1,
+   "juizes": "yes",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "grapefruit juice, itraconazole, cyclosporine) should be discouraged if a patient is on atorvastatin, lovastatin or simvastatin.",
+    "Grapefruit juice can modify the pharmacokinetic parameters of many drugs, in particular simvastatin, an orally active cholesterol-lowering agent.",
+    "Grapefruit juice greatly increases the bioavailability of lovastatin and simvastatin.",
+    "Grapefruit juice may increase both the cholesterol-lowering effect and the risk of adverse effects of simvastatin.",
+    "Grapefruit juice increased the mean peak serum concentration (Cmax) of unchanged simvastatin about 9-fold (range, 5.1-fold to 31.4-fold; P < .01) and the mean area under the serum simvastatin concentration-time curve [AUC(0-infinity)] 16-fold (range, 9.0-fold to 37.7-fold; P < .05).",
+    "Grapefruit juice greatly increased serum concentrations of simvastatin and simvastatin acid and, to a lesser extent, those of active and total HMG-CoA reductase inhibitors."
+   ]
+  },
+  {
+   "medicamento": "Ketoconazole",
+   "alimento": "Grapefruit Juice",
+   "registros_no_par": 1,
+   "nivel_regras": 1,
+   "juizes": "no",
+   "juizes_concordaram": true,
+   "trechos_mostrados": [
+    "Gut availability (Fg) and fraction contribution of CYP3A4 to hepatic intrinsic clearance (fmCYP3A4) were predicted by AUC ratio (AUCR) in oral DDI study with/without grapefruit juice, and alteration in intrinsic clearances with/without ketoconazole, respectively."
+   ]
+  }
+ ]
+}

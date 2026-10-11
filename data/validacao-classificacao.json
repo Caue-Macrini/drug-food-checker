@@ -1,0 +1,388 @@
+{
+  "rules": "regras-evidencia-1.5",
+  "classification": {
+    "rules": "regras-evidencia-1.5",
+    "records": 1108429,
+    "categories": {
+      "mencao": 1057935,
+      "interacao": 50369,
+      "sem_efeito": 125
+    },
+    "pairs": 632092,
+    "levels": {
+      "0": 592777,
+      "1": 39192,
+      "2": 123
+    },
+    "curated_pairs": 139,
+    "seconds": 466
+  },
+  "drugs_com_agreement": {
+    "curated_pairs": 139,
+    "pairs_with_literature": 45,
+    "confusion": {
+      "drugs.com 1 -> regras 0": 7,
+      "drugs.com 1 -> regras 1": 28,
+      "drugs.com 1 -> regras 2": 1,
+      "drugs.com 2 -> regras 0": 2,
+      "drugs.com 2 -> regras 1": 7
+    },
+    "detected_as_interaction": 36,
+    "sensitivity": 0.8
+  },
+  "catalog_positive_control": {
+    "pairs": 49,
+    "found_in_foodrugs": 26,
+    "levels_when_found": {
+      "Atenção": 20,
+      "Sem interação identificada": 3,
+      "Risco elevado": 3
+    },
+    "not_green_when_found": 0.885,
+    "details": [
+      {
+        "drug": "Sinvastatina",
+        "food": "Toranja",
+        "found": true,
+        "level": 1,
+        "records": 16
+      },
+      {
+        "drug": "Atorvastatina",
+        "food": "Toranja",
+        "found": true,
+        "level": 1,
+        "records": 6
+      },
+      {
+        "drug": "Fexofenadina",
+        "food": "Toranja",
+        "found": true,
+        "level": 1,
+        "records": 9
+      },
+      {
+        "drug": "Fexofenadina",
+        "food": "Suco de laranja",
+        "found": true,
+        "level": 0,
+        "records": 1
+      },
+      {
+        "drug": "Fexofenadina",
+        "food": "Suco de maçã",
+        "found": true,
+        "level": 1,
+        "records": 6
+      },
+      {
+        "drug": "Levotiroxina",
+        "food": "Soja",
+        "found": false,
+        "level": null,
+        "records": 0
+      },
+      {
+        "drug": "Levotiroxina",
+        "food": "Nozes",
+        "found": false,
+        "level": null,
+        "records": 0
+      },
+      {
+        "drug": "Levotiroxina",
+        "food": "Alimentos ricos em fibras",
+        "found": false,
+        "level": null,
+        "records": 0
+      },
+      {
+        "drug": "Levotiroxina",
+        "food": "Toranja",
+        "found": true,
+        "level": 1,
+        "records": 2
+      },
+      {
+        "drug": "Ciprofloxacino",
+        "food": "Leite",
+        "found": true,
+        "level": 1,
+        "records": 4
+      },
+      {
+        "drug": "Ciprofloxacino",
+        "food": "Iogurte",
+        "found": true,
+        "level": 1,
+        "records": 1
+      },
+      {
+        "drug": "Ciprofloxacino",
+        "food": "Suco enriquecido com cálcio",
+        "found": false,
+        "level": null,
+        "records": 0
+      },
+      {
+        "drug": "Ciprofloxacino",
+        "food": "Café e bebidas com cafeína",
+        "found": true,
+        "level": 2,
+        "records": 17
+      },
+      {
+        "drug": "Linezolida",
+        "food": "Queijos maturados",
+        "found": false,
+        "level": null,
+        "records": 0
+      },
+      {
+        "drug": "Linezolida",
+        "food": "Carnes curadas ou defumadas",
+        "found": false,
+        "level": null,
+        "records": 0
+      },
+      {
+        "drug": "Linezolida",
+        "food": "Cerveja",
+        "found": false,
+        "level": null,
+        "records": 0
+      },
+      {
+        "drug": "Linezolida",
+        "food": "Vinho tinto",
+        "found": false,
+        "level": null,
+        "records": 0
+      },
+      {
+        "drug": "Varfarina",
+        "food": "Vegetais verdes ricos em vitamina K",
+        "found": true,
+        "level": 1,
+        "records": 9
+      },
+      {
+        "drug": "Varfarina",
+        "food": "Toranja",
+        "found": false,
+        "level": null,
+        "records": 0
+      },
+      {
+        "drug": "Varfarina",
+        "food": "Bebidas alcoólicas",
+        "found": true,
+        "level": 1,
+        "records": 3
+      },
+      {
+        "drug": "Metronidazol",
+        "food": "Bebidas alcoólicas",
+        "found": false,
+        "level": null,
+        "records": 0
+      },
+      {
+        "drug": "Tinidazol",
+        "food": "Bebidas alcoólicas",
+        "found": false,
+        "level": null,
+        "records": 0
+      },
+      {
+        "drug": "Tinidazol",
+        "food": "Toranja",
+        "found": false,
+        "level": null,
+        "records": 0
+      },
+      {
+        "drug": "Espironolactona",
+        "food": "Substituto de sal com potássio",
+        "found": false,
+        "level": null,
+        "records": 0
+      },
+      {
+        "drug": "Espironolactona",
+        "food": "Alimentos ricos em potássio",
+        "found": false,
+        "level": null,
+        "records": 0
+      },
+      {
+        "drug": "Espironolactona",
+        "food": "Suco de laranja",
+        "found": false,
+        "level": null,
+        "records": 0
+      },
+      {
+        "drug": "Espironolactona",
+        "food": "Bebidas alcoólicas",
+        "found": true,
+        "level": 0,
+        "records": 4
+      },
+      {
+        "drug": "Lítio",
+        "food": "Sal de cozinha",
+        "found": true,
+        "level": 1,
+        "records": 78
+      },
+      {
+        "drug": "Lítio",
+        "food": "Café e bebidas com cafeína",
+        "found": true,
+        "level": 1,
+        "records": 2
+      },
+      {
+        "drug": "Tacrolimo",
+        "food": "Toranja",
+        "found": true,
+        "level": 1,
+        "records": 2
+      },
+      {
+        "drug": "Carbamazepina",
+        "food": "Toranja",
+        "found": true,
+        "level": 1,
+        "records": 5
+      },
+      {
+        "drug": "Enalapril",
+        "food": "Substituto de sal com potássio",
+        "found": false,
+        "level": null,
+        "records": 0
+      },
+      {
+        "drug": "Losartana",
+        "food": "Substituto de sal com potássio",
+        "found": false,
+        "level": null,
+        "records": 0
+      },
+      {
+        "drug": "Captopril",
+        "food": "Substituto de sal com potássio",
+        "found": false,
+        "level": null,
+        "records": 0
+      },
+      {
+        "drug": "Lisinopril",
+        "food": "Substituto de sal com potássio",
+        "found": false,
+        "level": null,
+        "records": 0
+      },
+      {
+        "drug": "Fenelzina",
+        "food": "Queijos maturados",
+        "found": false,
+        "level": null,
+        "records": 0
+      },
+      {
+        "drug": "Fenelzina",
+        "food": "Carnes curadas ou defumadas",
+        "found": false,
+        "level": null,
+        "records": 0
+      },
+      {
+        "drug": "Fenelzina",
+        "food": "Café e bebidas com cafeína",
+        "found": true,
+        "level": 1,
+        "records": 1
+      },
+      {
+        "drug": "Nifedipino",
+        "food": "Toranja",
+        "found": true,
+        "level": 1,
+        "records": 11
+      },
+      {
+        "drug": "Nifedipino",
+        "food": "Bebidas alcoólicas",
+        "found": true,
+        "level": 1,
+        "records": 2
+      },
+      {
+        "drug": "Ciclosporina",
+        "food": "Toranja",
+        "found": true,
+        "level": 1,
+        "records": 11
+      },
+      {
+        "drug": "Ciclosporina",
+        "food": "Alimentos ricos em potássio",
+        "found": false,
+        "level": null,
+        "records": 0
+      },
+      {
+        "drug": "Ciclosporina",
+        "food": "Substituto de sal com potássio",
+        "found": false,
+        "level": null,
+        "records": 0
+      },
+      {
+        "drug": "Buspirona",
+        "food": "Toranja",
+        "found": true,
+        "level": 1,
+        "records": 5
+      },
+      {
+        "drug": "Buspirona",
+        "food": "Bebidas alcoólicas",
+        "found": true,
+        "level": 0,
+        "records": 4
+      },
+      {
+        "drug": "Amiodarona",
+        "food": "Toranja",
+        "found": true,
+        "level": 2,
+        "records": 6
+      },
+      {
+        "drug": "Metformina",
+        "food": "Bebidas alcoólicas",
+        "found": true,
+        "level": 1,
+        "records": 3
+      },
+      {
+        "drug": "Sirolimo",
+        "food": "Toranja",
+        "found": true,
+        "level": 1,
+        "records": 1
+      },
+      {
+        "drug": "Dronedarona",
+        "food": "Toranja",
+        "found": true,
+        "level": 2,
+        "records": 3
+      }
+    ]
+  }
+}

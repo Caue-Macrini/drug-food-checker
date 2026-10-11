@@ -10,8 +10,10 @@ from models import Base, engine, Session, Dataset, Audit
 from services import uid
 from download_foodrugs import download, ROOT, MD5
 from foodrugs_full import build
-from index_foodrugs import index
+from index_foodrugs import index, update_translations
 from foodrugs_store import VERSION
+from classify_foodrugs import classify_database
+import risk_rules
 
 def install():
     final=ROOT/'foodrugs-v4.sqlite';stage=ROOT/'foodrugs-v4.build.sqlite';dump=ROOT/'FinalFooDrugs_v4.sql'
@@ -27,6 +29,11 @@ def install():
         if not indexed:index(stage)
         stage.replace(final)
         stage.with_suffix('.manifest.json').replace(final.with_suffix('.manifest.json'))
+    update_translations(final)  # idempotent: new Portuguese search labels
+    # Risk rules are derived tables; (re)build them when missing or produced by another rules version.
+    with sqlite3.connect(final) as c:
+        row=c.execute("SELECT value FROM _metadata WHERE key='risk_rules'").fetchone()
+    if not row or json.loads(row[0]).get('rules')!=risk_rules.RULES_VERSION:print('RISK:',json.dumps(classify_database(final)),flush=True)
     with sqlite3.connect(final) as c:
         manifest=json.loads(c.execute("SELECT value FROM _metadata WHERE key='manifest'").fetchone()[0])
         coverage=json.loads(c.execute("SELECT value FROM _metadata WHERE key='coverage'").fetchone()[0])

@@ -45,7 +45,7 @@ $publicApp = Start-Process -FilePath $pythonPath -ArgumentList '-m','uvicorn','m
 $env:JWT_SECRET = ''
 $publicApp.Id | Set-Content (Join-Path $runPath 'public-app.pid')
 $ready = $false
-for ($attempt=0; $attempt -lt 15; $attempt++) {
+for ($attempt=0; $attempt -lt 60; $attempt++) {
  try { $health = Invoke-RestMethod "$publicUrl/api/health" -TimeoutSec 5; if ($health.status -eq 'ok') { $ready=$true; break } } catch {}
  Start-Sleep -Milliseconds 500
 }

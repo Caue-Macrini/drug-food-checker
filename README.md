@@ -4,7 +4,7 @@ Sistema web em português baseado no TCC de Cauê Gaspar Macrini e João Pedro A
 
 **Base de dados:** o sistema usa a **FooDrugs 4.0.0 completa** (IMDEA Food Institute, CC BY 4.0), importada integralmente do arquivo oficial: 10 tabelas e **30.797.702 registros**, incluindo **1.108.429 registros de mineração de texto**, **439.338 documentos** e **26.365.254 resultados moleculares**. Detalhes em [FOODRUGS-COMPLETA.md](FOODRUGS-COMPLETA.md).
 
-**Apresentação:** consulte [APRESENTACAO.md](APRESENTACAO.md) para iniciar localmente, gerar o link temporário e seguir o roteiro. A última verificação está em [VERIFICACAO-2026-10-10.md](VERIFICACAO-2026-10-10.md).
+**Apresentação:** consulte [APRESENTACAO.md](APRESENTACAO.md) para iniciar localmente, gerar o link temporário e seguir o roteiro. A última verificação está em [VERIFICACAO-2026-10-11.md](VERIFICACAO-2026-10-11.md); capturas de tela para o documento do TCC ficam em `capturas-tcc/` (geradas por `frontend/capturas.mjs`).
 
 ## Executar no Windows
 
@@ -16,7 +16,7 @@ Requer Python 3.12+, Node.js 22+ e, para a base completa, pelo menos 10 GB livre
 ./start.ps1
 ```
 
-`Instalar-FooDrugs.ps1` baixa o arquivo oficial (1,56 GB), confere o checksum MD5, importa as dez tabelas, constrói os índices e ativa a versão `foodrugs-4.0.0-completa`. É executado uma vez por computador e pode levar de vários minutos a mais de uma hora, conforme a conexão. Sem essa etapa, o sistema funciona com o catálogo complementar de 25 medicamentos descrito abaixo.
+`Instalar-FooDrugs.ps1` baixa o arquivo oficial (1,56 GB), confere o checksum MD5, importa as dez tabelas, constrói os índices, classifica os registros pelas regras de risco e ativa a versão `foodrugs-4.0.0-completa`. É executado uma vez por computador e pode levar de vários minutos a mais de uma hora, conforme a conexão. Sem essa etapa, o sistema funciona com o catálogo complementar de 25 medicamentos descrito abaixo.
 
 Se necessário, informe o executável: `./setup.ps1 -Python 'C:/caminho/python.exe'`.
 Abra **http://127.0.0.1:8000**, clique em **Criar conta gratuita** e cadastre sua conta. Não há conta nem senha padrão. Contas e histórico são persistidos em `backend/drugfood.db`; a FooDrugs fica em `.local-data/foodrugs-v4.sqlite`. Mantenha o terminal de execução aberto; Ctrl+C encerra o servidor.
@@ -50,8 +50,10 @@ Para ambiente público, configure `APP_ENV=production`, `DOMAIN` com domínio so
 
 - Cadastro, consentimento versionado, login, logout e recuperação de senha.
 - Perfil opcional com idade, peso, altura, IMC, condições, doença renal/hepática, medicamentos, suplementos e álcool.
-- Autocompletar sobre os 161.495 termos de medicamentos e 50.796 termos alimentares da FooDrugs, com sinônimos em português (ex.: sinvastatina → Simvastatin, toranja → Grapefruit, leite → MILK). A consulta exige selecionar o termo, evitando substituição silenciosa de medicamentos.
-- Consulta por par sobre todos os registros textuais da FooDrugs: evidências paginadas, trecho original da fonte, identificadores de registro e documento, link para a referência e versão da base.
+- Autocompletar sobre os 161.495 termos de medicamentos e 50.796 termos alimentares da FooDrugs, com cerca de 90 sinônimos em português para os medicamentos e alimentos mais comuns (ex.: sinvastatina → Simvastatin, cafeína → Caffeine, toranja → Grapefruit, leite → MILK, chá verde → Green Tea). A consulta exige selecionar o termo, evitando substituição silenciosa de medicamentos.
+- Resultado com **indicador de risco por cores** (verde, amarelo, vermelho) e resposta direta em português ("Evite…", "Pode haver interação…", "Sem interação identificada"), explicação simplificada de como a interação acontece e a seção "Por que esta classificação", com as regras e contagens que levaram à cor. Detalhes em [CLASSIFICACAO-RISCO.md](CLASSIFICACAO-RISCO.md).
+- Ajuste do nível pelo perfil clínico com os quatro modificadores da Tabela 2 do TCC.
+- Evidências paginadas sobre todos os registros textuais do par: trechos que indicam interação aparecem primeiro, cada um marcado como "Indica interação", "Apenas menciona os dois" ou "Sem efeito observado", com trecho original, identificadores, link para a referência e versão da base.
 - Base de conhecimento com busca por medicamento/alimento/sinônimo, alimentos associados paginados e abertura direta da consulta.
 - Tela **Dados FooDrugs**: contagem e integridade por tabela, explorador das 10 tabelas originais e busca de relações moleculares (escore tau) com o estudo de origem.
 - Grafo interativo com medicamento, alimento, composto, mecanismo e fonte; seleção também disponível por botões.
@@ -80,7 +82,7 @@ Importação integral de `FinalFooDrugs_v4.sql` (1.561.331.208 bytes, MD5 `3c8f2
 
 Os registros textuais formam 632.092 pares medicamento–alimento distintos. Todos os registros textuais têm documento correspondente e são pesquisáveis. A contagem de termos não equivale ao número de medicamentos comercializados: nomes podem representar classes, compostos ou erros de extração.
 
-Associações textuais são candidatas produzidas pela mineração de texto original da FooDrugs. O sistema não executa MLP e não transforma escore tau, coocorrência ou contexto textual em risco clínico; por isso os resultados aparecem como **Não classificado**. Usar a base completa não significa ter uma base clinicamente validada nem cobertura de todas as interações existentes.
+A FooDrugs registra que um medicamento e um alimento aparecem juntos em um trecho, mas **não informa a gravidade**. O sistema deriva o nível de risco do TCC (0 verde, 1 amarelo, 2 vermelho) com **regras explícitas e auditáveis** que leem cada trecho: gravidade declarada nas monografias do Drugs.com incluídas na base, alterações farmacocinéticas ou de efeito descritas nos estudos, recomendações como "evitar" e estudos que não observaram efeito. Não há modelo treinado (o TCC, p. 31, justifica regras explícitas por rastreabilidade e falta de dados rotulados). As regras, os critérios de cada cor e o desempenho medido estão em [CLASSIFICACAO-RISCO.md](CLASSIFICACAO-RISCO.md). O escore tau dos dados moleculares não é convertido em risco. A classificação é heurística, sem validação clínica, e a base não cobre todas as interações existentes.
 
 Fonte e atribuição: Piette Gómez, Lacruz Pleguezuelos e colaboradores, IMDEA Food Institute, [FooDrugs 4.0.0 no Zenodo](https://doi.org/10.5281/zenodo.8192515), licença CC BY 4.0. [Artigo original](https://doi.org/10.1093/database/baad075). As tabelas originais são preservadas; as modificações consistem em índices de busca e sinônimos em português.
 
@@ -105,7 +107,7 @@ Ativar um JSON pela Administração troca a versão ativa. Para voltar à base c
 
 O contrato JSON está em `data/starter.json` e na documentação da API `/docs`. Para habilitar um risco, o registro precisa de `base_risk` (0, 1 ou 2), `reviewed: true` e `risk_basis` não vazio. Esse campo é uma declaração do administrador; o software não verifica a qualificação clínica do revisor. Não marque registros como revisados sem uma revisão efetiva. Sem esses campos o risco fica nulo. Nunca se converte automaticamente um escore molecular em risco clínico.
 
-Os quatro modificadores da página 31 do TCC estão em `backend/services.py`, limitados a 0–2. Eles são uma heurística acadêmica, não um modelo validado. Como a FooDrugs não fornece risco base, nenhum modificador é aplicado aos resultados dela. Ausência de registro é mostrada em estado neutro e não em verde, para não sugerir segurança indevida. Peso, IMC, doenças livres e suplementos são armazenados, mas não geram modificadores além daqueles definidos no TCC.
+Os quatro modificadores da página 31 do TCC estão em `backend/services.py`, limitados a 0–2. Eles são uma heurística acadêmica, não um modelo validado. Com a FooDrugs, os modificadores são aplicados ao nível base derivado pelas regras, quando o usuário ativa "Considerar meu perfil clínico". As propriedades do medicamento usadas pela Tabela 2 (metabolismo por CYP450, excreção renal, hepatotoxicidade) vêm de listas explícitas em `backend/risk_rules.py` e do mecanismo detectado nos trechos. Um par ausente da base fica verde, sem modificadores, conforme o fluxo alternativo do TCC. Ausência de registro é mostrada em estado neutro e não em verde, para não sugerir segurança indevida. Peso, IMC, doenças livres e suplementos são armazenados, mas não geram modificadores além daqueles definidos no TCC.
 
 ## Segurança e privacidade implementadas
 
@@ -122,6 +124,7 @@ Frontend com atualização automática: `cd frontend; npm run dev`. Nesse caso i
 ```powershell
 cd backend
 ../.venv/Scripts/python.exe -m pytest -q -p no:cacheprovider
+../.venv/Scripts/python.exe validate_risk.py   # desempenho das regras de risco (requer a FooDrugs instalada)
 cd ../frontend
 npm run build
 node foodrugs.e2e.mjs
@@ -129,13 +132,14 @@ node e2e.mjs
 node library.e2e.mjs
 ```
 
-Os E2E precisam da aplicação na porta 8000 e do Google Chrome. `foodrugs.e2e.mjs` exige a FooDrugs completa ativa; `e2e.mjs` e `library.e2e.mjs` foram escritos para o catálogo complementar. Os testes criam apenas contas de teste próprias. O backend usa banco temporário isolado nos testes. Capturas: `preview-foodrugs-evidencia.png`, `preview-foodrugs-completa.png` e `preview-foodrugs-mobile.png`. Se o build falhar por restrição de leitura de diretórios em ambientes Windows isolados, use `npm run build -- --configLoader runner`.
+Os E2E precisam da aplicação na porta 8000 e do Google Chrome. `foodrugs.e2e.mjs` exige a FooDrugs completa ativa; `e2e.mjs` e `library.e2e.mjs` foram escritos para o catálogo complementar. Os testes criam apenas contas de teste próprias. O backend usa banco temporário isolado nos testes. Capturas: `preview-foodrugs-resultado.png`, `preview-foodrugs-evidencia.png`, `preview-foodrugs-completa.png` e `preview-foodrugs-mobile.png`. Se o build falhar por restrição de leitura de diretórios em ambientes Windows isolados, use `npm run build -- --configLoader runner`.
 
-Validação em 10/10/2026 (detalhes em [VERIFICACAO-2026-10-10.md](VERIFICACAO-2026-10-10.md)): 29 testes Python aprovados; build de produção; E2E da FooDrugs completa no Chrome (desktop e mobile) sem erros JavaScript; link HTTPS temporário respondendo com a base completa. Tempo das consultas na camada de dados, com a base completa: busca de termos de 2 a 5 ms, evidências de um par de 4 a 16 ms, busca molecular por termo cerca de 0,2 s. Todas abaixo da meta de 3 s do TCC. Não foi feito teste de carga com usuários simultâneos nem teste em PostgreSQL/Docker.
+Validação em 11/10/2026 (detalhes em [VERIFICACAO-2026-10-11.md](VERIFICACAO-2026-10-11.md)): 66 testes Python aprovados (37 das regras de risco); build de produção; E2E da FooDrugs completa no Chrome (desktop e mobile) sem erros JavaScript; link HTTPS temporário respondendo. Regras de risco: 80% das interações do Drugs.com reconhecidas só pelos artigos; 88,5% das interações do catálogo FDA/MedlinePlus não ficam verdes; em avaliação cega de 60 pares realistas, precisão de 86,7% e sensibilidade de 70,3% (detalhes e limitações em [CLASSIFICACAO-RISCO.md](CLASSIFICACAO-RISCO.md)). Tempo das consultas na camada de dados: busca de termos de 2 a 5 ms, evidências de um par de 4 a 16 ms, busca molecular cerca de 0,2 s, todas abaixo da meta de 3 s do TCC (medição de 10/10/2026). Não foi feito teste de carga com usuários simultâneos nem teste em PostgreSQL/Docker.
 
 ## Organização
 
 - `backend/main.py`: API e segurança; `models.py`: persistência; `schemas.py`: contratos e validação; `services.py`: busca, consulta e regras do catálogo.
+- `backend/risk_rules.py`: regras de classificação de risco e textos do resultado; `classify_foodrugs.py`: aplica as regras a todos os registros; `validate_risk.py`: mede o desempenho das regras e gera a amostra para revisão humana.
 - `backend/download_foodrugs.py`: download retomável com verificação MD5; `foodrugs_full.py`: leitor do dump sem executar SQL; `index_foodrugs.py`: índices e sinônimos; `install_foodrugs.py`: instalação e ativação; `foodrugs_store.py`: consultas somente leitura à base completa; `foodrugs_import.py`: conversor de recortes.
 - `frontend/src/`: interface (`main.jsx`, `Library.jsx`, `Foodrugs.jsx` para a tela Dados FooDrugs, `Molecular.jsx` para relações moleculares).
 - `data/`: catálogo, exemplos e `foodrugs-full-manifest.json` (contagens e checksum da importação). `.local-data/`: dump e banco FooDrugs (fora do Git).
