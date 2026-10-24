@@ -1,4 +1,6 @@
-# Apresentação — sábado, 10 de outubro de 2026
+# Apresentação — Drug-Food Checker
+
+Revisão mais recente: **24/10/2026**. Base completa e funcionamento local/público conferidos; veja [o relatório de verificação](VERIFICACAO-2026-10-24.md). Consulte `.local-run/LINK-PUBLICO.txt` para o endereço público atual.
 
 ## Abrir no seu computador
 
