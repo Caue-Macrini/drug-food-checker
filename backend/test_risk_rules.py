@@ -111,17 +111,17 @@ def test_result_has_color_answer_reasons_and_interaction_first(classified_db):
 def test_curated_major_is_red(classified_db):
     result = store.evidence(*ids('fentanyl', 'alcohol'))
     assert result['risk'] == 2 and result['verdict']['title'] == 'Risco elevado'
-    assert 'Major · GENERALLY AVOID' in result['basis'][0]
+    assert 'grave · geralmente evitar' in result['basis'][0]
 
-def test_no_effect_study_is_green(classified_db):
+def test_no_effect_study_is_level_zero(classified_db):
     result = store.evidence(*ids('drugx', 'milk'))
     assert result['risk'] == 0 and 'não observaram interação' in result['verdict']['answer']
 
-def test_absent_pair_is_green_with_caveat_and_no_modifiers(classified_db):
+def test_absent_pair_is_neutral_with_caveat_and_no_modifiers(classified_db):
     profile = {'age': 70, 'medications': ['a', 'b', 'c']}
     result = store.evidence(*ids('simvastatin', 'milk'), profile=profile)
     assert not result['found'] and result['risk'] == 0 and not result['modifiers']
-    assert result['verdict']['title'] == 'Sem interação conhecida' and 'não garante' in result['verdict']['recommendation']
+    assert result['verdict']['title'] == 'Sem registro na base' and 'não garante' in result['verdict']['recommendation']
 
 def test_profile_modifiers_follow_tcc_table_2(classified_db):
     elderly = {'age': 70, 'medications': ['a', 'b', 'c']}
@@ -183,3 +183,20 @@ def test_food_that_contains_the_drug_is_not_an_interaction():
     category, flags, _ = R.classify(sentence)
     assert R.adjust_for_terms(category, flags, 'Coffee', 'Caffeine', sentence) == R.MENTION
     assert R.adjust_for_terms(category, flags, 'Coffee', 'Lithium', sentence) == category
+
+
+def test_display_names_are_portuguese(classified_db):
+    result = store.evidence(*ids('simvastatin', 'grapefruit'))
+    assert result['drug'] == 'Sinvastatina' and result['food'] == 'Toranja'
+    assert result['drug_original'] == 'Simvastatin' or result['drug_original'].lower() == 'simvastatin'
+    assert 'sinvastatina' in result['explanation']
+
+def test_non_food_terms_are_hidden_from_suggestions(classified_db):
+    import term_filter as TF
+    from foodrugs_full import norm
+    for term in ('Oxygen', 'CHOLESTEROL', 'Insulin', 'SAME', 'D-Glucose'):
+        assert norm(term) in TF.hidden('f')
+    for term in ('Grapefruit', 'Milk', 'Caffeine', 'Alcohol', 'Protein'):
+        assert norm(term) not in TF.hidden('f')
+    assert norm('Oxygen') in TF.hidden('d') and norm('Simvastatin') not in TF.hidden('d')
+    assert store.search('f', 'grapefruit')[0]['name'] == 'Toranja'

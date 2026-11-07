@@ -103,9 +103,10 @@ def test_checksum_rejects_partial_download(tmp_path):
 
 def test_molecular_join_preserves_experimental_context(source_db):
     found=store.molecular('resveratrol')
+    assert store.molecular('Resveratrol')['total']==1
     assert found['total']==1
     row=found['rows'][0]
-    assert row['compound']=='compound A' and row['treatment']=='resveratrol'
+    assert row['compound']=='compound A' and row['treatment']=='Resveratrol' and row['treatment_original']=='resveratrol'
     assert row['tau']==-99.1 and row['title']=='Example study'
     assert 'risk' not in row
     assert store.molecular('gene b')['rows'][0]['pert_type']=='trt_sh'

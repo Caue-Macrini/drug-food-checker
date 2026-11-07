@@ -6,6 +6,8 @@ from urllib.parse import quote
 from foodrugs_full import norm
 from services import adjusted_risk
 import risk_rules as R
+import pt_names as N
+import term_filter as TF
 
 VERSION='foodrugs-4.0.0-completa'
 PATH=Path(os.getenv('FOODRUGS_DB',str(Path(__file__).resolve().parents[1]/'.local-data/foodrugs-v4.sqlite')))
@@ -28,26 +30,28 @@ def entity_id(value,kind):
 
 def search(kind,term):
     table='_drugs' if kind=='d' else '_foods';q=norm(term)
+    hide,hp=TF.sql(kind,'e.norm')
     with connection() as c:
-        if not q:rows=c.execute(f'SELECT * FROM {table} ORDER BY occurrences DESC,id LIMIT 12').fetchall()
+        if not q:rows=c.execute(f'SELECT * FROM {table} e WHERE 1=1{hide} ORDER BY occurrences DESC,id LIMIT 12',hp).fetchall()
         else:
-            rows=c.execute(f'''SELECT DISTINCT e.* FROM {table} e WHERE e.norm=? OR e.id IN
-                (SELECT entity_id FROM _aliases WHERE kind=? AND term=?) ORDER BY e.occurrences DESC LIMIT 12''',(q,kind,q)).fetchall()
+            rows=c.execute(f'''SELECT DISTINCT e.* FROM {table} e WHERE (e.norm=? OR e.id IN
+                (SELECT entity_id FROM _aliases WHERE kind=? AND term=?)){hide} ORDER BY e.occurrences DESC LIMIT 12''',(q,kind,q,*hp)).fetchall()
             if len(rows)<12:
-                extra=c.execute(f'''SELECT * FROM {table} WHERE norm>=? AND norm<?
-                    ORDER BY occurrences DESC LIMIT 24''',(q,q+'\uffff')).fetchall()
+                extra=c.execute(f'''SELECT * FROM {table} e WHERE norm>=? AND norm<?{hide}
+                    ORDER BY occurrences DESC LIMIT 24''',(q,q+'\uffff',*hp)).fetchall()
                 known={r['id'] for r in rows};rows=list(rows)+[r for r in extra if r['id'] not in known]
             if not rows:
                 # Parameterized substring fallback; original entity terms are never rewritten.
-                rows=c.execute(f'SELECT * FROM {table} WHERE instr(norm,?)>0 ORDER BY occurrences DESC LIMIT 12',(q,)).fetchall()
-        return [{'id':f'fd:{kind}:{r["id"]}','name':r['name'],'score':100 if r['norm']==q else 90} for r in rows[:12]]
+                rows=c.execute(f'SELECT * FROM {table} e WHERE instr(norm,?)>0{hide} ORDER BY occurrences DESC LIMIT 12',(q,*hp)).fetchall()
+        return [{'id':f'fd:{kind}:{r["id"]}','name':N.display(r['name']),'original':r['name'],'score':100 if r['norm']==q else 90} for r in rows[:12]]
 
 def foods(c,drug_id,offset=0,limit=12):
     level='r.level' if has_rules(c) else 'NULL'
     join=' LEFT JOIN _pair_risk r ON r.drug_id=p.drug_id AND r.food_id=p.food_id' if has_rules(c) else ''
-    rows=c.execute(f'SELECT f.id,f.name,p.records,{level} AS level FROM _pairs p JOIN _foods f ON f.id=p.food_id{join} WHERE p.drug_id=? ORDER BY p.records DESC,f.id LIMIT ? OFFSET ?',(drug_id,limit,offset)).fetchall()
-    total=c.execute('SELECT count(*) FROM _pairs WHERE drug_id=?',(drug_id,)).fetchone()[0]
-    return {'items':[{'id':f'fd:f:{r["id"]}','name':r['name'],'records':r['records'],'level':r['level']} for r in rows],'total':total,'offset':offset,'limit':limit}
+    hide,hp=TF.sql('f','f.norm')
+    rows=c.execute(f'SELECT f.id,f.name,p.records,{level} AS level FROM _pairs p JOIN _foods f ON f.id=p.food_id{join} WHERE p.drug_id=?{hide} ORDER BY p.records DESC,f.id LIMIT ? OFFSET ?',(drug_id,*hp,limit,offset)).fetchall()
+    total=c.execute(f'SELECT count(*) FROM _pairs p JOIN _foods f ON f.id=p.food_id WHERE p.drug_id=?{hide}',(drug_id,*hp)).fetchone()[0]
+    return {'items':[{'id':f'fd:f:{r["id"]}','name':N.display(r['name']),'original':r['name'],'records':r['records'],'level':r['level']} for r in rows],'total':total,'offset':offset,'limit':limit}
 
 def library(term='',drug_id=None,offset=0,limit=12):
     q=norm(term)
@@ -58,13 +62,15 @@ def library(term='',drug_id=None,offset=0,limit=12):
             condition='''(instr(d.norm,?)>0 OR d.id IN (SELECT entity_id FROM _aliases WHERE kind='d' AND instr(term,?)>0)
                 OR d.id IN (SELECT p.drug_id FROM _pairs p WHERE p.food_id IN
                 (SELECT id FROM _foods WHERE instr(norm,?)>0 UNION SELECT entity_id FROM _aliases WHERE kind='f' AND instr(term,?)>0)))''';params=[q]*4
+        if not drug_id:
+            hide,hp=TF.sql('d','d.norm');condition='('+condition+')'+hide;params=[*params,*hp]
         total=c.execute('SELECT count(*) FROM _drugs d WHERE '+condition,params).fetchone()[0]
         rows=c.execute('SELECT d.* FROM _drugs d WHERE '+condition+' ORDER BY d.occurrences DESC,d.id LIMIT ? OFFSET ?',[*params,limit,offset]).fetchall()
         items=[]
         for r in rows:
             f=foods(c,r['id'])
             aliases=[a[0] for a in c.execute("SELECT label FROM _aliases WHERE kind='d' AND entity_id=? LIMIT 10",(r['id'],))]
-            items.append({'id':f'fd:d:{r["id"]}','name':r['name'],'aliases':aliases,'foods':f['items'],'food_total':f['total'],'records':r['occurrences']})
+            items.append({'id':f'fd:d:{r["id"]}','name':N.display(r['name']),'original':r['name'],'aliases':aliases,'foods':f['items'],'food_total':f['total'],'records':r['occurrences']})
         counts=json.loads(c.execute("SELECT value FROM _metadata WHERE key='coverage'").fetchone()[0])
         return {'counts':counts,'total':total,'offset':offset,'limit':limit,'items':items,'dataset':VERSION}
 
@@ -114,10 +120,10 @@ def explain(stats,drug,food):
     return ' '.join(parts),mechanisms,kind
 
 def basis(stats,level,found):
-    if not found:return ['Nenhum registro deste par na FooDrugs 4.0.0. Pelo fluxo alternativo do TCC, o resultado é verde, com ressalva.']
+    if not found:return ['Nenhum registro deste par na FooDrugs 4.0.0. O resultado aparece em cinza, sem classificação de risco: a ausência de registro não comprova segurança.']
     items=[]
     if stats['curated_level'] is not None:
-        items.append(f'Uma monografia do Drugs.com incluída na FooDrugs classifica esta interação como {stats["curated_label"]}. Fontes com gravidade explícita têm prioridade.')
+        items.append(f'Uma monografia do Drugs.com incluída na FooDrugs classifica esta interação como {N.severity(stats["curated_label"])}. Fontes com gravidade explícita têm prioridade.')
     n=lambda v:f'{v:,}'.replace(',','.')
     docs=lambda v:n(v)+(' documento' if v==1 else ' documentos')
     items.append(f'{n(stats["interaction_records"])} de {n(stats["records"])} {"trecho" if stats["records"]==1 else "trechos"} ({docs(stats["interaction_docs"])}) {"descreve" if stats["interaction_records"]==1 else "descrevem"} interação.')
@@ -125,7 +131,7 @@ def basis(stats,level,found):
     if stats['no_effect_docs']:items.append(f'{docs(stats["no_effect_docs"])} {"relata" if stats["no_effect_docs"]==1 else "relatam"} ausência de efeito relevante.')
     if stats['curated_level'] is None:
         rule={2:'Regra: 2 ou mais documentos com aviso forte → Risco elevado.',1:'Regra: ao menos 1 documento descreve interação → Atenção.',
-              0:'Regra: nenhum documento descreve interação, ou estudos sem efeito são maioria → Sem interação identificada.'}[stats['level']]
+              0:'Regra: nenhum documento descreve interação, ou estudos sem efeito são maioria → Nenhuma interação identificada (não significa que seja seguro).'}[stats['level']]
         items.append(rule)
     return items
 
@@ -134,6 +140,7 @@ def evidence(drug_id,food_id,offset=0,limit=20,profile=None,personalize=False):
     with connection() as c:
         drug=c.execute('SELECT name FROM _drugs WHERE id=?',(d,)).fetchone();food=c.execute('SELECT name FROM _foods WHERE id=?',(f,)).fetchone()
         if not drug or not food:raise ValueError('Termo não encontrado')
+        drug_pt,food_pt=N.display(drug[0]),N.display(food[0])
         total=c.execute('SELECT records FROM _pairs WHERE drug_id=? AND food_id=?',(d,f)).fetchone()
         rules=has_rules(c);stats=pair_stats(c,d,f) if rules and total else None
         if rules and total and stats is None:rules=None  # pair missing from the risk tables: show it unclassified
@@ -145,12 +152,12 @@ def evidence(drug_id,food_id,offset=0,limit=20,profile=None,personalize=False):
         found=bool(total)
         if rules:
             base=stats['level'] if stats else 0
-            explanation,mechanisms,kind=explain(stats,drug[0],food[0])
+            explanation,mechanisms,kind=explain(stats,drug_pt.lower() if N.pt(drug[0]) else drug_pt,food_pt.lower() if N.pt(food[0]) else food_pt)
             flags=R.drug_flags(drug[0],(stats or {}).get('mechanisms') or '')
             # TCC p. 21/31: modifiers intensify an identified interaction (base >= 1); they do not
-            # create one, so absent pairs and pairs without described interaction stay green.
+            # create one, so absent pairs and pairs without described interaction stay at level 0 (shown in neutral grey).
             level,modifiers=adjusted_risk(base,profile or {},flags) if found and base>=1 else (base,[])
-            summary=R.verdict(level,base,found,drug[0],food[0],stats or {})
+            summary=R.verdict(level,base,found,drug_pt.lower() if N.pt(drug[0]) else drug_pt,food_pt.lower() if N.pt(food[0]) else food_pt,stats or {})
         else:
             base=level=None;explanation,mechanisms,kind='',[],'Mineração de texto (FooDrugs)';modifiers=[];summary=None
         records=[]
@@ -162,10 +169,10 @@ def evidence(drug_id,food_id,offset=0,limit=20,profile=None,personalize=False):
             snippet=content[max(0,start):min(len(content),start+min(max(end-start,1),600))]
             category=r['category'];record_mechanisms=R.mechanism_text([m for m in (r['signal_mechanisms'] or '').split(',') if m])
             records.append({'id':f'fd:tm:{r["source_id"]}','source_record_id':str(r['source_id']),'source_text_id':str(r['text_id']),
-                'drug':drug[0],'food':food[0],'base_risk':base,'adjusted_risk':level,'reviewed':False,
+                'drug':drug_pt,'food':food_pt,'base_risk':base,'adjusted_risk':level,'reviewed':False,
                 'risk_basis':'Derivado por regras explícitas sobre os trechos da FooDrugs ('+rules+').' if rules else '','modifiers':modifiers,
                 'signal':{R.MENTION:'mencao',R.INTERACTION:'interacao',R.NO_EFFECT:'sem_efeito'}.get(category,'nao_classificado'),
-                'signal_label':R.SIGNAL_LABELS.get(category,'Não classificado'),'signal_detail':R.signal_detail(category,r['flags'] or 0,r['curated_label'] or '') if category is not None else '',
+                'signal_label':R.SIGNAL_LABELS.get(category,'Não classificado'),'signal_detail':R.signal_detail(category,r['flags'] or 0,N.severity(r['curated_label'] or '')) if category is not None else '',
                 'evidence_status':'Trecho extraído automaticamente pela FooDrugs; classificação por regras do sistema, sem validação clínica independente.',
                 'mechanism':(record_mechanisms[0][0].upper()+record_mechanisms[0][1:]+'.') if record_mechanisms else 'Não descrito neste trecho.','compound':'Não especificado na fonte',
                 'interaction_type':kind,'explanation':explanation or 'A FooDrugs registrou estes termos em um contexto textual.',
@@ -173,10 +180,10 @@ def evidence(drug_id,food_id,offset=0,limit=20,profile=None,personalize=False):
                 'guidance':summary['title'] if summary else 'Requer avaliação da evidência','reference_title':f'FooDrugs · registro {r["source_id"]} · documento {r["text_id"]}',
                 'reference_url':source_url(doc),'source':'FooDrugs 4.0.0 · IMDEA Food Institute · CC BY 4.0','version':VERSION,
                 'source_excerpt':snippet,'citation':str(doc.get('citation') or ''),'source_document':{k:str(v)[:600] for k,v in doc.items() if v is not None and k not in ('text','content','abstract','document')}})
-        return {'drug':drug[0],'food':food[0],'drug_id':drug_id,'food_id':food_id,'found':found,'risk':level,'base_risk':base,'unclassified':found and not rules,
+        return {'drug':drug_pt,'food':food_pt,'drug_original':drug[0],'food_original':food[0],'drug_id':drug_id,'food_id':food_id,'found':found,'risk':level,'base_risk':base,'unclassified':found and not rules,
             'verdict':summary,'explanation':explanation,'mechanisms':mechanisms,'interaction_type':kind,'basis':(basis(stats,base,found)+([f'Perfil clínico (Tabela 2 do TCC): +{len(modifiers)} → {R.LEVEL_NAMES[level]}.'] if modifiers else [])) if rules else [],
             'strength':R.strength(stats['curated_level'],stats['interaction_docs']) if stats else '','modifiers':modifiers,
-            'stats':{k:stats[k] for k in ('records','interaction_records','interaction_docs','strong_docs','no_effect_docs','curated_label')} if stats else None,
+            'stats':{**{k:stats[k] for k in ('records','interaction_records','interaction_docs','strong_docs','no_effect_docs')},'curated_label':N.severity(stats['curated_label'])} if stats else None,
             'rules_version':rules,'personalization':{'requested':bool(personalize),'profile_filled':bool(profile)},'evidence':records,
             'evidence_total':total[0] if total else 0,'evidence_offset':offset,'dataset':VERSION,'personalized':bool(modifiers),
             'heuristic':'Classificação derivada por regras explícitas e auditáveis sobre os trechos da FooDrugs (TCC, p. 31). Não é validação clínica.',
@@ -197,7 +204,7 @@ def table_rows(table,offset=0,limit=25,record=None):
             'rows':[{k:(str(v)[:600]+'…' if isinstance(v,str) and len(v)>600 else v) for k,v in dict(row).items()} for row in rows]}
 
 def molecular(term='',offset=0,limit=20):
-    query=norm(term);where='';params=[]
+    query=norm(N.english(term) or term);where='';params=[]
     if query:
         where=''' WHERE (cf.cmap_node_id IN (SELECT cmap_node_id FROM cmap WHERE instr(lower(compound),?)>0)
             OR cf.node_id IN (SELECT n.node_id FROM nodes n JOIN sample s ON s.sample_id=n.sample_id WHERE instr(lower(s.treatment),?)>0))'''
@@ -213,4 +220,10 @@ def molecular(term='',offset=0,limit=20):
             LEFT JOIN nodes n ON n.node_id=cf.node_id
             LEFT JOIN sample s ON s.sample_id=n.sample_id
             LEFT JOIN study st ON st.study_id=s.study_id''',[*params,limit,offset]).fetchall()
-        return {'total':total,'offset':offset,'limit':limit,'rows':[dict(r) for r in rows]}
+        out=[]
+        for r in rows:
+            r=dict(r)
+            for k in ('treatment','compound'):
+                if r.get(k) and N.pt(r[k]):r[k+'_original']=r[k];r[k]=N.display(r[k])
+            out.append(r)
+        return {'total':total,'offset':offset,'limit':limit,'rows':out}

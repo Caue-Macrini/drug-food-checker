@@ -1,0 +1,21 @@
+import { chromium } from '../frontend/node_modules/@playwright/test/index.mjs';
+import { readFileSync } from 'node:fs';
+const root = new URL('../', import.meta.url);
+const acc = readFileSync(new URL('.local-run/ACESSOS-APRESENTACAO.txt', root), 'utf8').split('Visitante')[1];
+const email = acc.match(/E-mail:\s*(\S+)/)[1], password = acc.match(/Senha:\s*(\S+)/)[1];
+let browser; try { browser = await chromium.launch(); } catch { browser = await chromium.launch({ channel: 'chrome' }); }
+const page = await browser.newPage();
+await page.goto('http://127.0.0.1:8000', { waitUntil: 'networkidle' });
+await page.locator('input[type=email]').first().fill(email);
+await page.locator('input[type=password]').first().fill(password);
+await page.getByRole('button', { name: /Entrar na minha conta/i }).click();
+await page.getByRole('button', { name: 'Consultar interação' }).waitFor();
+const t = async p => page.evaluate(async p => { const s = performance.now(); const r = await (await fetch('/api' + p)).json(); return [Math.round(performance.now() - s), r]; }, p);
+let [ms, r] = await t('/catalog/drugs?q='); console.log('medicamentos vazios', ms + 'ms', r.map(x => x.name).join(', '));
+[ms, r] = await t('/catalog/foods?q='); console.log('alimentos vazios', ms + 'ms', r.map(x => x.name).join(', '));
+[ms, r] = await t('/catalog/foods?q=oxig'); console.log('busca oxig', ms + 'ms', r.map(x => x.name).join(', ') || '(nenhum)');
+const sim = (await t('/catalog/drugs?q=sinvastatina'))[1][0];
+[ms, r] = await t('/library?drug_id=' + encodeURIComponent(sim.id)); console.log('sugestões sinvastatina', ms + 'ms', 'total', r.items[0].food_total, '|', r.items[0].foods.map(f => f.name + '(' + f.level + ')').join(', '));
+[ms, r] = await t('/library'); console.log('base de conhecimento', ms + 'ms', 'total', r.total, '|', r.items.map(x => x.name).join(', '));
+[ms, r] = await t('/library?q=leite'); console.log('busca leite', ms + 'ms', r.total);
+await browser.close();

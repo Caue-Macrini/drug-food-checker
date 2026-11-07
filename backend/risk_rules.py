@@ -192,12 +192,12 @@ def drug_flags(name, mechanisms):
     return {'cyp450': n in CYP450_SUBSTRATES or 'cyp' in mechanisms,
             'renal_excretion': n in RENAL_EXCRETION, 'hepatotoxic': n in HEPATOTOXIC}
 
-LEVEL_NAMES = {0: 'Sem interação identificada', 1: 'Atenção', 2: 'Risco elevado'}
+LEVEL_NAMES = {0: 'Nenhuma interação identificada', 1: 'Atenção', 2: 'Risco elevado'}
 
 def verdict(level, base, found, drug, food, stats):
     """Plain-language answer shown at the top of the result."""
     if not found:
-        return {'title': 'Sem interação conhecida',
+        return {'title': 'Sem registro na base',
                 'answer': f'A base FooDrugs não tem registros de {drug} com {food}.',
                 'recommendation': 'Não encontrar registro não garante que a combinação seja segura. Em caso de dúvida, pergunte a um médico ou farmacêutico.'}
     if level == 2:
@@ -215,7 +215,7 @@ def verdict(level, base, found, drug, food, stats):
         answer = f'O único registro cita {drug} e {food} juntos, mas não descreve uma interação.'
     else:
         answer = f'Os {records} registros citam {drug} e {food} juntos, mas nenhum descreve uma interação.'
-    return {'title': 'Sem interação identificada', 'answer': answer,
+    return {'title': 'Nenhuma interação identificada', 'answer': answer,
             'recommendation': 'Isso não garante segurança: a base pode não cobrir todos os estudos. Em caso de dúvida, pergunte a um médico ou farmacêutico.'}
 
 SIGNAL_LABELS = {MENTION: 'Apenas menciona os dois', INTERACTION: 'Indica interação', NO_EFFECT: 'Sem efeito observado'}

@@ -17,3 +17,6 @@ backups/
 
 .local-data/
 *.sqlite
+
+capturas-tcc/_*
+capturas-tcc/figura21-admin-completa.png

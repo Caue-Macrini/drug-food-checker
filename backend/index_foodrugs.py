@@ -26,9 +26,11 @@ FOOD_LABELS={'toranja':'grapefruit','suco de toranja':'grapefruit juice','leite'
     'banana':'banana','mel':'honey','teofilina':'theophylline','cafeína':'caffeine','alimento':'food','refeição':'meal'}
 
 def add_translations(c):
+    import pt_names
     added=0
-    for kind,table,labels in (('d','_drugs',DRUG_LABELS),('f','_foods',FOOD_LABELS)):
-        for label,term in labels.items():
+    reviewed=list(pt_names.labels())
+    for kind,table,labels in (('d','_drugs',list(DRUG_LABELS.items())+reviewed),('f','_foods',list(FOOD_LABELS.items())+reviewed)):
+        for label,term in labels:
             entity=c.execute(f'SELECT id FROM {table} WHERE norm=? ORDER BY occurrences DESC LIMIT 1',(norm(term),)).fetchone()
             if entity:added+=c.execute('INSERT OR IGNORE INTO _aliases VALUES (?,?,?,?)',(kind,norm(label),label,entity[0])).rowcount
     return added
