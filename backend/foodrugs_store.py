@@ -8,6 +8,7 @@ from services import adjusted_risk
 import risk_rules as R
 import pt_names as N
 import term_filter as TF
+import term_links as TL
 
 VERSION='foodrugs-4.0.0-completa'
 PATH=Path(os.getenv('FOODRUGS_DB',str(Path(__file__).resolve().parents[1]/'.local-data/foodrugs-v4.sqlite')))
@@ -154,29 +155,112 @@ def basis(stats,level,found):
         items.append(rule)
     return items
 
+_SYN={k:[{norm(t) for t in g} for g in v] for k,v in TL.SYNONYMS.items()}
+_TABLE={'d':'_drugs','f':'_foods'}
+
+def _q(values):return ','.join('?'*len(values))
+
+def _ids(c,kind,terms):
+    """Entity ids for normalized terms, each widened to its synonym group."""
+    wanted=set()
+    for t in terms:
+        t=norm(t);wanted|=next((g for g in _SYN[kind] if t in g),{t})
+    wanted=sorted(wanted)
+    return sorted(r[0] for r in c.execute(f'SELECT id FROM {_TABLE[kind]} WHERE norm IN ({_q(wanted)})',wanted)) if wanted else []
+
+def _group(c,kind,eid):
+    row=c.execute(f'SELECT norm FROM {_TABLE[kind]} WHERE id=?',(eid,)).fetchone()
+    return sorted(set(_ids(c,kind,[row[0]]))|{eid}) if row else [eid]
+
+def _aggregate(c,dids,fids):
+    """Risk statistics pooled over every pair in dids x fids (synonyms or an inferred link)."""
+    rows=[dict(r) for r in c.execute(f'SELECT * FROM _pair_risk WHERE drug_id IN ({_q(dids)}) AND food_id IN ({_q(fids)})',(*dids,*fids))]
+    if not rows:return None
+    curated=max((r for r in rows if r['curated_level'] is not None),key=lambda r:r['curated_level'],default=None)
+    stats={k:sum(r[k] for r in rows) for k in ('records','interaction_records','interaction_docs','strong_docs','no_effect_docs','pk_docs','pd_docs')}
+    stats.update(level=max(r['level'] for r in rows),curated_level=curated['curated_level'] if curated else None,
+        curated_label=curated['curated_label'] if curated else '',mechanisms=','.join(sorted({m for r in rows for m in (r['mechanisms'] or '').split(',') if m})),
+        pairs=[(r['drug_id'],r['food_id']) for r in rows])
+    inc,dec=c.execute(f'''SELECT coalesce(sum(s.flags&64>0),0),coalesce(sum(s.flags&128>0),0) FROM _tm t JOIN _tm_signal s ON s.source_id=t.source_id
+        WHERE t.drug_id IN ({_q(dids)}) AND t.food_id IN ({_q(fids)}) AND s.category=1 AND s.flags&1''',(*dids,*fids)).fetchone()
+    stats['increase'],stats['decrease']=inc,dec
+    return stats
+
+def _infer(c,D,F):
+    """Best indirect evidence: the drug's class with the food, or the drug with a component of the food."""
+    names=lambda kind,ids:[r[0] for r in c.execute(f'SELECT norm FROM {_TABLE[kind]} WHERE id IN ({_q(ids)})',ids)]
+    options=[('classe',cls,_ids(c,'d',[cls]),F) for n in names('d',D) for cls in TL.CLASSES.get(n,[])]
+    options+=[('componente',comp,D,_ids(c,'f',[comp])) for n in names('f',F) for comp in TL.COMPONENTS.get(n,[])]
+    best=None
+    for kind,via,dd,ff in options:
+        if not dd or not ff:continue
+        st=_aggregate(c,dd,ff)
+        if not st or st['level']<1 or st['no_effect_docs']>st['interaction_docs']:continue
+        key=(st['level'],st['curated_level'] is not None,st['interaction_docs'])
+        if not best or key>best[0]:
+            ids=dd if kind=='classe' else ff;table=_TABLE['d' if kind=='classe' else 'f']
+            # Name the link with the curated term itself when present (e.g. "Vitamin K"), else the most cited variant.
+            name=c.execute(f'SELECT name FROM {table} WHERE id IN ({_q(ids)}) ORDER BY norm=? DESC,occurrences DESC LIMIT 1',(*ids,norm(via))).fetchone()[0]
+            best=(key,st,{'type':kind,'via':N.display(name),'via_original':name,'level':st['level']})
+    return (best[1],best[2]) if best else (None,None)
+
+def notes(inferred,dnames,fnames,d,f,dname,fname):
+    """Lines that explain pooled synonyms or an inferred link, shown before the rule basis."""
+    if inferred:
+        what=('a classe do medicamento' if inferred['type']=='classe' else 'um componente do alimento')
+        return [f'Resultado inferido por {what} ({inferred["via"]}): não há registro direto deste par na FooDrugs. Os trechos abaixo tratam de '
+                f'{", ".join(sorted(set(dnames.values())))} com {", ".join(sorted(set(fnames.values())))}.',
+                'Regra: resultados inferidos são limitados a Atenção, porque a evidência não trata do par exato.']
+    others=sorted({v for k,v in dnames.items() if k!=d}|{v for k,v in fnames.items() if k!=f})
+    return [f'Inclui registros de termos equivalentes na base: {", ".join(others)}.'] if others else []
+
 def evidence(drug_id,food_id,offset=0,limit=20,profile=None,personalize=False):
     d=entity_id(drug_id,'d');f=entity_id(food_id,'f')
     with connection() as c:
         drug=c.execute('SELECT name FROM _drugs WHERE id=?',(d,)).fetchone();food=c.execute('SELECT name FROM _foods WHERE id=?',(f,)).fetchone()
         if not drug or not food:raise ValueError('Termo não encontrado')
         drug_pt,food_pt=N.display(drug[0]),N.display(food[0])
-        total=c.execute('SELECT records FROM _pairs WHERE drug_id=? AND food_id=?',(d,f)).fetchone()
-        rules=has_rules(c);stats=pair_stats(c,d,f) if rules and total else None
-        if rules and total and stats is None:rules=None  # pair missing from the risk tables: show it unclassified
+        dname=drug_pt.lower() if N.pt(drug[0]) else drug_pt;fname=food_pt.lower() if N.pt(food[0]) else food_pt
+        rules=has_rules(c)
+        D,F=(_group(c,'d',d),_group(c,'f',f)) if rules else ([d],[f])
+        direct=_aggregate(c,D,F) if rules else None
+        inferred=None;stats=direct
+        if rules and (direct is None or (direct['level']<1 and not direct['no_effect_docs'])):
+            st,info=_infer(c,D,F)
+            if st:stats,inferred=st,info
+        if rules and direct is None and not inferred and c.execute(f'SELECT 1 FROM _pairs WHERE drug_id IN ({_q(D)}) AND food_id IN ({_q(F)}) LIMIT 1',(*D,*F)).fetchone():
+            rules=None  # pair missing from the risk tables: show it unclassified
         if rules:
-            rows=c.execute('''SELECT t.*,s.category,s.flags,s.mechanisms AS signal_mechanisms,s.curated,s.curated_label FROM _tm t JOIN _tm_signal s ON s.source_id=t.source_id
-                WHERE t.drug_id=? AND t.food_id=? ORDER BY (s.curated IS NOT NULL) DESC,CASE s.category WHEN 1 THEN 0 WHEN 2 THEN 1 ELSE 2 END,(s.flags&8>0) DESC,t.source_id LIMIT ? OFFSET ?''',(d,f,limit,offset)).fetchall()
+            total=stats['records'] if stats else 0;pairs=stats['pairs'] if stats else []
+        else:
+            row=c.execute('SELECT records FROM _pairs WHERE drug_id=? AND food_id=?',(d,f)).fetchone()
+            total=row[0] if row else 0;pairs=[(d,f)] if row else []
+        PD=sorted({p[0] for p in pairs}) or [d];PF=sorted({p[1] for p in pairs}) or [f]
+        if rules:
+            rows=c.execute(f'''SELECT t.*,s.category,s.flags,s.mechanisms AS signal_mechanisms,s.curated,s.curated_label FROM _tm t JOIN _tm_signal s ON s.source_id=t.source_id
+                WHERE t.drug_id IN ({_q(PD)}) AND t.food_id IN ({_q(PF)}) ORDER BY (s.curated IS NOT NULL) DESC,CASE s.category WHEN 1 THEN 0 WHEN 2 THEN 1 ELSE 2 END,(s.flags&8>0) DESC,t.source_id LIMIT ? OFFSET ?''',(*PD,*PF,limit,offset)).fetchall()
         else:
             rows=c.execute('SELECT t.*,NULL AS category,0 AS flags,"" AS signal_mechanisms,NULL AS curated,"" AS curated_label FROM _tm t WHERE drug_id=? AND food_id=? ORDER BY source_id LIMIT ? OFFSET ?',(d,f,limit,offset)).fetchall()
         found=bool(total)
+        dnames={i:N.display(n) for i,n in c.execute(f'SELECT id,name FROM _drugs WHERE id IN ({_q(PD)})',PD)}
+        fnames={i:N.display(n) for i,n in c.execute(f'SELECT id,name FROM _foods WHERE id IN ({_q(PF)})',PF)}
         if rules:
-            base=stats['level'] if stats else 0
-            explanation,mechanisms,kind=explain(stats,drug_pt.lower() if N.pt(drug[0]) else drug_pt,food_pt.lower() if N.pt(food[0]) else food_pt)
+            raw_level=stats['level'] if stats else 0
+            base=min(raw_level,TL.LEVEL_CAP) if inferred else raw_level
+            via=(inferred or {}).get('via','')
+            if inferred and N.pt(inferred['via_original']):via=via[:1].lower()+via[1:]  # "vitamina K", not "vitamina k"
+            if inferred and inferred['type']=='classe':explanation,mechanisms,kind=explain(stats,via,fname)
+            elif inferred:explanation,mechanisms,kind=explain(stats,dname,via)
+            else:explanation,mechanisms,kind=explain(stats,dname,fname)
             flags=R.drug_flags(drug[0],(stats or {}).get('mechanisms') or '')
             # TCC p. 21/31: modifiers intensify an identified interaction (base >= 1); they do not
             # create one, so absent pairs and pairs without described interaction stay at level 0 (shown in neutral grey).
             level,modifiers=adjusted_risk(base,profile or {},flags) if found and base>=1 else (base,[])
-            summary=R.verdict(level,base,found,drug_pt.lower() if N.pt(drug[0]) else drug_pt,food_pt.lower() if N.pt(food[0]) else food_pt,stats or {})
+            summary=R.verdict(level,base,found,dname,fname,stats or {})
+            if inferred:
+                link=(f'{dname} pertence à classe {via}, e há registro de interação entre {via} e {fname}' if inferred['type']=='classe'
+                      else f'{fname} é fonte de {via}, e há registro de interação entre {dname} e {via}')
+                summary={**summary,'answer':f'Não há registro direto de {dname} com {fname}, mas {link}.'}
         else:
             base=level=None;explanation,mechanisms,kind='',[],'Mineração de texto (FooDrugs)';modifiers=[];summary=None
         records=[]
@@ -188,7 +272,7 @@ def evidence(drug_id,food_id,offset=0,limit=20,profile=None,personalize=False):
             snippet=content[max(0,start):min(len(content),start+min(max(end-start,1),600))]
             category=r['category'];record_mechanisms=R.mechanism_text([m for m in (r['signal_mechanisms'] or '').split(',') if m])
             records.append({'id':f'fd:tm:{r["source_id"]}','source_record_id':str(r['source_id']),'source_text_id':str(r['text_id']),
-                'drug':drug_pt,'food':food_pt,'base_risk':base,'adjusted_risk':level,'reviewed':False,
+                'drug':dnames.get(r['drug_id'],drug_pt),'food':fnames.get(r['food_id'],food_pt),'base_risk':base,'adjusted_risk':level,'reviewed':False,
                 'risk_basis':'Derivado por regras explícitas sobre os trechos da FooDrugs ('+rules+').' if rules else '','modifiers':modifiers,
                 'signal':{R.MENTION:'mencao',R.INTERACTION:'interacao',R.NO_EFFECT:'sem_efeito'}.get(category,'nao_classificado'),
                 'signal_label':R.SIGNAL_LABELS.get(category,'Não classificado'),'signal_detail':R.signal_detail(category,r['flags'] or 0,N.severity(r['curated_label'] or '')) if category is not None else '',
@@ -200,11 +284,13 @@ def evidence(drug_id,food_id,offset=0,limit=20,profile=None,personalize=False):
                 'reference_url':source_url(doc),'source':'FooDrugs 4.0.0 · IMDEA Food Institute · CC BY 4.0','version':VERSION,
                 'source_excerpt':snippet,'citation':str(doc.get('citation') or ''),'source_document':{k:str(v)[:600] for k,v in doc.items() if v is not None and k not in ('text','content','abstract','document')}})
         return {'drug':drug_pt,'food':food_pt,'drug_original':drug[0],'food_original':food[0],'drug_id':drug_id,'food_id':food_id,'found':found,'risk':level,'base_risk':base,'unclassified':found and not rules,
-            'verdict':summary,'explanation':explanation,'mechanisms':mechanisms,'interaction_type':kind,'basis':(basis(stats,base,found)+([f'Perfil clínico (Tabela 2 do TCC): +{len(modifiers)} → {R.LEVEL_NAMES[level]}.'] if modifiers else [])) if rules else [],
+            'verdict':summary,'explanation':explanation,'mechanisms':mechanisms,'interaction_type':kind,'inferred':inferred,
+            'equivalents':{'drug':sorted(v for k,v in dnames.items() if k!=d),'food':sorted(v for k,v in fnames.items() if k!=f)} if not inferred else {'drug':[],'food':[]},
+            'basis':(notes(inferred,dnames,fnames,d,f,dname,fname)+basis(stats,raw_level,found)+([f'Perfil clínico (Tabela 2 do TCC): +{len(modifiers)} → {R.LEVEL_NAMES[level]}.'] if modifiers else [])) if rules else [],
             'strength':R.strength(stats['curated_level'],stats['interaction_docs']) if stats else '','modifiers':modifiers,
             'stats':{**{k:stats[k] for k in ('records','interaction_records','interaction_docs','strong_docs','no_effect_docs')},'curated_label':N.severity(stats['curated_label'])} if stats else None,
             'rules_version':rules,'personalization':{'requested':bool(personalize),'profile_filled':bool(profile)},'evidence':records,
-            'evidence_total':total[0] if total else 0,'evidence_offset':offset,'dataset':VERSION,'personalized':bool(modifiers),
+            'evidence_total':total,'evidence_offset':offset,'dataset':VERSION,'personalized':bool(modifiers),
             'heuristic':'Classificação derivada por regras explícitas e auditáveis sobre os trechos da FooDrugs (TCC, p. 31). Não é validação clínica.',
             'notice':'Ausência de registro não comprova segurança. Não altere seu tratamento sem orientação profissional.'}
 

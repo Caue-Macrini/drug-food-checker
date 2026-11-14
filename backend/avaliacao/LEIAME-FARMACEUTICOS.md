@@ -23,7 +23,8 @@ os juízes de modelo de linguagem usados em 11/10/2026 por avaliadores humanos i
   NS evidência insuficiente; INV par inválido. Também registra confiança e fonte principal.
 - **Padrão-ouro**: classe igual nos dois avaliadores; nas divergências, decisão de um terceiro farmacêutico
   (adjudicação).
-- **Resposta do sistema**: positivo = nível ≥ 1. "Sem registro na base" conta como negativo, porque é o que o
+- **Resposta do sistema**: o nível que o aplicativo mostra (campo `level` do gabarito), já com sinônimos agrupados
+  e inferência por classe/componente (`term_links.py`); o nível literal da tabela fica em `level_direto`. Positivo = nível ≥ 1. "Sem registro na base" conta como negativo, porque é o que o
   usuário recebe.
 
 ## Arquivos
@@ -65,8 +66,10 @@ python avaliacao\kit_planilhas.py avaliacao\kit A B   # requer openpyxl
 - Kappa entre avaliadores: < 0,40 fraco; 0,41–0,60 moderado; 0,61–0,80 substancial; > 0,80 quase perfeito
   (Landis e Koch, 1977). Abaixo de 0,60, revise as definições antes de usar o padrão-ouro.
 - VPP do estrato E2 é a pergunta "quando o sistema diz vermelho, o farmacêutico concorda?".
-- Sensibilidade nos controles mostra lacunas de cobertura da base. Antes da avaliação, já se sabe que 6 dos 25
-  controles não têm registro para o termo sugerido em primeiro lugar e 3 aparecem como nível 0.
+- Sensibilidade nos controles mostra lacunas de cobertura da base. Antes da avaliação, o nível literal da
+  tabela marcava 16 dos 25 controles; com sinônimos e inferência (14/11/2026), o aplicativo marca 23 dos 25.
+  Ainda ficam de fora levodopa + proteína (13 trechos, nenhum classificado como interação) e alendronato + café
+  (sem registro). O ganho tem custo: 8 pares do estrato E0 sobem para Atenção, e a avaliação dirá se são acertos.
 
 ## Limitações a declarar
 

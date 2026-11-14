@@ -27,7 +27,9 @@
    "food_en": "Grapefruit",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": "Major · GENERALLY AVOID",
    "records": 2,
    "links": []
@@ -38,7 +40,9 @@
    "food_en": "Grapefruit",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": "Major · GENERALLY AVOID",
    "records": 2,
    "links": []
@@ -49,7 +53,9 @@
    "food_en": "propylene glycol",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": null,
    "records": 2,
    "links": []
@@ -60,7 +66,9 @@
    "food_en": "Alcohol",
    "stratum": "E1t",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 3,
    "links": [
@@ -74,7 +82,9 @@
    "food_en": "Coffee",
    "stratum": "CTRL",
    "control": true,
+   "level_direto": null,
    "level": null,
+   "inferido": null,
    "curated_label": null,
    "records": 0,
    "links": []
@@ -85,7 +95,9 @@
    "food_en": "Grapefruit",
    "stratum": "E1c",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": "Moderate · GENERALLY AVOID",
    "records": 1,
    "links": []
@@ -96,7 +108,9 @@
    "food_en": "Grapefruit Juice",
    "stratum": "E1t",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 1,
    "links": [
@@ -109,7 +123,9 @@
    "food_en": "SALT",
    "stratum": "E0",
    "control": false,
+   "level_direto": 0,
    "level": 0,
+   "inferido": null,
    "curated_label": null,
    "records": 2,
    "links": [
@@ -123,7 +139,9 @@
    "food_en": "MILK",
    "stratum": "CTRL",
    "control": true,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 4,
    "links": [
@@ -137,7 +155,9 @@
    "food_en": "Omega-3 Fatty Acids",
    "stratum": "E1t",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 2,
    "links": [
@@ -151,7 +171,9 @@
    "food_en": "MILK",
    "stratum": "E0",
    "control": false,
+   "level_direto": 0,
    "level": 0,
+   "inferido": null,
    "curated_label": null,
    "records": 1,
    "links": [
@@ -164,7 +186,9 @@
    "food_en": "Grapefruit",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": "Major · GENERALLY AVOID",
    "records": 3,
    "links": []
@@ -175,7 +199,9 @@
    "food_en": "Alcohol",
    "stratum": "E1t",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 3,
    "links": [
@@ -190,7 +216,9 @@
    "food_en": "SOY",
    "stratum": "CTRL",
    "control": true,
-   "level": null,
+   "level_direto": null,
+   "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 0,
    "links": []
@@ -201,7 +229,9 @@
    "food_en": "Grapefruit",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": "Major · GENERALLY AVOID",
    "records": 4,
    "links": []
@@ -212,7 +242,9 @@
    "food_en": "Grapefruit Juice",
    "stratum": "CTRL",
    "control": true,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 27,
    "links": [
@@ -227,7 +259,9 @@
    "food_en": "IRON",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": "Major · ADJUST DOSING INTERVAL",
    "records": 2,
    "links": []
@@ -238,7 +272,9 @@
    "food_en": "Green Tea",
    "stratum": "E1t",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 3,
    "links": []
@@ -249,7 +285,9 @@
    "food_en": "parsnips",
    "stratum": "E1c",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": "Moderate · GENERALLY AVOID",
    "records": 1,
    "links": []
@@ -260,7 +298,9 @@
    "food_en": "NACL",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": null,
    "records": 47,
    "links": [
@@ -275,7 +315,9 @@
    "food_en": "Caffeine",
    "stratum": "E1t",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 5,
    "links": [
@@ -290,7 +332,9 @@
    "food_en": "Ethyl alcohol",
    "stratum": "E1c",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": "Minor",
    "records": 1,
    "links": []
@@ -301,7 +345,9 @@
    "food_en": "Grapefruit",
    "stratum": "E1t",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 5,
    "links": [
@@ -316,7 +362,9 @@
    "food_en": "TEA",
    "stratum": "E1t",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 3,
    "links": [
@@ -329,7 +377,14 @@
    "food_en": "Cheese",
    "stratum": "CTRL",
    "control": true,
-   "level": null,
+   "level_direto": null,
+   "level": 1,
+   "inferido": {
+    "type": "componente",
+    "via": "Tiramina",
+    "via_original": "Tyramine",
+    "level": 1
+   },
    "curated_label": null,
    "records": 0,
    "links": []
@@ -340,7 +395,14 @@
    "food_en": "Spinach",
    "stratum": "CTRL",
    "control": true,
-   "level": null,
+   "level_direto": null,
+   "level": 1,
+   "inferido": {
+    "type": "componente",
+    "via": "Vitamina K",
+    "via_original": "Vitamin K",
+    "level": 1
+   },
    "curated_label": null,
    "records": 0,
    "links": []
@@ -351,7 +413,9 @@
    "food_en": "Grapefruit",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": "Major · GENERALLY AVOID",
    "records": 4,
    "links": [
@@ -364,7 +428,9 @@
    "food_en": "CALCIUM",
    "stratum": "E1t",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 11,
    "links": [
@@ -379,7 +445,9 @@
    "food_en": "Grapefruit",
    "stratum": "E1c",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": "Minor",
    "records": 1,
    "links": []
@@ -390,7 +458,9 @@
    "food_en": "Garlic",
    "stratum": "E0",
    "control": false,
+   "level_direto": 0,
    "level": 0,
+   "inferido": null,
    "curated_label": null,
    "records": 1,
    "links": [
@@ -403,7 +473,9 @@
    "food_en": "Alcohol",
    "stratum": "E0",
    "control": false,
+   "level_direto": 0,
    "level": 0,
+   "inferido": null,
    "curated_label": null,
    "records": 8,
    "links": [
@@ -418,7 +490,9 @@
    "food_en": "Steroid",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": null,
    "records": 20,
    "links": [
@@ -433,7 +507,9 @@
    "food_en": "Grapefruit",
    "stratum": "E1c",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": "Minor",
    "records": 1,
    "links": []
@@ -444,7 +520,9 @@
    "food_en": "Omega-3 Fatty Acids",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": null,
    "records": 2,
    "links": [
@@ -458,7 +536,9 @@
    "food_en": "Coffee",
    "stratum": "CTRL",
    "control": true,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 3,
    "links": [
@@ -473,7 +553,9 @@
    "food_en": "Apple Juice",
    "stratum": "E0",
    "control": false,
+   "level_direto": 0,
    "level": 0,
+   "inferido": null,
    "curated_label": null,
    "records": 3,
    "links": [
@@ -486,7 +568,9 @@
    "food_en": "Eggs",
    "stratum": "E0",
    "control": false,
+   "level_direto": 0,
    "level": 0,
+   "inferido": null,
    "curated_label": null,
    "records": 2,
    "links": [
@@ -499,7 +583,9 @@
    "food_en": "SODIUM",
    "stratum": "CTRL",
    "control": true,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 78,
    "links": [
@@ -514,7 +600,9 @@
    "food_en": "Grapefruit",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": "Major · GENERALLY AVOID",
    "records": 1,
    "links": []
@@ -525,7 +613,9 @@
    "food_en": "Grapefruit",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": "Major · GENERALLY AVOID",
    "records": 2,
    "links": []
@@ -536,7 +626,9 @@
    "food_en": "Tyramine",
    "stratum": "CTRL",
    "control": true,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 6,
    "links": [
@@ -551,7 +643,9 @@
    "food_en": "Grapefruit",
    "stratum": "E1c",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": "Moderate · GENERALLY AVOID",
    "records": 1,
    "links": []
@@ -562,7 +656,9 @@
    "food_en": "Ethanol",
    "stratum": "E1t",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 3,
    "links": [
@@ -577,7 +673,9 @@
    "food_en": "Green Tea",
    "stratum": "E0",
    "control": false,
+   "level_direto": 0,
    "level": 0,
+   "inferido": null,
    "curated_label": null,
    "records": 1,
    "links": [
@@ -590,7 +688,9 @@
    "food_en": "IRON",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": null,
    "records": 139,
    "links": [
@@ -605,7 +705,9 @@
    "food_en": "Caffeine",
    "stratum": "E0",
    "control": false,
+   "level_direto": 0,
    "level": 0,
+   "inferido": null,
    "curated_label": null,
    "records": 1,
    "links": [
@@ -618,7 +720,9 @@
    "food_en": "Garlic",
    "stratum": "E1t",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 1,
    "links": [
@@ -631,7 +735,9 @@
    "food_en": "N-oxide",
    "stratum": "E1c",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": "Minor",
    "records": 1,
    "links": []
@@ -642,7 +748,9 @@
    "food_en": "Hydrocarbon",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": null,
    "records": 2,
    "links": [
@@ -656,7 +764,9 @@
    "food_en": "Grapefruit",
    "stratum": "E1c",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": "Moderate · MONITOR",
    "records": 1,
    "links": []
@@ -667,7 +777,9 @@
    "food_en": "Grapefruit",
    "stratum": "E1c",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": "Moderate · GENERALLY AVOID",
    "records": 1,
    "links": []
@@ -678,7 +790,9 @@
    "food_en": "Grapefruit",
    "stratum": "E1c",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": "Moderate · MONITOR",
    "records": 2,
    "links": []
@@ -689,7 +803,9 @@
    "food_en": "Alcohol",
    "stratum": "E0",
    "control": false,
+   "level_direto": 0,
    "level": 0,
+   "inferido": null,
    "curated_label": null,
    "records": 2,
    "links": [
@@ -702,7 +818,9 @@
    "food_en": "Tyramine",
    "stratum": "CTRL",
    "control": true,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 8,
    "links": [
@@ -717,7 +835,9 @@
    "food_en": "Grapefruit",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": "Major · GENERALLY AVOID",
    "records": 2,
    "links": []
@@ -728,7 +848,9 @@
    "food_en": "Wine",
    "stratum": "E1t",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 2,
    "links": [
@@ -741,7 +863,9 @@
    "food_en": "Banana",
    "stratum": "E1t",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 2,
    "links": [
@@ -754,7 +878,9 @@
    "food_en": "Grapefruit",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": "Major · GENERALLY AVOID",
    "records": 3,
    "links": []
@@ -765,7 +891,9 @@
    "food_en": "Alcohol",
    "stratum": "E0",
    "control": false,
-   "level": 0,
+   "level_direto": 0,
+   "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 1,
    "links": [
@@ -778,7 +906,9 @@
    "food_en": "Alcohol",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": null,
    "records": 8,
    "links": [
@@ -793,7 +923,9 @@
    "food_en": "Yogurt",
    "stratum": "E1c",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": "Moderate · ADJUST DOSING INTERVAL",
    "records": 1,
    "links": []
@@ -804,7 +936,9 @@
    "food_en": "Alcohol",
    "stratum": "E0",
    "control": false,
+   "level_direto": 0,
    "level": 0,
+   "inferido": null,
    "curated_label": null,
    "records": 2,
    "links": [
@@ -817,7 +951,9 @@
    "food_en": "Grapefruit",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": "Major · CONTRAINDICATED",
    "records": 5,
    "links": [
@@ -830,7 +966,9 @@
    "food_en": "ZINC",
    "stratum": "E1t",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 3,
    "links": [
@@ -843,7 +981,9 @@
    "food_en": "Grapefruit",
    "stratum": "E1c",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": "Moderate · GENERALLY AVOID",
    "records": 4,
    "links": []
@@ -854,7 +994,14 @@
    "food_en": "Alcohol",
    "stratum": "E0",
    "control": false,
-   "level": 0,
+   "level_direto": 0,
+   "level": 1,
+   "inferido": {
+    "type": "classe",
+    "via": "Estatinas",
+    "via_original": "Statins",
+    "level": 1
+   },
    "curated_label": null,
    "records": 2,
    "links": [
@@ -868,7 +1015,14 @@
    "food_en": "Ethanol",
    "stratum": "E0",
    "control": false,
-   "level": 0,
+   "level_direto": 0,
+   "level": 1,
+   "inferido": {
+    "type": "classe",
+    "via": "SSRIs",
+    "via_original": "SSRIs",
+    "level": 1
+   },
    "curated_label": null,
    "records": 1,
    "links": [
@@ -881,7 +1035,9 @@
    "food_en": "Grapefruit",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": "Major · GENERALLY AVOID",
    "records": 2,
    "links": []
@@ -892,7 +1048,9 @@
    "food_en": "Grapefruit Juice",
    "stratum": "E1t",
    "control": true,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 16,
    "links": [
@@ -907,7 +1065,9 @@
    "food_en": "Grapefruit",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": "Major · GENERALLY AVOID",
    "records": 6,
    "links": [
@@ -921,7 +1081,9 @@
    "food_en": "SALT",
    "stratum": "E0",
    "control": false,
+   "level_direto": 0,
    "level": 0,
+   "inferido": null,
    "curated_label": null,
    "records": 1,
    "links": [
@@ -934,7 +1096,9 @@
    "food_en": "Omega-3 Fatty Acids",
    "stratum": "E1t",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 1,
    "links": [
@@ -947,7 +1111,9 @@
    "food_en": "PROTEIN",
    "stratum": "CTRL",
    "control": true,
+   "level_direto": 0,
    "level": 0,
+   "inferido": null,
    "curated_label": null,
    "records": 10,
    "links": [
@@ -962,7 +1128,9 @@
    "food_en": "CALCIUM",
    "stratum": "E1c",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": "Moderate · ADJUST DOSING INTERVAL",
    "records": 5,
    "links": [
@@ -977,7 +1145,9 @@
    "food_en": "EGG",
    "stratum": "E0",
    "control": false,
+   "level_direto": 0,
    "level": 0,
+   "inferido": null,
    "curated_label": null,
    "records": 2,
    "links": [
@@ -990,7 +1160,9 @@
    "food_en": "Alcohol",
    "stratum": "E1t",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 4,
    "links": [
@@ -1005,7 +1177,9 @@
    "food_en": "Ethanol",
    "stratum": "E1t",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 2,
    "links": [
@@ -1019,7 +1193,14 @@
    "food_en": "CALCIUM",
    "stratum": "CTRL",
    "control": true,
-   "level": 0,
+   "level_direto": 0,
+   "level": 1,
+   "inferido": {
+    "type": "classe",
+    "via": "Tetracyclines",
+    "via_original": "Tetracyclines",
+    "level": 1
+   },
    "curated_label": null,
    "records": 1,
    "links": [
@@ -1032,7 +1213,9 @@
    "food_en": "propylene glycol",
    "stratum": "E1c",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": "Minor",
    "records": 1,
    "links": []
@@ -1043,7 +1226,9 @@
    "food_en": "Grapefruit",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": "Major · GENERALLY AVOID",
    "records": 3,
    "links": []
@@ -1054,7 +1239,9 @@
    "food_en": "Ethanol",
    "stratum": "E1t",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 2,
    "links": [
@@ -1068,7 +1255,9 @@
    "food_en": "Grapefruit",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": "Major · GENERALLY AVOID",
    "records": 1,
    "links": []
@@ -1079,7 +1268,9 @@
    "food_en": "PROTEIN",
    "stratum": "E0",
    "control": false,
+   "level_direto": 0,
    "level": 0,
+   "inferido": null,
    "curated_label": null,
    "records": 1,
    "links": [
@@ -1092,7 +1283,14 @@
    "food_en": "Alcohol",
    "stratum": "E0",
    "control": false,
-   "level": 0,
+   "level_direto": 0,
+   "level": 1,
+   "inferido": {
+    "type": "classe",
+    "via": "SSRIs",
+    "via_original": "SSRIs",
+    "level": 1
+   },
    "curated_label": null,
    "records": 8,
    "links": [
@@ -1107,7 +1305,9 @@
    "food_en": "Grapefruit",
    "stratum": "E1c",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": "Moderate · GENERALLY AVOID",
    "records": 1,
    "links": []
@@ -1118,7 +1318,9 @@
    "food_en": "Caffeine",
    "stratum": "E1c",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": "Minor",
    "records": 3,
    "links": [
@@ -1131,7 +1333,9 @@
    "food_en": "SODIUM",
    "stratum": "E1t",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 40,
    "links": [
@@ -1146,7 +1350,14 @@
    "food_en": "PROTEIN",
    "stratum": "E0",
    "control": false,
-   "level": 0,
+   "level_direto": 0,
+   "level": 1,
+   "inferido": {
+    "type": "classe",
+    "via": "HMG-CoA Reductase Inhibitors",
+    "via_original": "HMG-CoA Reductase Inhibitors",
+    "level": 1
+   },
    "curated_label": null,
    "records": 36,
    "links": [
@@ -1161,7 +1372,9 @@
    "food_en": "SODIUM",
    "stratum": "E0",
    "control": false,
+   "level_direto": 0,
    "level": 0,
+   "inferido": null,
    "curated_label": null,
    "records": 9,
    "links": [
@@ -1176,7 +1389,9 @@
    "food_en": "Selenium",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": null,
    "records": 3,
    "links": [
@@ -1191,7 +1406,9 @@
    "food_en": "Alcohol",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": null,
    "records": 130,
    "links": [
@@ -1206,7 +1423,9 @@
    "food_en": "Alcohol",
    "stratum": "CTRL",
    "control": true,
-   "level": null,
+   "level_direto": null,
+   "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 0,
    "links": []
@@ -1217,7 +1436,9 @@
    "food_en": "Grapefruit",
    "stratum": "E1c",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": "Minor",
    "records": 1,
    "links": []
@@ -1228,7 +1449,9 @@
    "food_en": "Caffeine",
    "stratum": "E1c",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": "Minor",
    "records": 20,
    "links": [
@@ -1243,7 +1466,9 @@
    "food_en": "PROTEIN",
    "stratum": "E0",
    "control": false,
+   "level_direto": 0,
    "level": 0,
+   "inferido": null,
    "curated_label": null,
    "records": 12,
    "links": [
@@ -1258,7 +1483,9 @@
    "food_en": "Carbohydrate",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": null,
    "records": 7,
    "links": [
@@ -1273,7 +1500,9 @@
    "food_en": "EGG",
    "stratum": "E0",
    "control": false,
+   "level_direto": 0,
    "level": 0,
+   "inferido": null,
    "curated_label": null,
    "records": 1,
    "links": [
@@ -1286,7 +1515,9 @@
    "food_en": "Caffeine",
    "stratum": "E1t",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 18,
    "links": [
@@ -1301,7 +1532,9 @@
    "food_en": "Grapefruit",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": null,
    "records": 12,
    "links": []
@@ -1312,7 +1545,9 @@
    "food_en": "Levodopa",
    "stratum": "E1c",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": "Moderate · GENERALLY AVOID",
    "records": 2,
    "links": [
@@ -1325,7 +1560,9 @@
    "food_en": "Beer",
    "stratum": "E1c",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": "Moderate · MONITOR",
    "records": 1,
    "links": []
@@ -1336,7 +1573,9 @@
    "food_en": "TEA",
    "stratum": "E0",
    "control": false,
+   "level_direto": 0,
    "level": 0,
+   "inferido": null,
    "curated_label": null,
    "records": 2,
    "links": [
@@ -1349,7 +1588,9 @@
    "food_en": "PROTEIN",
    "stratum": "E0",
    "control": false,
+   "level_direto": 0,
    "level": 0,
+   "inferido": null,
    "curated_label": null,
    "records": 15,
    "links": [
@@ -1364,7 +1605,9 @@
    "food_en": "Ginkgo",
    "stratum": "E1t",
    "control": true,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 6,
    "links": [
@@ -1379,7 +1622,9 @@
    "food_en": "Genistein",
    "stratum": "E1c",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": "Moderate · GENERALLY AVOID",
    "records": 20,
    "links": [
@@ -1394,7 +1639,9 @@
    "food_en": "FISH",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": null,
    "records": 25,
    "links": [
@@ -1409,7 +1656,9 @@
    "food_en": "oranges",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": "Major · GENERALLY AVOID",
    "records": 1,
    "links": []
@@ -1420,7 +1669,9 @@
    "food_en": "CALCIUM",
    "stratum": "E0",
    "control": false,
+   "level_direto": 0,
    "level": 0,
+   "inferido": null,
    "curated_label": null,
    "records": 1,
    "links": [
@@ -1433,7 +1684,9 @@
    "food_en": "SALT",
    "stratum": "E1t",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 7,
    "links": [
@@ -1448,7 +1701,9 @@
    "food_en": "Cranberry Juice",
    "stratum": "CTRL",
    "control": true,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 9,
    "links": [
@@ -1463,7 +1718,9 @@
    "food_en": "niacin",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": "Major · ADJUST DOSE",
    "records": 1,
    "links": []
@@ -1474,7 +1731,9 @@
    "food_en": "Grapefruit Juice",
    "stratum": "CTRL",
    "control": true,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 11,
    "links": [
@@ -1489,7 +1748,9 @@
    "food_en": "Vitamin K",
    "stratum": "CTRL",
    "control": true,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 9,
    "links": [
@@ -1504,7 +1765,9 @@
    "food_en": "IRON",
    "stratum": "E1c",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": "Moderate · ADJUST DOSING INTERVAL",
    "records": 7,
    "links": [
@@ -1517,7 +1780,9 @@
    "food_en": "Alcohol",
    "stratum": "E0",
    "control": false,
-   "level": 0,
+   "level_direto": 0,
+   "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 1,
    "links": [
@@ -1530,7 +1795,9 @@
    "food_en": "CALCIUM",
    "stratum": "CTRL",
    "control": true,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 5,
    "links": [
@@ -1545,7 +1812,9 @@
    "food_en": "Caffeine",
    "stratum": "CTRL",
    "control": true,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 130,
    "links": [
@@ -1560,7 +1829,9 @@
    "food_en": "ORANGE",
    "stratum": "E1c",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": "Moderate · ADJUST DOSING INTERVAL",
    "records": 1,
    "links": []
@@ -1571,7 +1842,9 @@
    "food_en": "Grapefruit",
    "stratum": "E1c",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": "Moderate · GENERALLY AVOID",
    "records": 1,
    "links": []
@@ -1582,7 +1855,9 @@
    "food_en": "PROTEIN",
    "stratum": "E0",
    "control": false,
+   "level_direto": 0,
    "level": 0,
+   "inferido": null,
    "curated_label": null,
    "records": 3,
    "links": [
@@ -1596,7 +1871,9 @@
    "food_en": "Fish Oil",
    "stratum": "E0",
    "control": false,
+   "level_direto": 0,
    "level": 0,
+   "inferido": null,
    "curated_label": null,
    "records": 4,
    "links": [
@@ -1611,7 +1888,9 @@
    "food_en": "Ginger",
    "stratum": "E1t",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 1,
    "links": [
@@ -1624,7 +1903,9 @@
    "food_en": "MILK",
    "stratum": "E0",
    "control": false,
+   "level_direto": 0,
    "level": 0,
+   "inferido": null,
    "curated_label": null,
    "records": 1,
    "links": [
@@ -1637,7 +1918,9 @@
    "food_en": "Potassium",
    "stratum": "CTRL",
    "control": true,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 31,
    "links": [
@@ -1652,7 +1935,9 @@
    "food_en": "Grapefruit",
    "stratum": "E2",
    "control": false,
+   "level_direto": 2,
    "level": 2,
+   "inferido": null,
    "curated_label": "Major · GENERALLY AVOID",
    "records": 2,
    "links": []
@@ -1663,7 +1948,9 @@
    "food_en": "Grapefruit",
    "stratum": "E1c",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": "Moderate · GENERALLY AVOID",
    "records": 6,
    "links": [
@@ -1676,7 +1963,9 @@
    "food_en": "PROTEIN",
    "stratum": "E0",
    "control": false,
+   "level_direto": 0,
    "level": 0,
+   "inferido": null,
    "curated_label": null,
    "records": 13,
    "links": [
@@ -1691,7 +1980,9 @@
    "food_en": "Coffee",
    "stratum": "E1t",
    "control": false,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 3,
    "links": [
@@ -1704,7 +1995,14 @@
    "food_en": "MILK",
    "stratum": "CTRL",
    "control": true,
-   "level": 0,
+   "level_direto": 0,
+   "level": 1,
+   "inferido": {
+    "type": "classe",
+    "via": "Tetracyclines",
+    "via_original": "Tetracyclines",
+    "level": 1
+   },
    "curated_label": null,
    "records": 4,
    "links": [
@@ -1719,7 +2017,9 @@
    "food_en": "Apple Juice",
    "stratum": "CTRL",
    "control": true,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 6,
    "links": [
@@ -1734,7 +2034,9 @@
    "food_en": "Garlic",
    "stratum": "CTRL",
    "control": true,
+   "level_direto": 1,
    "level": 1,
+   "inferido": null,
    "curated_label": null,
    "records": 5,
    "links": [
@@ -1749,7 +2051,9 @@
    "food_en": "CURCUMIN",
    "stratum": "E0",
    "control": false,
+   "level_direto": 0,
    "level": 0,
+   "inferido": null,
    "curated_label": null,
    "records": 1,
    "links": [
@@ -1762,7 +2066,14 @@
    "food_en": "Tyramine",
    "stratum": "CTRL",
    "control": true,
-   "level": null,
+   "level_direto": null,
+   "level": 1,
+   "inferido": {
+    "type": "classe",
+    "via": "Monoamine oxidase inhibitors",
+    "via_original": "Monoamine oxidase inhibitors",
+    "level": 1
+   },
    "curated_label": null,
    "records": 0,
    "links": []

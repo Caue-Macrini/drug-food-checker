@@ -81,3 +81,5 @@ h1,h2,h3{letter-spacing:-.025em}h1{font-size:30px}p{line-height:1.65}
 .attention-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:10px}
 @media (max-width:900px){.mydrugs-grid{grid-template-columns:1fr}.add-row{flex-direction:column;align-items:stretch}.add-row .button{height:auto}.attention-list{grid-template-columns:1fr}}
 .show-all{margin-top:12px}
+.inferred-note{display:flex;gap:10px;align-items:flex-start;margin:12px 0;padding:12px 14px;border:1px dashed #b98a2e;border-radius:12px;background:#fffaf0;color:#5b4410;font-size:13.5px;line-height:1.5}
+.inferred-note svg{flex:none;margin-top:2px}

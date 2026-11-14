@@ -95,9 +95,18 @@ def resolve(kind, term):
     hits = store.search(kind, term)
     return (store.entity_id(hits[0]['id'], kind), hits[0]['original']) if hits else (None, term)
 
-def item(d_name, f_name, row, stratum, control):
+def app_answer(d, f):
+    """What the application shows for the pair (synonyms pooled, class/component inference), without profile."""
+    if d is None or f is None: return None, None
+    r = store.evidence(f'fd:d:{d}', f'fd:f:{f}', limit=1)
+    return (r['risk'] if r['found'] else None), r.get('inferred')
+
+def item(d_name, f_name, row, stratum, control, d=None, f=None):
+    d, f = (row[0], row[1]) if row is not None else (d, f)
+    level_app, inferred = app_answer(d, f)
     return {'drug_en': d_name, 'food_en': f_name, 'stratum': stratum, 'control': control,
-            'level': None if row is None else row[2], 'curated_label': None if row is None else (row[4] or None),
+            'level_direto': None if row is None else row[2], 'level': level_app, 'inferido': inferred,
+            'curated_label': None if row is None else (row[4] or None),
             'records': 0 if row is None else row[5],
             'links': [] if row is None else links(row[0], row[1])}
 
@@ -117,7 +126,7 @@ for dn, fn in CONTROLS:
             if it['drug_en'] == d_name and it['food_en'] == f_name: it['control'] = True
         continue
     seen.add((d, f))
-    chosen.append(item(d_name, f_name, pair_row.get((d, f)), 'CTRL', True))
+    chosen.append(item(d_name, f_name, pair_row.get((d, f)), 'CTRL', True, d, f))
     ctrl_n += 1
 
 rng.shuffle(chosen)
