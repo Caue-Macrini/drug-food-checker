@@ -1,0 +1,23 @@
+import { chromium } from '../frontend/node_modules/@playwright/test/index.mjs';
+import { fileURLToPath } from 'node:url';
+const base = process.argv[2] || 'https://drugfood.tail7a6e28.ts.net';
+let browser; try { browser = await chromium.launch(); } catch { browser = await chromium.launch({ channel: 'chrome' }); }
+const page = await browser.newPage({ viewport: { width: 1280, height: 860 }, deviceScaleFactor: 2 });
+await page.goto(base, { waitUntil: 'networkidle' });
+await page.getByRole('button', { name: /Entrar como visitante/i }).click();
+await page.getByRole('button', { name: 'Consultar interação' }).waitFor();
+await page.getByRole('button', { name: 'Consultar interação' }).click();
+await page.locator('#drugs').fill('marev');
+await page.locator('#drugs-options [role=option]').first().waitFor();
+await page.waitForTimeout(500);
+console.log('sugestoes:', (await page.locator('#drugs-options').innerText()).replace(/\n+/g, ' | ').slice(0, 300));
+await page.locator('.autocomplete').first().screenshot({ path: fileURLToPath(new URL('revisao-2026-11-02/busca-marca.png', import.meta.url)) }).catch(()=>{});
+await page.screenshot({ path: fileURLToPath(new URL('revisao-2026-11-02/busca-marca-tela.png', import.meta.url)) });
+await page.locator('#drugs-options [role=option]').first().click();
+await page.locator('#foods').fill('vitamina k');
+const vk = page.locator('#foods-options [role=option]', { hasText: 'Vitamina K' }).first();
+await vk.waitFor(); await vk.click();
+await page.getByRole('button', { name: /Consultar base/i }).click();
+await page.locator('.verdict').waitFor();
+console.log('resultado:', (await page.locator('.verdict').innerText()).replace(/\n+/g, ' | ').slice(0, 200));
+await browser.close();

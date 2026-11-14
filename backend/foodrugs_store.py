@@ -28,6 +28,10 @@ def entity_id(value,kind):
     if not value.startswith(prefix) or not value[len(prefix):].isdigit():raise ValueError('Identificador FooDrugs inválido')
     return int(value[len(prefix):])
 
+def brand_aliases(c):
+    """True when the CMED brand-name aliases (cmed_marcas.py aplicar) are installed."""
+    return any(r[1]=='source' for r in c.execute('PRAGMA table_info(_aliases)'))
+
 def search(kind,term):
     table='_drugs' if kind=='d' else '_foods';q=norm(term)
     hide,hp=TF.sql(kind,'e.norm')
@@ -39,11 +43,26 @@ def search(kind,term):
             if len(rows)<12:
                 extra=c.execute(f'''SELECT * FROM {table} e WHERE norm>=? AND norm<?{hide}
                     ORDER BY occurrences DESC LIMIT 24''',(q,q+'\uffff',*hp)).fetchall()
-                known={r['id'] for r in rows};rows=list(rows)+[r for r in extra if r['id'] not in known]
+                if len(q)>=3:
+                    # Prefix match on Portuguese labels and brand names, so "mare" already suggests Marevan.
+                    extra=list(extra)+c.execute(f'''SELECT * FROM {table} e WHERE e.id IN (SELECT entity_id FROM _aliases
+                        WHERE kind=? AND term>=? AND term<?){hide} ORDER BY occurrences DESC LIMIT 12''',(kind,q,q+'\uffff',*hp)).fetchall()
+                known={r['id'] for r in rows};rows=list(rows)
+                for r in sorted(extra,key=lambda r:-r['occurrences']):
+                    if r['id'] not in known:known.add(r['id']);rows.append(r)
             if not rows:
                 # Parameterized substring fallback; original entity terms are never rewritten.
                 rows=c.execute(f'SELECT * FROM {table} e WHERE instr(norm,?)>0{hide} ORDER BY occurrences DESC LIMIT 12',(q,*hp)).fetchall()
-        return [{'id':f'fd:{kind}:{r["id"]}','name':N.display(r['name']),'original':r['name'],'score':100 if r['norm']==q else 90} for r in rows[:12]]
+        rows=rows[:12];via={}
+        if q and kind=='d' and rows and brand_aliases(c):
+            ids=[r['id'] for r in rows]
+            for r in c.execute(f'''SELECT entity_id,label FROM _aliases WHERE kind='d' AND source='cmed' AND term>=? AND term<?
+                AND entity_id IN ({','.join('?'*len(ids))}) ORDER BY length(term)''',(q,q+'\uffff',*ids)):
+                via.setdefault(r['entity_id'],r['label'])
+            # Only explain the match when the user did not type the substance itself.
+            via={i:v for i,v in via.items() if not any(norm(x).startswith(q) for r in rows if r['id']==i for x in (r['name'],N.display(r['name'])))}
+        return [{'id':f'fd:{kind}:{r["id"]}','name':N.display(r['name']),'original':r['name'],'score':100 if r['norm']==q else 90,
+                 **({'via':via[r['id']]} if r['id'] in via else {})} for r in rows]
 
 def foods(c,drug_id,offset=0,limit=12):
     level='r.level' if has_rules(c) else 'NULL'
