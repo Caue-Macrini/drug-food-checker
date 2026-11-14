@@ -8,3 +8,7 @@ Scripts usados na avaliação de 11/10/2026 (resultado em `data/avaliacao-cega-2
 4. `exportar.py PASTA` — grava itens, rótulos e métricas em `data/avaliacao-cega-2026-10-11.json`.
 
 Execute a partir de `backend/`, por exemplo: `../.venv/Scripts/python.exe avaliacao/pontuar.py C:/caminho/da/pasta`. Os scripts importam `risk_rules` e `foodrugs_store`; rode-os com `backend/` no caminho de importação.
+
+## Avaliação por farmacêuticos (padrão-ouro humano)
+
+Kit para substituir os juízes de modelo por dois farmacêuticos e um adjudicador: `kit_amostra.py`, `kit_planilhas.py` e `kit_concordancia.py`. Protocolo completo em `LEIAME-FARMACEUTICOS.md`.
