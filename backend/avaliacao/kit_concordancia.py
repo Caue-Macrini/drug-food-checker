@@ -56,8 +56,9 @@ def code(answer):
 
 def answers(ev):
     rows = read_sheet(KIT / f'avaliador_{ev}.xlsx')
+    note = next((h for h in (rows[0] if rows else {}) if h.startswith(('Comentário', 'Trecho'))), None)
     return {r['ID']: {'classe': code(r['Classificação']), 'confianca': r['Confiança'], 'fonte': r['Fonte principal'],
-                      'comentario': r['Comentário (mecanismo, condição, dose)']} for r in rows}
+                      'comentario': r.get(note, '') if note else ''} for r in rows}
 
 def kappa(pairs, cats, weight=None):
     """Cohen's kappa; weight in (None, 'linear', 'quadratic') for ordinal categories."""
@@ -184,7 +185,7 @@ json.dump(report, open(KIT / 'relatorio_avaliacao.json', 'w', encoding='utf-8'),
 def pct(v): return '—' if v is None else f'{100 * v:.1f}%'
 def ci(v): return '' if not v else f' (IC95% {100 * v[0]:.1f}–{100 * v[1]:.1f}%)'
 u, s, c = metrics['universo_ponderado'], metrics['amostra_aleatoria_nao_ponderada'], metrics['controles_da_literatura']
-md = [f'# Relatório da avaliação por farmacêuticos', '',
+md = [f'# Relatório da avaliação ({KIT.name})', '',
       f"Amostra: {len(ids)} pares ({', '.join(f'{k} {v}' for k, v in meta['estratos_amostra'].items())}). "
       f"Universo avaliado: {meta['universo_realista']} pares.", '',
       '## Concordância entre avaliadores', '',
@@ -198,10 +199,10 @@ md = [f'# Relatório da avaliação por farmacêuticos', '',
       f"| Amostra aleatória | {pct(s['sensibilidade'])}{ci(s.get('ic95', {}).get('sensibilidade'))} | {pct(s['especificidade'])}{ci(s.get('ic95', {}).get('especificidade'))} | {pct(s['vpp'])} | {pct(s['vpn'])} | {pct(s['acuracia'])} |",
       f"| Universo (ponderado) | {pct(u['sensibilidade'])} | {pct(u['especificidade'])} | {pct(u['vpp'])} | {pct(u['vpn'])} | {pct(u['acuracia'])} |",
       f"| Controles da literatura | {pct(c['sensibilidade'])}{ci(c.get('ic95', {}).get('sensibilidade'))} | — | — | — | — |", '',
-      '## Matriz sistema × padrão-ouro', '', '| Sistema \\ Farmacêuticos | 0 | 1 | 2 |', '|---|---|---|---|',
+      '## Matriz sistema × padrão de referência', '', '| Sistema \\ Referência | 0 | 1 | 2 |', '|---|---|---|---|',
       *[f'| {k} | ' + ' | '.join(str(matrix[k][g]) for g in VALID) + ' |' for k in VALID], '',
       f"Kappa quadrático sistema × padrão-ouro: {metrics['kappa_quadratico_sistema_x_padrao_ouro']}", '',
-      '## Falsos negativos (sistema 0 ou sem registro; farmacêuticos ≥ 1)', '',
+      '## Falsos negativos (sistema 0 ou sem registro; padrão de referência ≥ 1)', '',
       *[f"- {x['id']} {x['par']} (sistema {x['sistema'] if x['sistema'] is not None else 'sem registro'}, padrão-ouro {x['padrao_ouro']})" for x in metrics['falsos_negativos']]]
 if pending: md.insert(2, f'> Atenção: {len(pending)} pares ainda sem padrão-ouro. Preencha a coluna "decisao" de adjudicacao.csv e rode de novo.\n')
 open(KIT / 'relatorio_avaliacao.md', 'w', encoding='utf-8').write('\n'.join(md) + '\n')

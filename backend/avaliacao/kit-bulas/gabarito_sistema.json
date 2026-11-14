@@ -1,0 +1,2082 @@
+{
+ "meta": {
+  "gerado_em": "2026-11-14",
+  "semente": 20261114,
+  "base": "FooDrugs 4.0.0",
+  "universo_realista": 961,
+  "estratos_universo": {
+   "E2": 69,
+   "E1c": 92,
+   "E1t": 267,
+   "E0": 533
+  },
+  "estratos_amostra": {
+   "E2": 30,
+   "E1c": 25,
+   "E1t": 25,
+   "E0": 30,
+   "CTRL": 23
+  },
+  "controles_fora_da_amostra_aleatoria": 23,
+  "total": 133
+ },
+ "itens": [
+  {
+   "id": "P001",
+   "drug_en": "Entrectinib",
+   "food_en": "Grapefruit",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": "Major · GENERALLY AVOID",
+   "records": 2,
+   "links": []
+  },
+  {
+   "id": "P002",
+   "drug_en": "Pimozide",
+   "food_en": "Grapefruit",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": "Major · GENERALLY AVOID",
+   "records": 2,
+   "links": []
+  },
+  {
+   "id": "P003",
+   "drug_en": "nitroimidazole",
+   "food_en": "propylene glycol",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": null,
+   "records": 2,
+   "links": []
+  },
+  {
+   "id": "P004",
+   "drug_en": "Warfarin",
+   "food_en": "Alcohol",
+   "stratum": "E1t",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 3,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/20846657/",
+    "https://pubmed.ncbi.nlm.nih.gov/24025228/"
+   ]
+  },
+  {
+   "id": "P005",
+   "drug_en": "Alendronate",
+   "food_en": "Coffee",
+   "stratum": "CTRL",
+   "control": true,
+   "level_direto": null,
+   "level": null,
+   "inferido": null,
+   "curated_label": null,
+   "records": 0,
+   "links": []
+  },
+  {
+   "id": "P006",
+   "drug_en": "larotrectinib",
+   "food_en": "Grapefruit",
+   "stratum": "E1c",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": "Moderate · GENERALLY AVOID",
+   "records": 1,
+   "links": []
+  },
+  {
+   "id": "P007",
+   "drug_en": "Caffeine",
+   "food_en": "Grapefruit Juice",
+   "stratum": "E1t",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 1,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/16620293/"
+   ]
+  },
+  {
+   "id": "P008",
+   "drug_en": "Paracetamol",
+   "food_en": "SALT",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 0,
+   "inferido": null,
+   "curated_label": null,
+   "records": 2,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/30082254/",
+    "https://pubmed.ncbi.nlm.nih.gov/2680435/"
+   ]
+  },
+  {
+   "id": "P009",
+   "drug_en": "Ciprofloxacin",
+   "food_en": "MILK",
+   "stratum": "CTRL",
+   "control": true,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 4,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/30799115/",
+    "https://pubmed.ncbi.nlm.nih.gov/1934862/"
+   ]
+  },
+  {
+   "id": "P010",
+   "drug_en": "Simvastatin",
+   "food_en": "Omega-3 Fatty Acids",
+   "stratum": "E1t",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 2,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/11829698/",
+    "https://pubmed.ncbi.nlm.nih.gov/20877395/"
+   ]
+  },
+  {
+   "id": "P011",
+   "drug_en": "Paracetamol",
+   "food_en": "MILK",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 0,
+   "inferido": null,
+   "curated_label": null,
+   "records": 1,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/31229285/"
+   ]
+  },
+  {
+   "id": "P012",
+   "drug_en": "Dasatinib",
+   "food_en": "Grapefruit",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": "Major · GENERALLY AVOID",
+   "records": 3,
+   "links": []
+  },
+  {
+   "id": "P013",
+   "drug_en": "Metformin",
+   "food_en": "Alcohol",
+   "stratum": "E1t",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 3,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/35386022/",
+    "https://pubmed.ncbi.nlm.nih.gov/30266098/",
+    "https://pubmed.ncbi.nlm.nih.gov/19640960/"
+   ]
+  },
+  {
+   "id": "P014",
+   "drug_en": "Levothyroxine",
+   "food_en": "SOY",
+   "stratum": "CTRL",
+   "control": true,
+   "level_direto": null,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 0,
+   "links": []
+  },
+  {
+   "id": "P015",
+   "drug_en": "Simvastatin",
+   "food_en": "Grapefruit",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": "Major · GENERALLY AVOID",
+   "records": 4,
+   "links": []
+  },
+  {
+   "id": "P016",
+   "drug_en": "Felodipine",
+   "food_en": "Grapefruit Juice",
+   "stratum": "CTRL",
+   "control": true,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 27,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/9757148/",
+    "https://pubmed.ncbi.nlm.nih.gov/10945313/",
+    "https://pubmed.ncbi.nlm.nih.gov/1577050/"
+   ]
+  },
+  {
+   "id": "P017",
+   "drug_en": "Bictegravir",
+   "food_en": "IRON",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": "Major · ADJUST DOSING INTERVAL",
+   "records": 2,
+   "links": []
+  },
+  {
+   "id": "P018",
+   "drug_en": "Simvastatin",
+   "food_en": "Green Tea",
+   "stratum": "E1t",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 3,
+   "links": []
+  },
+  {
+   "id": "P019",
+   "drug_en": "methoxsalen",
+   "food_en": "parsnips",
+   "stratum": "E1c",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": "Moderate · GENERALLY AVOID",
+   "records": 1,
+   "links": []
+  },
+  {
+   "id": "P020",
+   "drug_en": "Potassium",
+   "food_en": "NACL",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": null,
+   "records": 47,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/34263973/",
+    "https://pubmed.ncbi.nlm.nih.gov/1476439/",
+    "https://pubmed.ncbi.nlm.nih.gov/27639963/"
+   ]
+  },
+  {
+   "id": "P021",
+   "drug_en": "Fluoxetine",
+   "food_en": "Caffeine",
+   "stratum": "E1t",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 5,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/33242109/",
+    "https://pubmed.ncbi.nlm.nih.gov/32877707/",
+    "https://pubmed.ncbi.nlm.nih.gov/23131584/"
+   ]
+  },
+  {
+   "id": "P022",
+   "drug_en": "Nitroglycerin",
+   "food_en": "Ethyl alcohol",
+   "stratum": "E1c",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": "Minor",
+   "records": 1,
+   "links": []
+  },
+  {
+   "id": "P023",
+   "drug_en": "Felodipine",
+   "food_en": "Grapefruit",
+   "stratum": "E1t",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 5,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/11103749/",
+    "https://pubmed.ncbi.nlm.nih.gov/22530299/",
+    "https://pubmed.ncbi.nlm.nih.gov/23696038/"
+   ]
+  },
+  {
+   "id": "P024",
+   "drug_en": "Rosuvastatin",
+   "food_en": "TEA",
+   "stratum": "E1t",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 3,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/31400238/"
+   ]
+  },
+  {
+   "id": "P025",
+   "drug_en": "Phenelzine",
+   "food_en": "Cheese",
+   "stratum": "CTRL",
+   "control": true,
+   "level_direto": null,
+   "level": 1,
+   "inferido": {
+    "type": "componente",
+    "via": "Tiramina",
+    "via_original": "Tyramine",
+    "level": 1
+   },
+   "curated_label": null,
+   "records": 0,
+   "links": []
+  },
+  {
+   "id": "P026",
+   "drug_en": "Warfarin",
+   "food_en": "Spinach",
+   "stratum": "CTRL",
+   "control": true,
+   "level_direto": null,
+   "level": 1,
+   "inferido": {
+    "type": "componente",
+    "via": "Vitamina K",
+    "via_original": "Vitamin K",
+    "level": 1
+   },
+   "curated_label": null,
+   "records": 0,
+   "links": []
+  },
+  {
+   "id": "P027",
+   "drug_en": "nilotinib",
+   "food_en": "Grapefruit",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": "Major · GENERALLY AVOID",
+   "records": 4,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/19948946/"
+   ]
+  },
+  {
+   "id": "P028",
+   "drug_en": "Atorvastatin",
+   "food_en": "CALCIUM",
+   "stratum": "E1t",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 11,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/21774822/",
+    "https://pubmed.ncbi.nlm.nih.gov/30730760/",
+    "https://pubmed.ncbi.nlm.nih.gov/11320358/"
+   ]
+  },
+  {
+   "id": "P029",
+   "drug_en": "Clarithromycin",
+   "food_en": "Grapefruit",
+   "stratum": "E1c",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": "Minor",
+   "records": 1,
+   "links": []
+  },
+  {
+   "id": "P030",
+   "drug_en": "Theophylline",
+   "food_en": "Garlic",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 0,
+   "inferido": null,
+   "curated_label": null,
+   "records": 1,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/23554727/"
+   ]
+  },
+  {
+   "id": "P031",
+   "drug_en": "Quetiapine",
+   "food_en": "Alcohol",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 0,
+   "inferido": null,
+   "curated_label": null,
+   "records": 8,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/31087085/",
+    "https://pubmed.ncbi.nlm.nih.gov/21487653/",
+    "https://pubmed.ncbi.nlm.nih.gov/18425995/"
+   ]
+  },
+  {
+   "id": "P032",
+   "drug_en": "COrticosteroid",
+   "food_en": "Steroid",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": null,
+   "records": 20,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/23813218/",
+    "https://pubmed.ncbi.nlm.nih.gov/19817753/",
+    "https://pubmed.ncbi.nlm.nih.gov/36084710/"
+   ]
+  },
+  {
+   "id": "P033",
+   "drug_en": "Loratadine",
+   "food_en": "Grapefruit",
+   "stratum": "E1c",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": "Minor",
+   "records": 1,
+   "links": []
+  },
+  {
+   "id": "P034",
+   "drug_en": "DHA-supplement",
+   "food_en": "Omega-3 Fatty Acids",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": null,
+   "records": 2,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/22669700/",
+    "https://pubmed.ncbi.nlm.nih.gov/22692838/"
+   ]
+  },
+  {
+   "id": "P035",
+   "drug_en": "Levothyroxine",
+   "food_en": "Coffee",
+   "stratum": "CTRL",
+   "control": true,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 3,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/24123095/",
+    "https://pubmed.ncbi.nlm.nih.gov/19942153/",
+    "https://pubmed.ncbi.nlm.nih.gov/24610609/"
+   ]
+  },
+  {
+   "id": "P036",
+   "drug_en": "Lithium",
+   "food_en": "Apple Juice",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 0,
+   "inferido": null,
+   "curated_label": null,
+   "records": 3,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/33505823/"
+   ]
+  },
+  {
+   "id": "P037",
+   "drug_en": "Atorvastatin",
+   "food_en": "Eggs",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 0,
+   "inferido": null,
+   "curated_label": null,
+   "records": 2,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/10615252/"
+   ]
+  },
+  {
+   "id": "P038",
+   "drug_en": "Lithium",
+   "food_en": "SODIUM",
+   "stratum": "CTRL",
+   "control": true,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 78,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/938947/",
+    "https://pubmed.ncbi.nlm.nih.gov/7334464/",
+    "https://pubmed.ncbi.nlm.nih.gov/15355879/"
+   ]
+  },
+  {
+   "id": "P039",
+   "drug_en": "Lonafarnib",
+   "food_en": "Grapefruit",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": "Major · GENERALLY AVOID",
+   "records": 1,
+   "links": []
+  },
+  {
+   "id": "P040",
+   "drug_en": "naloxegol",
+   "food_en": "Grapefruit",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": "Major · GENERALLY AVOID",
+   "records": 2,
+   "links": []
+  },
+  {
+   "id": "P041",
+   "drug_en": "Linezolid",
+   "food_en": "Tyramine",
+   "stratum": "CTRL",
+   "control": true,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 6,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/20581320/",
+    "https://pubmed.ncbi.nlm.nih.gov/11336106/",
+    "https://pubmed.ncbi.nlm.nih.gov/15521893/"
+   ]
+  },
+  {
+   "id": "P042",
+   "drug_en": "Ivacaftor",
+   "food_en": "Grapefruit",
+   "stratum": "E1c",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": "Moderate · GENERALLY AVOID",
+   "records": 1,
+   "links": []
+  },
+  {
+   "id": "P043",
+   "drug_en": "Nifedipine",
+   "food_en": "Ethanol",
+   "stratum": "E1t",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 3,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/9436865/",
+    "https://pubmed.ncbi.nlm.nih.gov/34930830/",
+    "https://pubmed.ncbi.nlm.nih.gov/1608903/"
+   ]
+  },
+  {
+   "id": "P044",
+   "drug_en": "DIGOXIN",
+   "food_en": "Green Tea",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 0,
+   "inferido": null,
+   "curated_label": null,
+   "records": 1,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/26426900/"
+   ]
+  },
+  {
+   "id": "P045",
+   "drug_en": "Erythropoietin",
+   "food_en": "IRON",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": null,
+   "records": 139,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/34324880/",
+    "https://pubmed.ncbi.nlm.nih.gov/9266623/",
+    "https://pubmed.ncbi.nlm.nih.gov/16979010/"
+   ]
+  },
+  {
+   "id": "P046",
+   "drug_en": "Sildenafil",
+   "food_en": "Caffeine",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 0,
+   "inferido": null,
+   "curated_label": null,
+   "records": 1,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/31679888/"
+   ]
+  },
+  {
+   "id": "P047",
+   "drug_en": "Acetaminophen",
+   "food_en": "Garlic",
+   "stratum": "E1t",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 1,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/15916450/"
+   ]
+  },
+  {
+   "id": "P048",
+   "drug_en": "Roflumilast",
+   "food_en": "N-oxide",
+   "stratum": "E1c",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": "Minor",
+   "records": 1,
+   "links": []
+  },
+  {
+   "id": "P049",
+   "drug_en": "Ipecac",
+   "food_en": "Hydrocarbon",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": null,
+   "records": 2,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/15214617/",
+    "https://pubmed.ncbi.nlm.nih.gov/9482425/"
+   ]
+  },
+  {
+   "id": "P050",
+   "drug_en": "Cobimetinib",
+   "food_en": "Grapefruit",
+   "stratum": "E1c",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": "Moderate · MONITOR",
+   "records": 1,
+   "links": []
+  },
+  {
+   "id": "P051",
+   "drug_en": "Deflazacort",
+   "food_en": "Grapefruit",
+   "stratum": "E1c",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": "Moderate · GENERALLY AVOID",
+   "records": 1,
+   "links": []
+  },
+  {
+   "id": "P052",
+   "drug_en": "Paclitaxel",
+   "food_en": "Grapefruit",
+   "stratum": "E1c",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": "Moderate · MONITOR",
+   "records": 2,
+   "links": []
+  },
+  {
+   "id": "P053",
+   "drug_en": "Isoniazid",
+   "food_en": "Alcohol",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 0,
+   "inferido": null,
+   "curated_label": null,
+   "records": 2,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/15581208/"
+   ]
+  },
+  {
+   "id": "P054",
+   "drug_en": "Phenelzine",
+   "food_en": "Tyramine",
+   "stratum": "CTRL",
+   "control": true,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 8,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/2920501/",
+    "https://pubmed.ncbi.nlm.nih.gov/9829163/",
+    "https://pubmed.ncbi.nlm.nih.gov/2677242/"
+   ]
+  },
+  {
+   "id": "P055",
+   "drug_en": "Crizotinib",
+   "food_en": "Grapefruit",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": "Major · GENERALLY AVOID",
+   "records": 2,
+   "links": []
+  },
+  {
+   "id": "P056",
+   "drug_en": "Cyclosporine",
+   "food_en": "Wine",
+   "stratum": "E1t",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 2,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/11719733/"
+   ]
+  },
+  {
+   "id": "P057",
+   "drug_en": "Warfarin",
+   "food_en": "Banana",
+   "stratum": "E1t",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 2,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/26137942/"
+   ]
+  },
+  {
+   "id": "P058",
+   "drug_en": "Finerenone",
+   "food_en": "Grapefruit",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": "Major · GENERALLY AVOID",
+   "records": 3,
+   "links": []
+  },
+  {
+   "id": "P059",
+   "drug_en": "Tetracycline",
+   "food_en": "Alcohol",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 1,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/1110867/"
+   ]
+  },
+  {
+   "id": "P060",
+   "drug_en": "Flibanserin",
+   "food_en": "Alcohol",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": null,
+   "records": 8,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/31550099/",
+    "https://pubmed.ncbi.nlm.nih.gov/28608926/",
+    "https://pubmed.ncbi.nlm.nih.gov/31735618/"
+   ]
+  },
+  {
+   "id": "P061",
+   "drug_en": "Norfloxacin",
+   "food_en": "Yogurt",
+   "stratum": "E1c",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": "Moderate · ADJUST DOSING INTERVAL",
+   "records": 1,
+   "links": []
+  },
+  {
+   "id": "P062",
+   "drug_en": "Tacrolimus",
+   "food_en": "Alcohol",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 0,
+   "inferido": null,
+   "curated_label": null,
+   "records": 2,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/30358368/"
+   ]
+  },
+  {
+   "id": "P063",
+   "drug_en": "Flibanserin",
+   "food_en": "Grapefruit",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": "Major · CONTRAINDICATED",
+   "records": 5,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/31550099/"
+   ]
+  },
+  {
+   "id": "P064",
+   "drug_en": "Diclofenac",
+   "food_en": "ZINC",
+   "stratum": "E1t",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 3,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/7792314/"
+   ]
+  },
+  {
+   "id": "P065",
+   "drug_en": "Methadone",
+   "food_en": "Grapefruit",
+   "stratum": "E1c",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": "Moderate · GENERALLY AVOID",
+   "records": 4,
+   "links": []
+  },
+  {
+   "id": "P066",
+   "drug_en": "Simvastatin",
+   "food_en": "Alcohol",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 1,
+   "inferido": {
+    "type": "classe",
+    "via": "Estatinas",
+    "via_original": "Statins",
+    "level": 1
+   },
+   "curated_label": null,
+   "records": 2,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/14758716/",
+    "https://pubmed.ncbi.nlm.nih.gov/18224432/"
+   ]
+  },
+  {
+   "id": "P067",
+   "drug_en": "Sertraline",
+   "food_en": "Ethanol",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 1,
+   "inferido": {
+    "type": "classe",
+    "via": "SSRIs",
+    "via_original": "SSRIs",
+    "level": 1
+   },
+   "curated_label": null,
+   "records": 1,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/33819457/"
+   ]
+  },
+  {
+   "id": "P068",
+   "drug_en": "Midostaurin",
+   "food_en": "Grapefruit",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": "Major · GENERALLY AVOID",
+   "records": 2,
+   "links": []
+  },
+  {
+   "id": "P069",
+   "drug_en": "Simvastatin",
+   "food_en": "Grapefruit Juice",
+   "stratum": "E1t",
+   "control": true,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 16,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/26299317/",
+    "https://pubmed.ncbi.nlm.nih.gov/10503959/",
+    "https://pubmed.ncbi.nlm.nih.gov/11061578/"
+   ]
+  },
+  {
+   "id": "P070",
+   "drug_en": "Amiodarone",
+   "food_en": "Grapefruit",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": "Major · GENERALLY AVOID",
+   "records": 6,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/10759694/",
+    "https://pubmed.ncbi.nlm.nih.gov/20970282/"
+   ]
+  },
+  {
+   "id": "P071",
+   "drug_en": "Alprazolam",
+   "food_en": "SALT",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 0,
+   "inferido": null,
+   "curated_label": null,
+   "records": 1,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/20665840/"
+   ]
+  },
+  {
+   "id": "P072",
+   "drug_en": "Clozapine",
+   "food_en": "Omega-3 Fatty Acids",
+   "stratum": "E1t",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 1,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/16866765/"
+   ]
+  },
+  {
+   "id": "P073",
+   "drug_en": "l-dopa",
+   "food_en": "PROTEIN",
+   "stratum": "CTRL",
+   "control": true,
+   "level_direto": 0,
+   "level": 0,
+   "inferido": null,
+   "curated_label": null,
+   "records": 10,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/1682136/",
+    "https://pubmed.ncbi.nlm.nih.gov/4091838/",
+    "https://pubmed.ncbi.nlm.nih.gov/28698499/"
+   ]
+  },
+  {
+   "id": "P074",
+   "drug_en": "Oxalic Acid",
+   "food_en": "CALCIUM",
+   "stratum": "E1c",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": "Moderate · ADJUST DOSING INTERVAL",
+   "records": 5,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/22642068/",
+    "https://pubmed.ncbi.nlm.nih.gov/30200732/",
+    "https://pubmed.ncbi.nlm.nih.gov/30200732/"
+   ]
+  },
+  {
+   "id": "P075",
+   "drug_en": "Metformin",
+   "food_en": "EGG",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 0,
+   "inferido": null,
+   "curated_label": null,
+   "records": 2,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/36547400/"
+   ]
+  },
+  {
+   "id": "P076",
+   "drug_en": "Lithium",
+   "food_en": "Alcohol",
+   "stratum": "E1t",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 4,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/10832908/",
+    "https://pubmed.ncbi.nlm.nih.gov/322635/",
+    "https://pubmed.ncbi.nlm.nih.gov/21641663/"
+   ]
+  },
+  {
+   "id": "P077",
+   "drug_en": "Lithium",
+   "food_en": "Ethanol",
+   "stratum": "E1t",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 2,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/181193/",
+    "https://pubmed.ncbi.nlm.nih.gov/6439054/"
+   ]
+  },
+  {
+   "id": "P078",
+   "drug_en": "Doxycycline",
+   "food_en": "CALCIUM",
+   "stratum": "CTRL",
+   "control": true,
+   "level_direto": 0,
+   "level": 1,
+   "inferido": {
+    "type": "classe",
+    "via": "Tetracyclines",
+    "via_original": "Tetracyclines",
+    "level": 1
+   },
+   "curated_label": null,
+   "records": 1,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/28546078/"
+   ]
+  },
+  {
+   "id": "P079",
+   "drug_en": "Nitroglycerin",
+   "food_en": "propylene glycol",
+   "stratum": "E1c",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": "Minor",
+   "records": 1,
+   "links": []
+  },
+  {
+   "id": "P080",
+   "drug_en": "Halofantrine",
+   "food_en": "Grapefruit",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": "Major · GENERALLY AVOID",
+   "records": 3,
+   "links": []
+  },
+  {
+   "id": "P081",
+   "drug_en": "Metronidazole",
+   "food_en": "Ethanol",
+   "stratum": "E1t",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 2,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/17916057/",
+    "https://pubmed.ncbi.nlm.nih.gov/12022894/"
+   ]
+  },
+  {
+   "id": "P082",
+   "drug_en": "Tazemetostat",
+   "food_en": "Grapefruit",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": "Major · GENERALLY AVOID",
+   "records": 1,
+   "links": []
+  },
+  {
+   "id": "P083",
+   "drug_en": "Quetiapine",
+   "food_en": "PROTEIN",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 0,
+   "inferido": null,
+   "curated_label": null,
+   "records": 1,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/35615587/"
+   ]
+  },
+  {
+   "id": "P084",
+   "drug_en": "Sertraline",
+   "food_en": "Alcohol",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 1,
+   "inferido": {
+    "type": "classe",
+    "via": "SSRIs",
+    "via_original": "SSRIs",
+    "level": 1
+   },
+   "curated_label": null,
+   "records": 8,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/9571652/",
+    "https://pubmed.ncbi.nlm.nih.gov/14624185/",
+    "https://pubmed.ncbi.nlm.nih.gov/10924008/"
+   ]
+  },
+  {
+   "id": "P085",
+   "drug_en": "Quinidine",
+   "food_en": "Grapefruit",
+   "stratum": "E1c",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": "Moderate · GENERALLY AVOID",
+   "records": 1,
+   "links": []
+  },
+  {
+   "id": "P086",
+   "drug_en": "Topotecan",
+   "food_en": "Caffeine",
+   "stratum": "E1c",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": "Minor",
+   "records": 3,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/8402636/"
+   ]
+  },
+  {
+   "id": "P087",
+   "drug_en": "DIGOXIN",
+   "food_en": "SODIUM",
+   "stratum": "E1t",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 40,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/15757504/",
+    "https://pubmed.ncbi.nlm.nih.gov/6652360/",
+    "https://pubmed.ncbi.nlm.nih.gov/7426274/"
+   ]
+  },
+  {
+   "id": "P088",
+   "drug_en": "Lovastatin",
+   "food_en": "PROTEIN",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 1,
+   "inferido": {
+    "type": "classe",
+    "via": "HMG-CoA Reductase Inhibitors",
+    "via_original": "HMG-CoA Reductase Inhibitors",
+    "level": 1
+   },
+   "curated_label": null,
+   "records": 36,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/12405293/",
+    "https://pubmed.ncbi.nlm.nih.gov/12933658/",
+    "https://pubmed.ncbi.nlm.nih.gov/21903868/"
+   ]
+  },
+  {
+   "id": "P089",
+   "drug_en": "Amitriptyline",
+   "food_en": "SODIUM",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 0,
+   "inferido": null,
+   "curated_label": null,
+   "records": 9,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/9635895/",
+    "https://pubmed.ncbi.nlm.nih.gov/11718954/",
+    "https://pubmed.ncbi.nlm.nih.gov/36596558/"
+   ]
+  },
+  {
+   "id": "P090",
+   "drug_en": "selenium dioxide",
+   "food_en": "Selenium",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": null,
+   "records": 3,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/9315321/",
+    "https://pubmed.ncbi.nlm.nih.gov/9315321/",
+    "https://pubmed.ncbi.nlm.nih.gov/24272133/"
+   ]
+  },
+  {
+   "id": "P091",
+   "drug_en": "Caffeine",
+   "food_en": "Alcohol",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": null,
+   "records": 130,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/26815360/",
+    "https://pubmed.ncbi.nlm.nih.gov/31231310/",
+    "https://pubmed.ncbi.nlm.nih.gov/27419377/"
+   ]
+  },
+  {
+   "id": "P092",
+   "drug_en": "Metronidazole",
+   "food_en": "Alcohol",
+   "stratum": "CTRL",
+   "control": true,
+   "level_direto": null,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 0,
+   "links": []
+  },
+  {
+   "id": "P093",
+   "drug_en": "Dofetilide",
+   "food_en": "Grapefruit",
+   "stratum": "E1c",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": "Minor",
+   "records": 1,
+   "links": []
+  },
+  {
+   "id": "P094",
+   "drug_en": "Aspirin",
+   "food_en": "Caffeine",
+   "stratum": "E1c",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": "Minor",
+   "records": 20,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/18824931/",
+    "https://pubmed.ncbi.nlm.nih.gov/26010457/",
+    "https://pubmed.ncbi.nlm.nih.gov/23813246/"
+   ]
+  },
+  {
+   "id": "P095",
+   "drug_en": "Paracetamol",
+   "food_en": "PROTEIN",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 0,
+   "inferido": null,
+   "curated_label": null,
+   "records": 12,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/19446955/",
+    "https://pubmed.ncbi.nlm.nih.gov/20804811/",
+    "https://pubmed.ncbi.nlm.nih.gov/27089362/"
+   ]
+  },
+  {
+   "id": "P096",
+   "drug_en": "Sucrose",
+   "food_en": "Carbohydrate",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": null,
+   "records": 7,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/31631474/",
+    "https://pubmed.ncbi.nlm.nih.gov/11833048/",
+    "https://pubmed.ncbi.nlm.nih.gov/36499633/"
+   ]
+  },
+  {
+   "id": "P097",
+   "drug_en": "Rosuvastatin",
+   "food_en": "EGG",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 0,
+   "inferido": null,
+   "curated_label": null,
+   "records": 1,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/33521447/"
+   ]
+  },
+  {
+   "id": "P098",
+   "drug_en": "Carbamazepine",
+   "food_en": "Caffeine",
+   "stratum": "E1t",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 18,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/26745385/",
+    "https://pubmed.ncbi.nlm.nih.gov/30927730/",
+    "https://pubmed.ncbi.nlm.nih.gov/27327394/"
+   ]
+  },
+  {
+   "id": "P099",
+   "drug_en": "Fentanyl",
+   "food_en": "Grapefruit",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": null,
+   "records": 12,
+   "links": []
+  },
+  {
+   "id": "P100",
+   "drug_en": "Entacapone",
+   "food_en": "Levodopa",
+   "stratum": "E1c",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": "Moderate · GENERALLY AVOID",
+   "records": 2,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/18690870/"
+   ]
+  },
+  {
+   "id": "P101",
+   "drug_en": "Sulfamethoxazole-Trimethoprim",
+   "food_en": "Beer",
+   "stratum": "E1c",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": "Moderate · MONITOR",
+   "records": 1,
+   "links": []
+  },
+  {
+   "id": "P102",
+   "drug_en": "Lovastatin",
+   "food_en": "TEA",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 0,
+   "inferido": null,
+   "curated_label": null,
+   "records": 2,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/23587710/"
+   ]
+  },
+  {
+   "id": "P103",
+   "drug_en": "Doxycycline",
+   "food_en": "PROTEIN",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 0,
+   "inferido": null,
+   "curated_label": null,
+   "records": 15,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/17429196/",
+    "https://pubmed.ncbi.nlm.nih.gov/23667633/",
+    "https://pubmed.ncbi.nlm.nih.gov/31394382/"
+   ]
+  },
+  {
+   "id": "P104",
+   "drug_en": "Warfarin",
+   "food_en": "Ginkgo",
+   "stratum": "E1t",
+   "control": true,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 6,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/15801937/",
+    "https://pubmed.ncbi.nlm.nih.gov/10902065/",
+    "https://pubmed.ncbi.nlm.nih.gov/21919844/"
+   ]
+  },
+  {
+   "id": "P105",
+   "drug_en": "Tamoxifen",
+   "food_en": "Genistein",
+   "stratum": "E1c",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": "Moderate · GENERALLY AVOID",
+   "records": 20,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/28950682/",
+    "https://pubmed.ncbi.nlm.nih.gov/26841510/",
+    "https://pubmed.ncbi.nlm.nih.gov/22266527/"
+   ]
+  },
+  {
+   "id": "P106",
+   "drug_en": "Omega-3 Fatty Acids",
+   "food_en": "FISH",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": null,
+   "records": 25,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/17575985/",
+    "https://pubmed.ncbi.nlm.nih.gov/28273497/",
+    "https://pubmed.ncbi.nlm.nih.gov/25161990/"
+   ]
+  },
+  {
+   "id": "P107",
+   "drug_en": "Entrectinib",
+   "food_en": "oranges",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": "Major · GENERALLY AVOID",
+   "records": 1,
+   "links": []
+  },
+  {
+   "id": "P108",
+   "drug_en": "Tranylcypromine",
+   "food_en": "CALCIUM",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 0,
+   "inferido": null,
+   "curated_label": null,
+   "records": 1,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/6808981/"
+   ]
+  },
+  {
+   "id": "P109",
+   "drug_en": "Captopril",
+   "food_en": "SALT",
+   "stratum": "E1t",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 7,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/6266727/",
+    "https://pubmed.ncbi.nlm.nih.gov/3279725/",
+    "https://pubmed.ncbi.nlm.nih.gov/7737713/"
+   ]
+  },
+  {
+   "id": "P110",
+   "drug_en": "Warfarin",
+   "food_en": "Cranberry Juice",
+   "stratum": "CTRL",
+   "control": true,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 9,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/17392729/",
+    "https://pubmed.ncbi.nlm.nih.gov/34015833/",
+    "https://pubmed.ncbi.nlm.nih.gov/23958198/"
+   ]
+  },
+  {
+   "id": "P111",
+   "drug_en": "Simvastatin",
+   "food_en": "niacin",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": "Major · ADJUST DOSE",
+   "records": 1,
+   "links": []
+  },
+  {
+   "id": "P112",
+   "drug_en": "Nifedipine",
+   "food_en": "Grapefruit Juice",
+   "stratum": "CTRL",
+   "control": true,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 11,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/8827399/",
+    "https://pubmed.ncbi.nlm.nih.gov/8073064/",
+    "https://pubmed.ncbi.nlm.nih.gov/11991343/"
+   ]
+  },
+  {
+   "id": "P113",
+   "drug_en": "Warfarin",
+   "food_en": "Vitamin K",
+   "stratum": "CTRL",
+   "control": true,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 9,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/26346860/",
+    "https://pubmed.ncbi.nlm.nih.gov/31409123/",
+    "https://pubmed.ncbi.nlm.nih.gov/28635328/"
+   ]
+  },
+  {
+   "id": "P114",
+   "drug_en": "Cefdinir",
+   "food_en": "IRON",
+   "stratum": "E1c",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": "Moderate · ADJUST DOSING INTERVAL",
+   "records": 7,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/8222489/"
+   ]
+  },
+  {
+   "id": "P115",
+   "drug_en": "Amitriptyline",
+   "food_en": "Alcohol",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 1,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/1092511/"
+   ]
+  },
+  {
+   "id": "P116",
+   "drug_en": "Ciprofloxacin",
+   "food_en": "CALCIUM",
+   "stratum": "CTRL",
+   "control": true,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 5,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/17913970/",
+    "https://pubmed.ncbi.nlm.nih.gov/11117292/",
+    "https://pubmed.ncbi.nlm.nih.gov/12092748/"
+   ]
+  },
+  {
+   "id": "P117",
+   "drug_en": "Theophylline",
+   "food_en": "Caffeine",
+   "stratum": "CTRL",
+   "control": true,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 130,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/1507275/",
+    "https://pubmed.ncbi.nlm.nih.gov/34987426/",
+    "https://pubmed.ncbi.nlm.nih.gov/20863845/"
+   ]
+  },
+  {
+   "id": "P118",
+   "drug_en": "Norfloxacin",
+   "food_en": "ORANGE",
+   "stratum": "E1c",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": "Moderate · ADJUST DOSING INTERVAL",
+   "records": 1,
+   "links": []
+  },
+  {
+   "id": "P119",
+   "drug_en": "ivacaftor-containing",
+   "food_en": "Grapefruit",
+   "stratum": "E1c",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": "Moderate · GENERALLY AVOID",
+   "records": 1,
+   "links": []
+  },
+  {
+   "id": "P120",
+   "drug_en": "Lisinopril",
+   "food_en": "PROTEIN",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 0,
+   "inferido": null,
+   "curated_label": null,
+   "records": 3,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/35359831/",
+    "https://pubmed.ncbi.nlm.nih.gov/23020955/"
+   ]
+  },
+  {
+   "id": "P121",
+   "drug_en": "Fluoxetine",
+   "food_en": "Fish Oil",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 0,
+   "inferido": null,
+   "curated_label": null,
+   "records": 4,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/24867329/",
+    "https://pubmed.ncbi.nlm.nih.gov/27021785/",
+    "https://pubmed.ncbi.nlm.nih.gov/32734823/"
+   ]
+  },
+  {
+   "id": "P122",
+   "drug_en": "Aspirin",
+   "food_en": "Ginger",
+   "stratum": "E1t",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 1,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/12472978/"
+   ]
+  },
+  {
+   "id": "P123",
+   "drug_en": "Amlodipine",
+   "food_en": "MILK",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 0,
+   "inferido": null,
+   "curated_label": null,
+   "records": 1,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/30265578/"
+   ]
+  },
+  {
+   "id": "P124",
+   "drug_en": "Spironolactone",
+   "food_en": "Potassium",
+   "stratum": "CTRL",
+   "control": true,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 31,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/32160420/",
+    "https://pubmed.ncbi.nlm.nih.gov/17606839/",
+    "https://pubmed.ncbi.nlm.nih.gov/32452128/"
+   ]
+  },
+  {
+   "id": "P125",
+   "drug_en": "Guanfacine",
+   "food_en": "Grapefruit",
+   "stratum": "E2",
+   "control": false,
+   "level_direto": 2,
+   "level": 2,
+   "inferido": null,
+   "curated_label": "Major · GENERALLY AVOID",
+   "records": 2,
+   "links": []
+  },
+  {
+   "id": "P126",
+   "drug_en": "Tolvaptan",
+   "food_en": "Grapefruit",
+   "stratum": "E1c",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": "Moderate · GENERALLY AVOID",
+   "records": 6,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/21853290/"
+   ]
+  },
+  {
+   "id": "P127",
+   "drug_en": "Rifampicin",
+   "food_en": "PROTEIN",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 0,
+   "inferido": null,
+   "curated_label": null,
+   "records": 13,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/29695454/",
+    "https://pubmed.ncbi.nlm.nih.gov/33412187/",
+    "https://pubmed.ncbi.nlm.nih.gov/24623513/"
+   ]
+  },
+  {
+   "id": "P128",
+   "drug_en": "Felodipine",
+   "food_en": "Coffee",
+   "stratum": "E1t",
+   "control": false,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 3,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/27481881/"
+   ]
+  },
+  {
+   "id": "P129",
+   "drug_en": "Tetracycline",
+   "food_en": "MILK",
+   "stratum": "CTRL",
+   "control": true,
+   "level_direto": 0,
+   "level": 1,
+   "inferido": {
+    "type": "classe",
+    "via": "Tetracyclines",
+    "via_original": "Tetracyclines",
+    "level": 1
+   },
+   "curated_label": null,
+   "records": 4,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/33668483/",
+    "https://pubmed.ncbi.nlm.nih.gov/33465548/",
+    "https://pubmed.ncbi.nlm.nih.gov/30471904/"
+   ]
+  },
+  {
+   "id": "P130",
+   "drug_en": "Fexofenadine",
+   "food_en": "Apple Juice",
+   "stratum": "CTRL",
+   "control": true,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 6,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/27197662/",
+    "https://pubmed.ncbi.nlm.nih.gov/15570603/",
+    "https://pubmed.ncbi.nlm.nih.gov/21280267/"
+   ]
+  },
+  {
+   "id": "P131",
+   "drug_en": "Warfarin",
+   "food_en": "Garlic",
+   "stratum": "CTRL",
+   "control": true,
+   "level_direto": 1,
+   "level": 1,
+   "inferido": null,
+   "curated_label": null,
+   "records": 5,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/17918162/",
+    "https://pubmed.ncbi.nlm.nih.gov/27470545/",
+    "https://pubmed.ncbi.nlm.nih.gov/10902065/"
+   ]
+  },
+  {
+   "id": "P132",
+   "drug_en": "Isoniazid",
+   "food_en": "CURCUMIN",
+   "stratum": "E0",
+   "control": false,
+   "level_direto": 0,
+   "level": 0,
+   "inferido": null,
+   "curated_label": null,
+   "records": 1,
+   "links": [
+    "https://pubmed.ncbi.nlm.nih.gov/28713372/"
+   ]
+  },
+  {
+   "id": "P133",
+   "drug_en": "Isoniazid",
+   "food_en": "Tyramine",
+   "stratum": "CTRL",
+   "control": true,
+   "level_direto": null,
+   "level": 1,
+   "inferido": {
+    "type": "classe",
+    "via": "Monoamine oxidase inhibitors",
+    "via_original": "Monoamine oxidase inhibitors",
+    "level": 1
+   },
+   "curated_label": null,
+   "records": 0,
+   "links": []
+  }
+ ]
+}

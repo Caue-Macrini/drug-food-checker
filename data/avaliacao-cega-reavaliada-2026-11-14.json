@@ -1,0 +1,467 @@
+{
+ "data": "2026-11-14",
+ "base": "Mesmos itens e rótulos da avaliação cega de 2026-10-11, pontuados no sistema atual.",
+ "outubro": {
+  "A_sentencas": {
+   "amostra": 120,
+   "regra_interacao": 60,
+   "regra_outros": 60,
+   "precisao_interacao": 0.267,
+   "taxa_omissao_por_trecho": 0.0833
+  },
+  "B_pares_realistas": {
+   "pares": 60,
+   "vp": 26,
+   "fp": 4,
+   "fn": 11,
+   "vn": 19,
+   "precisao": 0.867,
+   "sensibilidade": 0.703,
+   "especificidade": 0.826,
+   "acuracia": 0.75
+  }
+ },
+ "atual": {
+  "A_sentencas": {
+   "amostra": 120,
+   "regra_interacao": 60,
+   "regra_outros": 60,
+   "precisao_interacao": 0.267,
+   "taxa_omissao_por_trecho": 0.0833
+  },
+  "B_pares_realistas": {
+   "pares": 60,
+   "vp": 26,
+   "fp": 4,
+   "fn": 11,
+   "vn": 19,
+   "precisao": 0.867,
+   "sensibilidade": 0.703,
+   "especificidade": 0.826,
+   "acuracia": 0.75
+  }
+ },
+ "pares_que_mudaram": [],
+ "detalhes_B": [
+  {
+   "par": "Midazolam + Ethanol",
+   "nivel_outubro": 1,
+   "nivel_atual": 1,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Rifampicin + IRON",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "sem evidência"
+  },
+  {
+   "par": "Tacrolimus + Ginger",
+   "nivel_outubro": 1,
+   "nivel_atual": 1,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Cyclosporine + Juice",
+   "nivel_outubro": 1,
+   "nivel_atual": 1,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Diazepam + WATER",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "sem evidência"
+  },
+  {
+   "par": "Losartan + Alcohol",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Triazolam + CALCIUM",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "sem evidência"
+  },
+  {
+   "par": "Disulfiram + CURCUMIN",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Midazolam + CURCUMIN",
+   "nivel_outubro": 1,
+   "nivel_atual": 1,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Felodipine + Wine",
+   "nivel_outubro": 1,
+   "nivel_atual": 1,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Fentanyl + MILK",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "sem evidência"
+  },
+  {
+   "par": "Amiodarone + Alcohol",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "sem evidência"
+  },
+  {
+   "par": "Fexofenadine + Grapefruit",
+   "nivel_outubro": 1,
+   "nivel_atual": 1,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Fentanyl + Potassium",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "sem evidência"
+  },
+  {
+   "par": "Aspirin + MILK",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "sem evidência"
+  },
+  {
+   "par": "Lovastatin + Grapefruit",
+   "nivel_outubro": 1,
+   "nivel_atual": 1,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Colchicine + CALCIUM",
+   "nivel_outubro": 1,
+   "nivel_atual": 1,
+   "inferido": null,
+   "juizes": "sem evidência"
+  },
+  {
+   "par": "Amlodipine + IRON",
+   "nivel_outubro": 1,
+   "nivel_atual": 1,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Allopurinol + Ethanol",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Duloxetine + Ethanol",
+   "nivel_outubro": 1,
+   "nivel_atual": 1,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Isoniazid + IRON",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "sem evidência"
+  },
+  {
+   "par": "Aspirin + Caffeine",
+   "nivel_outubro": 1,
+   "nivel_atual": 1,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Valproate + SODIUM",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "sem evidência"
+  },
+  {
+   "par": "Dronedarone + Grapefruit",
+   "nivel_outubro": 2,
+   "nivel_atual": 2,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Alendronate + WATER",
+   "nivel_outubro": 1,
+   "nivel_atual": 1,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Phenytoin + CALCIUM",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Methotrexate + TEA",
+   "nivel_outubro": 1,
+   "nivel_atual": 1,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Tenofovir + Potassium",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "sem evidência"
+  },
+  {
+   "par": "Verapamil + Garlic",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Valproate + Caffeine",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Diclofenac + FOOD",
+   "nivel_outubro": 1,
+   "nivel_atual": 1,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Aspirin + Ginger",
+   "nivel_outubro": 1,
+   "nivel_atual": 1,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Verapamil + TEA",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "sem evidência"
+  },
+  {
+   "par": "Linezolid + Tyramine",
+   "nivel_outubro": 1,
+   "nivel_atual": 1,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Ciprofloxacin + IRON",
+   "nivel_outubro": 1,
+   "nivel_atual": 1,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Lithium + Green Tea",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "sem evidência"
+  },
+  {
+   "par": "Methotrexate + CALCIUM",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "sem evidência"
+  },
+  {
+   "par": "Lithium + Tyramine",
+   "nivel_outubro": 1,
+   "nivel_atual": 1,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Gentamicin + SODIUM",
+   "nivel_outubro": 1,
+   "nivel_atual": 1,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Caffeine + ZINC",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "sem evidência"
+  },
+  {
+   "par": "Terbinafine + Caffeine",
+   "nivel_outubro": 1,
+   "nivel_atual": 1,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Triazolam + Ethanol",
+   "nivel_outubro": 1,
+   "nivel_atual": 1,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Triazolam + Caffeine",
+   "nivel_outubro": 1,
+   "nivel_atual": 1,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Midazolam + Orange Juice",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "sem evidência"
+  },
+  {
+   "par": "Felodipine + Potassium",
+   "nivel_outubro": 1,
+   "nivel_atual": 1,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Aspirin + SODIUM",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "sem evidência"
+  },
+  {
+   "par": "Phenelzine + Ethanol",
+   "nivel_outubro": 1,
+   "nivel_atual": 1,
+   "inferido": null,
+   "juizes": "sem evidência"
+  },
+  {
+   "par": "Disulfiram + CALCIUM",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "sem evidência"
+  },
+  {
+   "par": "Diazepam + Ethanol",
+   "nivel_outubro": 1,
+   "nivel_atual": 1,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Rifampicin + Honey",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Lovastatin + Ethanol",
+   "nivel_outubro": 1,
+   "nivel_atual": 1,
+   "inferido": null,
+   "juizes": "sem evidência"
+  },
+  {
+   "par": "Statins + ZINC",
+   "nivel_outubro": 1,
+   "nivel_atual": 1,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Amiodarone + CURCUMIN",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Gentamicin + Potassium",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Oxycodone + MILK",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "sem evidência"
+  },
+  {
+   "par": "Amiodarone + SODIUM",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "sem evidência"
+  },
+  {
+   "par": "Alendronate + CURCUMIN",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Sulfasalazine + FOOD",
+   "nivel_outubro": 0,
+   "nivel_atual": 0,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Simvastatin + Juice",
+   "nivel_outubro": 1,
+   "nivel_atual": 1,
+   "inferido": null,
+   "juizes": "interação"
+  },
+  {
+   "par": "Ketoconazole + Grapefruit Juice",
+   "nivel_outubro": 1,
+   "nivel_atual": 1,
+   "inferido": null,
+   "juizes": "sem evidência"
+  }
+ ]
+}

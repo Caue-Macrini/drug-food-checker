@@ -225,7 +225,9 @@ def evidence(drug_id,food_id,offset=0,limit=20,profile=None,personalize=False):
         D,F=(_group(c,'d',d),_group(c,'f',f)) if rules else ([d],[f])
         direct=_aggregate(c,D,F) if rules else None
         inferred=None;stats=direct
-        if rules and (direct is None or (direct['level']<1 and not direct['no_effect_docs'])):
+        # No inference for terms hidden as noise (e.g. "water" is not a food): they can only show their own records.
+        noise=norm(drug[0]) in TF.hidden('d') or norm(food[0]) in TF.hidden('f')
+        if rules and not noise and (direct is None or (direct['level']<1 and not direct['no_effect_docs'])):
             st,info=_infer(c,D,F)
             if st:stats,inferred=st,info
         if rules and direct is None and not inferred and c.execute(f'SELECT 1 FROM _pairs WHERE drug_id IN ({_q(D)}) AND food_id IN ({_q(F)}) LIMIT 1',(*D,*F)).fetchone():

@@ -1,0 +1,1355 @@
+{
+ "meta": {
+  "gerado_em": "2026-11-14",
+  "total": 133
+ },
+ "itens": [
+  {
+   "id": "P001",
+   "medicamento": "Entrectinib",
+   "alimento": "Toranja",
+   "medicamento_original": "Entrectinib",
+   "alimento_original": "Grapefruit",
+   "artigos": []
+  },
+  {
+   "id": "P002",
+   "medicamento": "Pimozide",
+   "alimento": "Toranja",
+   "medicamento_original": "Pimozide",
+   "alimento_original": "Grapefruit",
+   "artigos": []
+  },
+  {
+   "id": "P003",
+   "medicamento": "nitroimidazole",
+   "alimento": "propylene glycol",
+   "medicamento_original": "nitroimidazole",
+   "alimento_original": "propylene glycol",
+   "artigos": []
+  },
+  {
+   "id": "P004",
+   "medicamento": "Varfarina",
+   "alimento": "Álcool",
+   "medicamento_original": "Warfarin",
+   "alimento_original": "Alcohol",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/20846657/",
+    "https://pubmed.ncbi.nlm.nih.gov/24025228/"
+   ]
+  },
+  {
+   "id": "P005",
+   "medicamento": "Alendronato",
+   "alimento": "Café",
+   "medicamento_original": "Alendronate",
+   "alimento_original": "Coffee",
+   "artigos": []
+  },
+  {
+   "id": "P006",
+   "medicamento": "larotrectinib",
+   "alimento": "Toranja",
+   "medicamento_original": "larotrectinib",
+   "alimento_original": "Grapefruit",
+   "artigos": []
+  },
+  {
+   "id": "P007",
+   "medicamento": "Cafeína",
+   "alimento": "Suco de toranja",
+   "medicamento_original": "Caffeine",
+   "alimento_original": "Grapefruit Juice",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/16620293/"
+   ]
+  },
+  {
+   "id": "P008",
+   "medicamento": "Paracetamol",
+   "alimento": "Sal",
+   "medicamento_original": "Paracetamol",
+   "alimento_original": "SALT",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/30082254/",
+    "https://pubmed.ncbi.nlm.nih.gov/2680435/"
+   ]
+  },
+  {
+   "id": "P009",
+   "medicamento": "Ciprofloxacino",
+   "alimento": "Leite",
+   "medicamento_original": "Ciprofloxacin",
+   "alimento_original": "MILK",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/30799115/",
+    "https://pubmed.ncbi.nlm.nih.gov/1934862/"
+   ]
+  },
+  {
+   "id": "P010",
+   "medicamento": "Sinvastatina",
+   "alimento": "Ácidos graxos ômega-3",
+   "medicamento_original": "Simvastatin",
+   "alimento_original": "Omega-3 Fatty Acids",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/11829698/",
+    "https://pubmed.ncbi.nlm.nih.gov/20877395/"
+   ]
+  },
+  {
+   "id": "P011",
+   "medicamento": "Paracetamol",
+   "alimento": "Leite",
+   "medicamento_original": "Paracetamol",
+   "alimento_original": "MILK",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/31229285/"
+   ]
+  },
+  {
+   "id": "P012",
+   "medicamento": "Dasatinib",
+   "alimento": "Toranja",
+   "medicamento_original": "Dasatinib",
+   "alimento_original": "Grapefruit",
+   "artigos": []
+  },
+  {
+   "id": "P013",
+   "medicamento": "Metformina",
+   "alimento": "Álcool",
+   "medicamento_original": "Metformin",
+   "alimento_original": "Alcohol",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/35386022/",
+    "https://pubmed.ncbi.nlm.nih.gov/30266098/",
+    "https://pubmed.ncbi.nlm.nih.gov/19640960/"
+   ]
+  },
+  {
+   "id": "P014",
+   "medicamento": "Levotiroxina",
+   "alimento": "Soja",
+   "medicamento_original": "Levothyroxine",
+   "alimento_original": "SOY",
+   "artigos": []
+  },
+  {
+   "id": "P015",
+   "medicamento": "Sinvastatina",
+   "alimento": "Toranja",
+   "medicamento_original": "Simvastatin",
+   "alimento_original": "Grapefruit",
+   "artigos": []
+  },
+  {
+   "id": "P016",
+   "medicamento": "Felodipino",
+   "alimento": "Suco de toranja",
+   "medicamento_original": "Felodipine",
+   "alimento_original": "Grapefruit Juice",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/9757148/",
+    "https://pubmed.ncbi.nlm.nih.gov/10945313/",
+    "https://pubmed.ncbi.nlm.nih.gov/1577050/"
+   ]
+  },
+  {
+   "id": "P017",
+   "medicamento": "Bictegravir",
+   "alimento": "Ferro",
+   "medicamento_original": "Bictegravir",
+   "alimento_original": "IRON",
+   "artigos": []
+  },
+  {
+   "id": "P018",
+   "medicamento": "Sinvastatina",
+   "alimento": "Chá verde",
+   "medicamento_original": "Simvastatin",
+   "alimento_original": "Green Tea",
+   "artigos": []
+  },
+  {
+   "id": "P019",
+   "medicamento": "methoxsalen",
+   "alimento": "parsnips",
+   "medicamento_original": "methoxsalen",
+   "alimento_original": "parsnips",
+   "artigos": []
+  },
+  {
+   "id": "P020",
+   "medicamento": "Potássio",
+   "alimento": "Cloreto de sódio",
+   "medicamento_original": "Potassium",
+   "alimento_original": "NACL",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/34263973/",
+    "https://pubmed.ncbi.nlm.nih.gov/1476439/",
+    "https://pubmed.ncbi.nlm.nih.gov/27639963/"
+   ]
+  },
+  {
+   "id": "P021",
+   "medicamento": "Fluoxetina",
+   "alimento": "Cafeína",
+   "medicamento_original": "Fluoxetine",
+   "alimento_original": "Caffeine",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/33242109/",
+    "https://pubmed.ncbi.nlm.nih.gov/32877707/",
+    "https://pubmed.ncbi.nlm.nih.gov/23131584/"
+   ]
+  },
+  {
+   "id": "P022",
+   "medicamento": "Nitroglicerina",
+   "alimento": "Ethyl alcohol",
+   "medicamento_original": "Nitroglycerin",
+   "alimento_original": "Ethyl alcohol",
+   "artigos": []
+  },
+  {
+   "id": "P023",
+   "medicamento": "Felodipino",
+   "alimento": "Toranja",
+   "medicamento_original": "Felodipine",
+   "alimento_original": "Grapefruit",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/11103749/",
+    "https://pubmed.ncbi.nlm.nih.gov/22530299/",
+    "https://pubmed.ncbi.nlm.nih.gov/23696038/"
+   ]
+  },
+  {
+   "id": "P024",
+   "medicamento": "Rosuvastatina",
+   "alimento": "Chá",
+   "medicamento_original": "Rosuvastatin",
+   "alimento_original": "TEA",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/31400238/"
+   ]
+  },
+  {
+   "id": "P025",
+   "medicamento": "Phenelzine",
+   "alimento": "Queijo",
+   "medicamento_original": "Phenelzine",
+   "alimento_original": "Cheese",
+   "artigos": []
+  },
+  {
+   "id": "P026",
+   "medicamento": "Varfarina",
+   "alimento": "Espinafre",
+   "medicamento_original": "Warfarin",
+   "alimento_original": "Spinach",
+   "artigos": []
+  },
+  {
+   "id": "P027",
+   "medicamento": "nilotinib",
+   "alimento": "Toranja",
+   "medicamento_original": "nilotinib",
+   "alimento_original": "Grapefruit",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/19948946/"
+   ]
+  },
+  {
+   "id": "P028",
+   "medicamento": "Atorvastatina",
+   "alimento": "Cálcio",
+   "medicamento_original": "Atorvastatin",
+   "alimento_original": "CALCIUM",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/21774822/",
+    "https://pubmed.ncbi.nlm.nih.gov/30730760/",
+    "https://pubmed.ncbi.nlm.nih.gov/11320358/"
+   ]
+  },
+  {
+   "id": "P029",
+   "medicamento": "Claritromicina",
+   "alimento": "Toranja",
+   "medicamento_original": "Clarithromycin",
+   "alimento_original": "Grapefruit",
+   "artigos": []
+  },
+  {
+   "id": "P030",
+   "medicamento": "Teofilina",
+   "alimento": "Alho",
+   "medicamento_original": "Theophylline",
+   "alimento_original": "Garlic",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/23554727/"
+   ]
+  },
+  {
+   "id": "P031",
+   "medicamento": "Quetiapine",
+   "alimento": "Álcool",
+   "medicamento_original": "Quetiapine",
+   "alimento_original": "Alcohol",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/31087085/",
+    "https://pubmed.ncbi.nlm.nih.gov/21487653/",
+    "https://pubmed.ncbi.nlm.nih.gov/18425995/"
+   ]
+  },
+  {
+   "id": "P032",
+   "medicamento": "Corticosteroide",
+   "alimento": "Esteroide",
+   "medicamento_original": "COrticosteroid",
+   "alimento_original": "Steroid",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/23813218/",
+    "https://pubmed.ncbi.nlm.nih.gov/19817753/",
+    "https://pubmed.ncbi.nlm.nih.gov/36084710/"
+   ]
+  },
+  {
+   "id": "P033",
+   "medicamento": "Loratadine",
+   "alimento": "Toranja",
+   "medicamento_original": "Loratadine",
+   "alimento_original": "Grapefruit",
+   "artigos": []
+  },
+  {
+   "id": "P034",
+   "medicamento": "DHA-supplement",
+   "alimento": "Ácidos graxos ômega-3",
+   "medicamento_original": "DHA-supplement",
+   "alimento_original": "Omega-3 Fatty Acids",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/22669700/",
+    "https://pubmed.ncbi.nlm.nih.gov/22692838/"
+   ]
+  },
+  {
+   "id": "P035",
+   "medicamento": "Levotiroxina",
+   "alimento": "Café",
+   "medicamento_original": "Levothyroxine",
+   "alimento_original": "Coffee",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/24123095/",
+    "https://pubmed.ncbi.nlm.nih.gov/19942153/",
+    "https://pubmed.ncbi.nlm.nih.gov/24610609/"
+   ]
+  },
+  {
+   "id": "P036",
+   "medicamento": "Lítio",
+   "alimento": "Suco de maçã",
+   "medicamento_original": "Lithium",
+   "alimento_original": "Apple Juice",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/33505823/"
+   ]
+  },
+  {
+   "id": "P037",
+   "medicamento": "Atorvastatina",
+   "alimento": "Ovos",
+   "medicamento_original": "Atorvastatin",
+   "alimento_original": "Eggs",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/10615252/"
+   ]
+  },
+  {
+   "id": "P038",
+   "medicamento": "Lítio",
+   "alimento": "Sódio",
+   "medicamento_original": "Lithium",
+   "alimento_original": "SODIUM",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/938947/",
+    "https://pubmed.ncbi.nlm.nih.gov/7334464/",
+    "https://pubmed.ncbi.nlm.nih.gov/15355879/"
+   ]
+  },
+  {
+   "id": "P039",
+   "medicamento": "Lonafarnib",
+   "alimento": "Toranja",
+   "medicamento_original": "Lonafarnib",
+   "alimento_original": "Grapefruit",
+   "artigos": []
+  },
+  {
+   "id": "P040",
+   "medicamento": "naloxegol",
+   "alimento": "Toranja",
+   "medicamento_original": "naloxegol",
+   "alimento_original": "Grapefruit",
+   "artigos": []
+  },
+  {
+   "id": "P041",
+   "medicamento": "Linezolid",
+   "alimento": "Tiramina",
+   "medicamento_original": "Linezolid",
+   "alimento_original": "Tyramine",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/20581320/",
+    "https://pubmed.ncbi.nlm.nih.gov/11336106/",
+    "https://pubmed.ncbi.nlm.nih.gov/15521893/"
+   ]
+  },
+  {
+   "id": "P042",
+   "medicamento": "Ivacaftor",
+   "alimento": "Toranja",
+   "medicamento_original": "Ivacaftor",
+   "alimento_original": "Grapefruit",
+   "artigos": []
+  },
+  {
+   "id": "P043",
+   "medicamento": "Nifedipino",
+   "alimento": "Etanol (álcool)",
+   "medicamento_original": "Nifedipine",
+   "alimento_original": "Ethanol",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/9436865/",
+    "https://pubmed.ncbi.nlm.nih.gov/34930830/",
+    "https://pubmed.ncbi.nlm.nih.gov/1608903/"
+   ]
+  },
+  {
+   "id": "P044",
+   "medicamento": "Digoxina",
+   "alimento": "Chá verde",
+   "medicamento_original": "DIGOXIN",
+   "alimento_original": "Green Tea",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/26426900/"
+   ]
+  },
+  {
+   "id": "P045",
+   "medicamento": "Eritropoetina",
+   "alimento": "Ferro",
+   "medicamento_original": "Erythropoietin",
+   "alimento_original": "IRON",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/34324880/",
+    "https://pubmed.ncbi.nlm.nih.gov/9266623/",
+    "https://pubmed.ncbi.nlm.nih.gov/16979010/"
+   ]
+  },
+  {
+   "id": "P046",
+   "medicamento": "Sildenafila",
+   "alimento": "Cafeína",
+   "medicamento_original": "Sildenafil",
+   "alimento_original": "Caffeine",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/31679888/"
+   ]
+  },
+  {
+   "id": "P047",
+   "medicamento": "Paracetamol",
+   "alimento": "Alho",
+   "medicamento_original": "Acetaminophen",
+   "alimento_original": "Garlic",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/15916450/"
+   ]
+  },
+  {
+   "id": "P048",
+   "medicamento": "Roflumilast",
+   "alimento": "N-oxide",
+   "medicamento_original": "Roflumilast",
+   "alimento_original": "N-oxide",
+   "artigos": []
+  },
+  {
+   "id": "P049",
+   "medicamento": "Ipecac",
+   "alimento": "Hydrocarbon",
+   "medicamento_original": "Ipecac",
+   "alimento_original": "Hydrocarbon",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/15214617/",
+    "https://pubmed.ncbi.nlm.nih.gov/9482425/"
+   ]
+  },
+  {
+   "id": "P050",
+   "medicamento": "Cobimetinib",
+   "alimento": "Toranja",
+   "medicamento_original": "Cobimetinib",
+   "alimento_original": "Grapefruit",
+   "artigos": []
+  },
+  {
+   "id": "P051",
+   "medicamento": "Deflazacort",
+   "alimento": "Toranja",
+   "medicamento_original": "Deflazacort",
+   "alimento_original": "Grapefruit",
+   "artigos": []
+  },
+  {
+   "id": "P052",
+   "medicamento": "Paclitaxel",
+   "alimento": "Toranja",
+   "medicamento_original": "Paclitaxel",
+   "alimento_original": "Grapefruit",
+   "artigos": []
+  },
+  {
+   "id": "P053",
+   "medicamento": "Isoniazida",
+   "alimento": "Álcool",
+   "medicamento_original": "Isoniazid",
+   "alimento_original": "Alcohol",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/15581208/"
+   ]
+  },
+  {
+   "id": "P054",
+   "medicamento": "Phenelzine",
+   "alimento": "Tiramina",
+   "medicamento_original": "Phenelzine",
+   "alimento_original": "Tyramine",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/2920501/",
+    "https://pubmed.ncbi.nlm.nih.gov/9829163/",
+    "https://pubmed.ncbi.nlm.nih.gov/2677242/"
+   ]
+  },
+  {
+   "id": "P055",
+   "medicamento": "Crizotinib",
+   "alimento": "Toranja",
+   "medicamento_original": "Crizotinib",
+   "alimento_original": "Grapefruit",
+   "artigos": []
+  },
+  {
+   "id": "P056",
+   "medicamento": "Ciclosporina",
+   "alimento": "Vinho",
+   "medicamento_original": "Cyclosporine",
+   "alimento_original": "Wine",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/11719733/"
+   ]
+  },
+  {
+   "id": "P057",
+   "medicamento": "Varfarina",
+   "alimento": "Banana",
+   "medicamento_original": "Warfarin",
+   "alimento_original": "Banana",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/26137942/"
+   ]
+  },
+  {
+   "id": "P058",
+   "medicamento": "Finerenone",
+   "alimento": "Toranja",
+   "medicamento_original": "Finerenone",
+   "alimento_original": "Grapefruit",
+   "artigos": []
+  },
+  {
+   "id": "P059",
+   "medicamento": "Tetraciclina",
+   "alimento": "Álcool",
+   "medicamento_original": "Tetracycline",
+   "alimento_original": "Alcohol",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/1110867/"
+   ]
+  },
+  {
+   "id": "P060",
+   "medicamento": "Flibanserin",
+   "alimento": "Álcool",
+   "medicamento_original": "Flibanserin",
+   "alimento_original": "Alcohol",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/31550099/",
+    "https://pubmed.ncbi.nlm.nih.gov/28608926/",
+    "https://pubmed.ncbi.nlm.nih.gov/31735618/"
+   ]
+  },
+  {
+   "id": "P061",
+   "medicamento": "Norfloxacin",
+   "alimento": "Iogurte",
+   "medicamento_original": "Norfloxacin",
+   "alimento_original": "Yogurt",
+   "artigos": []
+  },
+  {
+   "id": "P062",
+   "medicamento": "Tacrolimo",
+   "alimento": "Álcool",
+   "medicamento_original": "Tacrolimus",
+   "alimento_original": "Alcohol",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/30358368/"
+   ]
+  },
+  {
+   "id": "P063",
+   "medicamento": "Flibanserin",
+   "alimento": "Toranja",
+   "medicamento_original": "Flibanserin",
+   "alimento_original": "Grapefruit",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/31550099/"
+   ]
+  },
+  {
+   "id": "P064",
+   "medicamento": "Diclofenaco",
+   "alimento": "Zinco",
+   "medicamento_original": "Diclofenac",
+   "alimento_original": "ZINC",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/7792314/"
+   ]
+  },
+  {
+   "id": "P065",
+   "medicamento": "Metadona",
+   "alimento": "Toranja",
+   "medicamento_original": "Methadone",
+   "alimento_original": "Grapefruit",
+   "artigos": []
+  },
+  {
+   "id": "P066",
+   "medicamento": "Sinvastatina",
+   "alimento": "Álcool",
+   "medicamento_original": "Simvastatin",
+   "alimento_original": "Alcohol",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/14758716/",
+    "https://pubmed.ncbi.nlm.nih.gov/18224432/"
+   ]
+  },
+  {
+   "id": "P067",
+   "medicamento": "Sertraline",
+   "alimento": "Etanol (álcool)",
+   "medicamento_original": "Sertraline",
+   "alimento_original": "Ethanol",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/33819457/"
+   ]
+  },
+  {
+   "id": "P068",
+   "medicamento": "Midostaurin",
+   "alimento": "Toranja",
+   "medicamento_original": "Midostaurin",
+   "alimento_original": "Grapefruit",
+   "artigos": []
+  },
+  {
+   "id": "P069",
+   "medicamento": "Sinvastatina",
+   "alimento": "Suco de toranja",
+   "medicamento_original": "Simvastatin",
+   "alimento_original": "Grapefruit Juice",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/26299317/",
+    "https://pubmed.ncbi.nlm.nih.gov/10503959/",
+    "https://pubmed.ncbi.nlm.nih.gov/11061578/"
+   ]
+  },
+  {
+   "id": "P070",
+   "medicamento": "Amiodarona",
+   "alimento": "Toranja",
+   "medicamento_original": "Amiodarone",
+   "alimento_original": "Grapefruit",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/10759694/",
+    "https://pubmed.ncbi.nlm.nih.gov/20970282/"
+   ]
+  },
+  {
+   "id": "P071",
+   "medicamento": "Alprazolam",
+   "alimento": "Sal",
+   "medicamento_original": "Alprazolam",
+   "alimento_original": "SALT",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/20665840/"
+   ]
+  },
+  {
+   "id": "P072",
+   "medicamento": "Clozapina",
+   "alimento": "Ácidos graxos ômega-3",
+   "medicamento_original": "Clozapine",
+   "alimento_original": "Omega-3 Fatty Acids",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/16866765/"
+   ]
+  },
+  {
+   "id": "P073",
+   "medicamento": "Levodopa",
+   "alimento": "Proteína",
+   "medicamento_original": "l-dopa",
+   "alimento_original": "PROTEIN",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/1682136/",
+    "https://pubmed.ncbi.nlm.nih.gov/4091838/",
+    "https://pubmed.ncbi.nlm.nih.gov/28698499/"
+   ]
+  },
+  {
+   "id": "P074",
+   "medicamento": "Oxalic Acid",
+   "alimento": "Cálcio",
+   "medicamento_original": "Oxalic Acid",
+   "alimento_original": "CALCIUM",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/22642068/",
+    "https://pubmed.ncbi.nlm.nih.gov/30200732/",
+    "https://pubmed.ncbi.nlm.nih.gov/30200732/"
+   ]
+  },
+  {
+   "id": "P075",
+   "medicamento": "Metformina",
+   "alimento": "Ovo",
+   "medicamento_original": "Metformin",
+   "alimento_original": "EGG",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/36547400/"
+   ]
+  },
+  {
+   "id": "P076",
+   "medicamento": "Lítio",
+   "alimento": "Álcool",
+   "medicamento_original": "Lithium",
+   "alimento_original": "Alcohol",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/10832908/",
+    "https://pubmed.ncbi.nlm.nih.gov/322635/",
+    "https://pubmed.ncbi.nlm.nih.gov/21641663/"
+   ]
+  },
+  {
+   "id": "P077",
+   "medicamento": "Lítio",
+   "alimento": "Etanol (álcool)",
+   "medicamento_original": "Lithium",
+   "alimento_original": "Ethanol",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/181193/",
+    "https://pubmed.ncbi.nlm.nih.gov/6439054/"
+   ]
+  },
+  {
+   "id": "P078",
+   "medicamento": "Doxiciclina",
+   "alimento": "Cálcio",
+   "medicamento_original": "Doxycycline",
+   "alimento_original": "CALCIUM",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/28546078/"
+   ]
+  },
+  {
+   "id": "P079",
+   "medicamento": "Nitroglicerina",
+   "alimento": "propylene glycol",
+   "medicamento_original": "Nitroglycerin",
+   "alimento_original": "propylene glycol",
+   "artigos": []
+  },
+  {
+   "id": "P080",
+   "medicamento": "Halofantrine",
+   "alimento": "Toranja",
+   "medicamento_original": "Halofantrine",
+   "alimento_original": "Grapefruit",
+   "artigos": []
+  },
+  {
+   "id": "P081",
+   "medicamento": "Metronidazol",
+   "alimento": "Etanol (álcool)",
+   "medicamento_original": "Metronidazole",
+   "alimento_original": "Ethanol",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/17916057/",
+    "https://pubmed.ncbi.nlm.nih.gov/12022894/"
+   ]
+  },
+  {
+   "id": "P082",
+   "medicamento": "Tazemetostat",
+   "alimento": "Toranja",
+   "medicamento_original": "Tazemetostat",
+   "alimento_original": "Grapefruit",
+   "artigos": []
+  },
+  {
+   "id": "P083",
+   "medicamento": "Quetiapine",
+   "alimento": "Proteína",
+   "medicamento_original": "Quetiapine",
+   "alimento_original": "PROTEIN",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/35615587/"
+   ]
+  },
+  {
+   "id": "P084",
+   "medicamento": "Sertraline",
+   "alimento": "Álcool",
+   "medicamento_original": "Sertraline",
+   "alimento_original": "Alcohol",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/9571652/",
+    "https://pubmed.ncbi.nlm.nih.gov/14624185/",
+    "https://pubmed.ncbi.nlm.nih.gov/10924008/"
+   ]
+  },
+  {
+   "id": "P085",
+   "medicamento": "Quinidina",
+   "alimento": "Toranja",
+   "medicamento_original": "Quinidine",
+   "alimento_original": "Grapefruit",
+   "artigos": []
+  },
+  {
+   "id": "P086",
+   "medicamento": "Topotecan",
+   "alimento": "Cafeína",
+   "medicamento_original": "Topotecan",
+   "alimento_original": "Caffeine",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/8402636/"
+   ]
+  },
+  {
+   "id": "P087",
+   "medicamento": "Digoxina",
+   "alimento": "Sódio",
+   "medicamento_original": "DIGOXIN",
+   "alimento_original": "SODIUM",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/15757504/",
+    "https://pubmed.ncbi.nlm.nih.gov/6652360/",
+    "https://pubmed.ncbi.nlm.nih.gov/7426274/"
+   ]
+  },
+  {
+   "id": "P088",
+   "medicamento": "Lovastatina",
+   "alimento": "Proteína",
+   "medicamento_original": "Lovastatin",
+   "alimento_original": "PROTEIN",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/12405293/",
+    "https://pubmed.ncbi.nlm.nih.gov/12933658/",
+    "https://pubmed.ncbi.nlm.nih.gov/21903868/"
+   ]
+  },
+  {
+   "id": "P089",
+   "medicamento": "Amitriptilina",
+   "alimento": "Sódio",
+   "medicamento_original": "Amitriptyline",
+   "alimento_original": "SODIUM",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/9635895/",
+    "https://pubmed.ncbi.nlm.nih.gov/11718954/",
+    "https://pubmed.ncbi.nlm.nih.gov/36596558/"
+   ]
+  },
+  {
+   "id": "P090",
+   "medicamento": "selenium dioxide",
+   "alimento": "Selênio",
+   "medicamento_original": "selenium dioxide",
+   "alimento_original": "Selenium",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/9315321/",
+    "https://pubmed.ncbi.nlm.nih.gov/9315321/",
+    "https://pubmed.ncbi.nlm.nih.gov/24272133/"
+   ]
+  },
+  {
+   "id": "P091",
+   "medicamento": "Cafeína",
+   "alimento": "Álcool",
+   "medicamento_original": "Caffeine",
+   "alimento_original": "Alcohol",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/26815360/",
+    "https://pubmed.ncbi.nlm.nih.gov/31231310/",
+    "https://pubmed.ncbi.nlm.nih.gov/27419377/"
+   ]
+  },
+  {
+   "id": "P092",
+   "medicamento": "Metronidazol",
+   "alimento": "Álcool",
+   "medicamento_original": "Metronidazole",
+   "alimento_original": "Alcohol",
+   "artigos": []
+  },
+  {
+   "id": "P093",
+   "medicamento": "Dofetilide",
+   "alimento": "Toranja",
+   "medicamento_original": "Dofetilide",
+   "alimento_original": "Grapefruit",
+   "artigos": []
+  },
+  {
+   "id": "P094",
+   "medicamento": "Ácido acetilsalicílico (aspirina)",
+   "alimento": "Cafeína",
+   "medicamento_original": "Aspirin",
+   "alimento_original": "Caffeine",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/18824931/",
+    "https://pubmed.ncbi.nlm.nih.gov/26010457/",
+    "https://pubmed.ncbi.nlm.nih.gov/23813246/"
+   ]
+  },
+  {
+   "id": "P095",
+   "medicamento": "Paracetamol",
+   "alimento": "Proteína",
+   "medicamento_original": "Paracetamol",
+   "alimento_original": "PROTEIN",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/19446955/",
+    "https://pubmed.ncbi.nlm.nih.gov/20804811/",
+    "https://pubmed.ncbi.nlm.nih.gov/27089362/"
+   ]
+  },
+  {
+   "id": "P096",
+   "medicamento": "Sacarose",
+   "alimento": "Carboidrato",
+   "medicamento_original": "Sucrose",
+   "alimento_original": "Carbohydrate",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/31631474/",
+    "https://pubmed.ncbi.nlm.nih.gov/11833048/",
+    "https://pubmed.ncbi.nlm.nih.gov/36499633/"
+   ]
+  },
+  {
+   "id": "P097",
+   "medicamento": "Rosuvastatina",
+   "alimento": "Ovo",
+   "medicamento_original": "Rosuvastatin",
+   "alimento_original": "EGG",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/33521447/"
+   ]
+  },
+  {
+   "id": "P098",
+   "medicamento": "Carbamazepina",
+   "alimento": "Cafeína",
+   "medicamento_original": "Carbamazepine",
+   "alimento_original": "Caffeine",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/26745385/",
+    "https://pubmed.ncbi.nlm.nih.gov/30927730/",
+    "https://pubmed.ncbi.nlm.nih.gov/27327394/"
+   ]
+  },
+  {
+   "id": "P099",
+   "medicamento": "Fentanila",
+   "alimento": "Toranja",
+   "medicamento_original": "Fentanyl",
+   "alimento_original": "Grapefruit",
+   "artigos": []
+  },
+  {
+   "id": "P100",
+   "medicamento": "Entacapone",
+   "alimento": "Levodopa",
+   "medicamento_original": "Entacapone",
+   "alimento_original": "Levodopa",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/18690870/"
+   ]
+  },
+  {
+   "id": "P101",
+   "medicamento": "Sulfamethoxazole-Trimethoprim",
+   "alimento": "Cerveja",
+   "medicamento_original": "Sulfamethoxazole-Trimethoprim",
+   "alimento_original": "Beer",
+   "artigos": []
+  },
+  {
+   "id": "P102",
+   "medicamento": "Lovastatina",
+   "alimento": "Chá",
+   "medicamento_original": "Lovastatin",
+   "alimento_original": "TEA",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/23587710/"
+   ]
+  },
+  {
+   "id": "P103",
+   "medicamento": "Doxiciclina",
+   "alimento": "Proteína",
+   "medicamento_original": "Doxycycline",
+   "alimento_original": "PROTEIN",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/17429196/",
+    "https://pubmed.ncbi.nlm.nih.gov/23667633/",
+    "https://pubmed.ncbi.nlm.nih.gov/31394382/"
+   ]
+  },
+  {
+   "id": "P104",
+   "medicamento": "Varfarina",
+   "alimento": "Ginkgo",
+   "medicamento_original": "Warfarin",
+   "alimento_original": "Ginkgo",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/15801937/",
+    "https://pubmed.ncbi.nlm.nih.gov/10902065/",
+    "https://pubmed.ncbi.nlm.nih.gov/21919844/"
+   ]
+  },
+  {
+   "id": "P105",
+   "medicamento": "Tamoxifeno",
+   "alimento": "Genisteína",
+   "medicamento_original": "Tamoxifen",
+   "alimento_original": "Genistein",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/28950682/",
+    "https://pubmed.ncbi.nlm.nih.gov/26841510/",
+    "https://pubmed.ncbi.nlm.nih.gov/22266527/"
+   ]
+  },
+  {
+   "id": "P106",
+   "medicamento": "Ácidos graxos ômega-3",
+   "alimento": "Peixe",
+   "medicamento_original": "Omega-3 Fatty Acids",
+   "alimento_original": "FISH",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/17575985/",
+    "https://pubmed.ncbi.nlm.nih.gov/28273497/",
+    "https://pubmed.ncbi.nlm.nih.gov/25161990/"
+   ]
+  },
+  {
+   "id": "P107",
+   "medicamento": "Entrectinib",
+   "alimento": "oranges",
+   "medicamento_original": "Entrectinib",
+   "alimento_original": "oranges",
+   "artigos": []
+  },
+  {
+   "id": "P108",
+   "medicamento": "Tranylcypromine",
+   "alimento": "Cálcio",
+   "medicamento_original": "Tranylcypromine",
+   "alimento_original": "CALCIUM",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/6808981/"
+   ]
+  },
+  {
+   "id": "P109",
+   "medicamento": "Captopril",
+   "alimento": "Sal",
+   "medicamento_original": "Captopril",
+   "alimento_original": "SALT",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/6266727/",
+    "https://pubmed.ncbi.nlm.nih.gov/3279725/",
+    "https://pubmed.ncbi.nlm.nih.gov/7737713/"
+   ]
+  },
+  {
+   "id": "P110",
+   "medicamento": "Varfarina",
+   "alimento": "Cranberry Juice",
+   "medicamento_original": "Warfarin",
+   "alimento_original": "Cranberry Juice",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/17392729/",
+    "https://pubmed.ncbi.nlm.nih.gov/34015833/",
+    "https://pubmed.ncbi.nlm.nih.gov/23958198/"
+   ]
+  },
+  {
+   "id": "P111",
+   "medicamento": "Sinvastatina",
+   "alimento": "niacin",
+   "medicamento_original": "Simvastatin",
+   "alimento_original": "niacin",
+   "artigos": []
+  },
+  {
+   "id": "P112",
+   "medicamento": "Nifedipino",
+   "alimento": "Suco de toranja",
+   "medicamento_original": "Nifedipine",
+   "alimento_original": "Grapefruit Juice",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/8827399/",
+    "https://pubmed.ncbi.nlm.nih.gov/8073064/",
+    "https://pubmed.ncbi.nlm.nih.gov/11991343/"
+   ]
+  },
+  {
+   "id": "P113",
+   "medicamento": "Varfarina",
+   "alimento": "Vitamina K",
+   "medicamento_original": "Warfarin",
+   "alimento_original": "Vitamin K",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/26346860/",
+    "https://pubmed.ncbi.nlm.nih.gov/31409123/",
+    "https://pubmed.ncbi.nlm.nih.gov/28635328/"
+   ]
+  },
+  {
+   "id": "P114",
+   "medicamento": "Cefdinir",
+   "alimento": "Ferro",
+   "medicamento_original": "Cefdinir",
+   "alimento_original": "IRON",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/8222489/"
+   ]
+  },
+  {
+   "id": "P115",
+   "medicamento": "Amitriptilina",
+   "alimento": "Álcool",
+   "medicamento_original": "Amitriptyline",
+   "alimento_original": "Alcohol",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/1092511/"
+   ]
+  },
+  {
+   "id": "P116",
+   "medicamento": "Ciprofloxacino",
+   "alimento": "Cálcio",
+   "medicamento_original": "Ciprofloxacin",
+   "alimento_original": "CALCIUM",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/17913970/",
+    "https://pubmed.ncbi.nlm.nih.gov/11117292/",
+    "https://pubmed.ncbi.nlm.nih.gov/12092748/"
+   ]
+  },
+  {
+   "id": "P117",
+   "medicamento": "Teofilina",
+   "alimento": "Cafeína",
+   "medicamento_original": "Theophylline",
+   "alimento_original": "Caffeine",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/1507275/",
+    "https://pubmed.ncbi.nlm.nih.gov/34987426/",
+    "https://pubmed.ncbi.nlm.nih.gov/20863845/"
+   ]
+  },
+  {
+   "id": "P118",
+   "medicamento": "Norfloxacin",
+   "alimento": "Laranja",
+   "medicamento_original": "Norfloxacin",
+   "alimento_original": "ORANGE",
+   "artigos": []
+  },
+  {
+   "id": "P119",
+   "medicamento": "ivacaftor-containing",
+   "alimento": "Toranja",
+   "medicamento_original": "ivacaftor-containing",
+   "alimento_original": "Grapefruit",
+   "artigos": []
+  },
+  {
+   "id": "P120",
+   "medicamento": "Lisinopril",
+   "alimento": "Proteína",
+   "medicamento_original": "Lisinopril",
+   "alimento_original": "PROTEIN",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/35359831/",
+    "https://pubmed.ncbi.nlm.nih.gov/23020955/"
+   ]
+  },
+  {
+   "id": "P121",
+   "medicamento": "Fluoxetina",
+   "alimento": "Óleo de peixe",
+   "medicamento_original": "Fluoxetine",
+   "alimento_original": "Fish Oil",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/24867329/",
+    "https://pubmed.ncbi.nlm.nih.gov/27021785/",
+    "https://pubmed.ncbi.nlm.nih.gov/32734823/"
+   ]
+  },
+  {
+   "id": "P122",
+   "medicamento": "Ácido acetilsalicílico (aspirina)",
+   "alimento": "Gengibre",
+   "medicamento_original": "Aspirin",
+   "alimento_original": "Ginger",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/12472978/"
+   ]
+  },
+  {
+   "id": "P123",
+   "medicamento": "Anlodipino",
+   "alimento": "Leite",
+   "medicamento_original": "Amlodipine",
+   "alimento_original": "MILK",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/30265578/"
+   ]
+  },
+  {
+   "id": "P124",
+   "medicamento": "Espironolactona",
+   "alimento": "Potássio",
+   "medicamento_original": "Spironolactone",
+   "alimento_original": "Potassium",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/32160420/",
+    "https://pubmed.ncbi.nlm.nih.gov/17606839/",
+    "https://pubmed.ncbi.nlm.nih.gov/32452128/"
+   ]
+  },
+  {
+   "id": "P125",
+   "medicamento": "Guanfacine",
+   "alimento": "Toranja",
+   "medicamento_original": "Guanfacine",
+   "alimento_original": "Grapefruit",
+   "artigos": []
+  },
+  {
+   "id": "P126",
+   "medicamento": "Tolvaptan",
+   "alimento": "Toranja",
+   "medicamento_original": "Tolvaptan",
+   "alimento_original": "Grapefruit",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/21853290/"
+   ]
+  },
+  {
+   "id": "P127",
+   "medicamento": "Rifampicina",
+   "alimento": "Proteína",
+   "medicamento_original": "Rifampicin",
+   "alimento_original": "PROTEIN",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/29695454/",
+    "https://pubmed.ncbi.nlm.nih.gov/33412187/",
+    "https://pubmed.ncbi.nlm.nih.gov/24623513/"
+   ]
+  },
+  {
+   "id": "P128",
+   "medicamento": "Felodipino",
+   "alimento": "Café",
+   "medicamento_original": "Felodipine",
+   "alimento_original": "Coffee",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/27481881/"
+   ]
+  },
+  {
+   "id": "P129",
+   "medicamento": "Tetraciclina",
+   "alimento": "Leite",
+   "medicamento_original": "Tetracycline",
+   "alimento_original": "MILK",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/33668483/",
+    "https://pubmed.ncbi.nlm.nih.gov/33465548/",
+    "https://pubmed.ncbi.nlm.nih.gov/30471904/"
+   ]
+  },
+  {
+   "id": "P130",
+   "medicamento": "Fexofenadine",
+   "alimento": "Suco de maçã",
+   "medicamento_original": "Fexofenadine",
+   "alimento_original": "Apple Juice",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/27197662/",
+    "https://pubmed.ncbi.nlm.nih.gov/15570603/",
+    "https://pubmed.ncbi.nlm.nih.gov/21280267/"
+   ]
+  },
+  {
+   "id": "P131",
+   "medicamento": "Varfarina",
+   "alimento": "Alho",
+   "medicamento_original": "Warfarin",
+   "alimento_original": "Garlic",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/17918162/",
+    "https://pubmed.ncbi.nlm.nih.gov/27470545/",
+    "https://pubmed.ncbi.nlm.nih.gov/10902065/"
+   ]
+  },
+  {
+   "id": "P132",
+   "medicamento": "Isoniazida",
+   "alimento": "Curcumina",
+   "medicamento_original": "Isoniazid",
+   "alimento_original": "CURCUMIN",
+   "artigos": [
+    "https://pubmed.ncbi.nlm.nih.gov/28713372/"
+   ]
+  },
+  {
+   "id": "P133",
+   "medicamento": "Isoniazida",
+   "alimento": "Tiramina",
+   "medicamento_original": "Isoniazid",
+   "alimento_original": "Tyramine",
+   "artigos": []
+  }
+ ]
+}
