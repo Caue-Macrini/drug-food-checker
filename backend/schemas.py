@@ -60,6 +60,13 @@ class Check(BaseModel):
     food_id: str = Field(max_length=36)
     personalize: bool = True
 
+class DrugRef(BaseModel):
+    drug_id: str = Field(min_length=1, max_length=36)
+
+class FoodCheck(BaseModel):
+    food_id: str = Field(min_length=1, max_length=36)
+    personalize: bool = True
+
 class EmailRequest(BaseModel):
     email: str = Field(min_length=3, max_length=254)
 

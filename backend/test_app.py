@@ -244,3 +244,32 @@ def test_demo_mode_blocks_signup_admin_recovery_and_deletion(client, monkeypatch
 
 def test_demo_login_is_disabled_outside_demo_mode(client):
     assert client.post('/api/auth/demo', json={}).status_code == 404
+
+def test_my_drugs_list_check_and_profile_preservation(client, monkeypatch):
+    signup(client, 'meds')
+    assert client.post('/api/my-drugs/check', json={'food_id': 'x'}).status_code == 422
+    ids = pair(client)
+    r = client.post('/api/my-drugs', json={'drug_id': ids['drug_id']})
+    assert r.status_code == 200, r.text
+    assert [i['name'] for i in r.json()['items']] == ['Sinvastatina']
+    assert len(client.post('/api/my-drugs', json={'drug_id': ids['drug_id']}).json()['items']) == 1  # idempotent
+    assert client.post('/api/my-drugs', json={'drug_id': 'nao-existe'}).status_code == 422
+    # Editing the clinical profile keeps the saved list, and the list counts for the polypharmacy rule.
+    client.put('/api/profile', json={'age': 70, 'medications': ['A', 'B']})
+    assert client.get('/api/profile').json()['my_drugs'][0]['name'] == 'Sinvastatina'
+    assert adjusted_risk(1, client.get('/api/profile').json(), {})[1]
+    r = client.post('/api/my-drugs/check', json={'food_id': ids['food_id']})
+    assert r.status_code == 200, r.text
+    body = r.json()
+    assert body['food'] and body['results'][0]['drug'] == 'Sinvastatina' and body['results'][0]['found']
+    assert client.get('/api/history').json() == []  # the multi-check is not stored as consultations
+    assert client.get('/api/privacy/export').json()['profile']['my_drugs']
+    monkeypatch.setattr('main.MAX_MY_DRUGS', 1)
+    other = client.get('/api/catalog/drugs?q=varfarina').json()[0]['id']
+    assert client.post('/api/my-drugs', json={'drug_id': other}).status_code == 409
+    r = client.delete('/api/my-drugs?drug_id=' + ids['drug_id'], headers={'Content-Type': 'application/json'})
+    assert r.status_code == 200 and r.json()['items'] == []
+
+def test_my_drugs_requires_login(client):
+    assert client.get('/api/my-drugs').status_code == 401
+    assert client.post('/api/my-drugs', json={'drug_id': 'x'}).status_code == 401

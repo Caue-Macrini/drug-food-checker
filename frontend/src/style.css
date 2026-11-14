@@ -64,3 +64,20 @@ h1,h2,h3{letter-spacing:-.025em}h1{font-size:30px}p{line-height:1.65}
 
 /* Nome comercial (lista CMED) que levou à sugestão */
 .term-brand{display:block;color:#1e3a5f;font-size:11px;margin-top:2px;font-weight:600}
+
+/* Meus remédios */
+.mydrugs-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+.mydrugs-grid .card{display:flex;flex-direction:column;gap:14px}
+.add-row{display:flex;gap:12px;align-items:flex-end}
+.add-row .autocomplete{flex:1;min-width:0}
+.add-row .button{height:52px;flex:none}
+.med-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.med-list li,.check-results li,.attention-item{display:flex;align-items:center;gap:12px;padding:10px 12px;border:1px solid #e3e8ee;border-radius:12px;background:#fbfcfd}
+.med-list li>div,.check-results li>div,.attention-item>div{flex:1;min-width:0;display:flex;flex-direction:column}
+.med-list small,.check-results small,.attention-item small{color:#6b7785;font-size:12px;margin-top:2px}
+.check-results h3{font-size:15px;margin:4px 0 10px}
+.check-results ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.attention-card{margin-bottom:20px}
+.attention-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:10px}
+@media (max-width:900px){.mydrugs-grid{grid-template-columns:1fr}.add-row{flex-direction:column;align-items:stretch}.add-row .button{height:auto}.attention-list{grid-template-columns:1fr}}
+.show-all{margin-top:12px}

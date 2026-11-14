@@ -11,7 +11,7 @@ from fastapi.staticfiles import StaticFiles
 from sqlalchemy import select, delete
 from sqlalchemy.exc import IntegrityError
 from models import Base, engine, Session, User, Profile, Consent, HistoryKey, History, Audit, Reset, Dataset, Drug, Food, now
-from schemas import Signup, Login, ClinicalProfile, Check, EmailRequest, ResetRequest, PasswordRequest, AccountAction, ImportDataset
+from schemas import Signup, Login, ClinicalProfile, Check, DrugRef, FoodCheck, EmailRequest, ResetRequest, PasswordRequest, AccountAction, ImportDataset
 from services import uid, search_catalog, build_result, import_dataset, library
 import foodrugs_store as foodrugs
 
@@ -255,7 +255,9 @@ def get_profile(user=Depends(current_user), db=Depends(db_session)):
 def save_profile(data: ClinicalProfile, user=Depends(current_user), db=Depends(db_session)):
     profile = data.model_dump()
     profile['bmi'] = round(data.weight / (data.height / 100)**2, 2) if data.weight and data.height else None
-    db.get(Profile, user.id).data = profile
+    stored = db.get(Profile, user.id)
+    profile['my_drugs'] = (stored.data or {}).get('my_drugs', [])  # managed by /api/my-drugs, kept on profile edits
+    stored.data = profile
     audit(db, user.id, 'profile.updated')
     db.commit()
     return profile
@@ -330,6 +332,81 @@ def check(data: Check, user=Depends(current_user), db=Depends(db_session)):
     audit(db, user.id, 'interaction.checked')
     db.commit()
     return {**result, 'history_id':record.id, 'created_at':record.created_at}
+
+MAX_MY_DRUGS = 15
+
+def saved_drugs(db, user):
+    return list((db.get(Profile, user.id).data or {}).get('my_drugs', []))
+
+def store_drugs(db, user, items):
+    profile = db.get(Profile, user.id)
+    profile.data = {**(profile.data or {}), 'my_drugs': items}  # new dict so the JSON column is marked as changed
+
+def my_drugs_view(db, user):
+    items = saved_drugs(db, user)
+    attention = foodrugs.attention([i['id'] for i in items]) if items and using_foodrugs(db) else []
+    names = {i['id']: i['name'] for i in items}
+    for food in attention:
+        for drug in food['drugs']:
+            drug['name'] = names.get(drug['id'], '')
+    return {'items': items, 'attention': attention, 'limit': MAX_MY_DRUGS}
+
+@app.get('/api/my-drugs')
+def list_my_drugs(user=Depends(current_user), db=Depends(db_session)):
+    return my_drugs_view(db, user)
+
+@app.post('/api/my-drugs')
+def add_my_drug(data: DrugRef, user=Depends(current_user), db=Depends(db_session)):
+    items = saved_drugs(db, user)
+    if any(i['id'] == data.drug_id for i in items):
+        return my_drugs_view(db, user)
+    if len(items) >= MAX_MY_DRUGS:
+        raise HTTPException(409, f'Limite de {MAX_MY_DRUGS} medicamentos na lista')
+    if using_foodrugs(db):
+        try: info = foodrugs.drug_info(data.drug_id)
+        except ValueError as exc: raise HTTPException(422, str(exc))
+    else:
+        drug = db.get(Drug, data.drug_id)
+        if not drug: raise HTTPException(422, 'Selecione o medicamento nas sugestões')
+        info = {'id': drug.id, 'name': drug.name, 'original': drug.name}
+    store_drugs(db, user, items + [info])
+    audit(db, user.id, 'my_drugs.updated')
+    db.commit()
+    return my_drugs_view(db, user)
+
+@app.delete('/api/my-drugs')
+def remove_my_drug(drug_id: str = Query(max_length=36), user=Depends(current_user), db=Depends(db_session)):
+    items = saved_drugs(db, user)
+    store_drugs(db, user, [i for i in items if i['id'] != drug_id])
+    audit(db, user.id, 'my_drugs.updated')
+    db.commit()
+    return my_drugs_view(db, user)
+
+@app.post('/api/my-drugs/check')
+def check_my_drugs(data: FoodCheck, user=Depends(current_user), db=Depends(db_session)):
+    """One food against every saved medicine. Not stored in the history (each pair can be opened as a full consultation)."""
+    items = saved_drugs(db, user)
+    if not items:
+        raise HTTPException(422, 'Adicione pelo menos um medicamento à sua lista')
+    profile = db.get(Profile, user.id).data if data.personalize else {}
+    results, food_name = [], ''
+    for item in items:
+        if using_foodrugs(db):
+            try: r = foodrugs.evidence(item['id'], data.food_id, limit=1, profile=profile, personalize=data.personalize)
+            except ValueError as exc: raise HTTPException(422, str(exc))
+            title = (r.get('verdict') or {}).get('answer') or ''
+        else:
+            drug, food = db.get(Drug, item['id']), db.get(Food, data.food_id)
+            if not drug or not food: raise HTTPException(422, 'Selecione o alimento nas sugestões')
+            r = build_result(db, drug, food, profile)
+            title = r['evidence'][0]['guidance'] if r['evidence'] else ''
+        food_name = r['food']
+        results.append({'drug_id': item['id'], 'food_id': data.food_id, 'drug': r['drug'], 'food': r['food'], 'risk': r['risk'],
+                        'found': r['found'], 'title': title, 'modifiers': r.get('modifiers', [])})
+    results.sort(key=lambda x: (-(x['risk'] if x['risk'] is not None else -1), not x['found'], x['drug']))
+    audit(db, user.id, 'my_drugs.checked')
+    db.commit()
+    return {'food': food_name, 'results': results}
 
 def owned_history(db, user_id):
     return select(History).join(HistoryKey).where(HistoryKey.user_id == user_id).order_by(History.created_at.desc())

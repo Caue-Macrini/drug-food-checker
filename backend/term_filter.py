@@ -61,6 +61,8 @@ NOT_FOOD = {
  'd-tryptophan', 'chloride', 'phosphate', 'sulfate', 'sulfide', 'acetate', 'hydroquinone', 'resorcinol', 'phloroglucinol',
  'formic acid', 'trimethylamine oxide', 'acetaldehyde', 'formaldehyde', 'methanol', 'phenol',
  'geranylgeranyl pyrophosphate', 'farnesyl pyrophosphate', 'isopentenyl pyrophosphate', 'squalene epoxide',
+ 'atrial fibrillation', 'vitamin k epoxide', '6beta-hydroxyacid simvastatin', '6β-hydroxyacid simvastatin', 'extract',
+ 'extracts', 'herbal', 'herbs',
 }
 
 # Endogenous molecules, lab markers, nutrient classes and generic chemistry listed as "medicines".

@@ -53,7 +53,9 @@ def adjusted_risk(base, profile, flags):
         reasons.append('Insuficiência hepática e metabolismo por CYP450 (+1)')
     if profile.get('renal_stage', 0) >= 3 and flags.get('renal_excretion'):
         reasons.append('Doença renal em estágio ≥ 3 e excreção renal (+1)')
-    if (profile.get('age') or 0) >= 65 and len({normalize(x) for x in profile.get('medications', []) if x.strip()}) >= 3:
+    medicines = {normalize(x) for x in profile.get('medications', []) if x.strip()}
+    medicines |= {normalize(d.get('name', '')) for d in profile.get('my_drugs', []) if d.get('name')}
+    if (profile.get('age') or 0) >= 65 and len(medicines) >= 3:
         reasons.append('Idade ≥ 65 anos e uso de pelo menos 3 medicamentos (+1)')
     if profile.get('alcohol_frequency', 0) >= 4 and flags.get('hepatotoxic'):
         reasons.append('Álcool ≥ 4 vezes/semana e medicamento hepatotóxico (+1)')

@@ -208,6 +208,33 @@ def evidence(drug_id,food_id,offset=0,limit=20,profile=None,personalize=False):
             'heuristic':'Classificação derivada por regras explícitas e auditáveis sobre os trechos da FooDrugs (TCC, p. 31). Não é validação clínica.',
             'notice':'Ausência de registro não comprova segurança. Não altere seu tratamento sem orientação profissional.'}
 
+def drug_info(drug_id):
+    """Display data for one medicine identifier (used by "Meus remédios")."""
+    d=entity_id(drug_id,'d')
+    with connection() as c:row=c.execute('SELECT name FROM _drugs WHERE id=?',(d,)).fetchone()
+    if not row:raise ValueError('Medicamento não encontrado')
+    return {'id':drug_id,'name':N.display(row[0]),'original':row[0]}
+
+GENERIC_FOODS={norm(x) for x in ('food','foods','diet','diets','meal','meals','fruit','fruits','beverage','beverages','juice',
+    'fruit juice','vegetables','drink','drinks','nutrition','feeding','fasting','fed','fasted')}
+
+def attention(drug_ids,per_drug=12,limit=40):
+    """Foods with an identified interaction (level >= 1) for any of the medicines, merged by food.
+    Base levels only: profile modifiers are applied when a specific pair is opened."""
+    out={}
+    hide,hp=TF.sql('f','f.norm')
+    with connection() as c:
+        if not has_rules(c):return []
+        for did in drug_ids:
+            d=entity_id(did,'d')
+            for r in c.execute(f'''SELECT f.id,f.name,f.norm,r.level,r.records FROM _pair_risk r JOIN _foods f ON f.id=r.food_id
+                WHERE r.drug_id=? AND r.level>=1{hide} ORDER BY r.level DESC,(r.curated_level IS NOT NULL) DESC,r.records DESC LIMIT ?''',(d,*hp,per_drug*2)):
+                if r['norm'] in GENERIC_FOODS:continue
+                e=out.setdefault(r['id'],{'food_id':f'fd:f:{r["id"]}','name':N.display(r['name']),'original':r['name'],'level':0,'records':0,'drugs':[]})
+                if len([x for x in e['drugs'] if x['id']==did]):continue
+                e['level']=max(e['level'],r['level']);e['records']+=r['records'];e['drugs'].append({'id':did,'level':r['level']})
+    return sorted(out.values(),key=lambda e:(-e['level'],-len(e['drugs']),-e['records']))[:limit]
+
 def table_rows(table,offset=0,limit=25,record=None):
     manifest=metadata()
     if table not in manifest['tables']:raise ValueError('Tabela indisponível')
