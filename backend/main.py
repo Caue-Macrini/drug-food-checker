@@ -27,6 +27,14 @@ if not SECRET:
 if len(SECRET) < 32:
     raise RuntimeError('JWT_SECRET deve ter pelo menos 32 caracteres')
 ORIGIN = os.getenv('APP_ORIGIN', 'http://127.0.0.1:5173')
+# Public demonstration instance: no sign-up, no password recovery, no administration and no account deletion.
+DEMO = os.getenv('DEMO_MODE') == 'true'
+DEMO_EMAIL = os.getenv('DEMO_EMAIL', '').strip().lower()
+DEMO_BLOCKED = 'Indisponível no ambiente público de demonstração. Use a conta de visitante.'
+
+def block_in_demo():
+    if DEMO:
+        raise HTTPException(403, DEMO_BLOCKED)
 if PRODUCTION and not ORIGIN.startswith('https://'):
     raise RuntimeError('APP_ORIGIN deve usar HTTPS em produção')
 COOKIE = 'dfc_session'
@@ -99,7 +107,7 @@ def audit(db, user_id, action):
     db.add(Audit(id=uid(), actor=actor_hash(user_id), action=action))
 
 def public_user(user):
-    return {'id': user.id, 'name': user.name, 'email': user.email, 'role': user.role, 'active': user.active, 'created_at': user.created_at}
+    return {'id': user.id, 'name': user.name, 'email': user.email, 'role': user.role, 'active': user.active, 'created_at': user.created_at, 'demo': DEMO}
 
 def current_user(request: Request, db=Depends(db_session)):
     try:
@@ -112,6 +120,7 @@ def current_user(request: Request, db=Depends(db_session)):
         raise HTTPException(401, 'Entre na sua conta para continuar')
 
 def admin(user=Depends(current_user)):
+    block_in_demo()
     if user.role != 'admin':
         raise HTTPException(403, 'Acesso exclusivo da administração')
     return user
@@ -133,10 +142,11 @@ def health(db=Depends(db_session)):
     datasets = db.scalars(select(Dataset).where(Dataset.active == True)).all()
     if any(d.version==foodrugs.VERSION for d in datasets) and not foodrugs.PATH.exists():
         raise HTTPException(503,'A versão FooDrugs está ativa, mas o banco completo não foi encontrado. Execute Instalar-FooDrugs.ps1.')
-    return {'status':'ok', 'datasets':[{'version':d.version, 'source':d.source, 'count':d.count} for d in datasets], 'coverage':foodrugs.coverage() if any(d.version==foodrugs.VERSION for d in datasets) else library(db, limit=0)['counts'], 'mode':'educational', 'smtp_configured':bool(os.getenv('SMTP_HOST'))}
+    return {'status':'ok', 'datasets':[{'version':d.version, 'source':d.source, 'count':d.count} for d in datasets], 'coverage':foodrugs.coverage() if any(d.version==foodrugs.VERSION for d in datasets) else library(db, limit=0)['counts'], 'mode':'educational', 'demo':DEMO, 'smtp_configured':bool(os.getenv('SMTP_HOST')) and not DEMO}
 
 @app.post('/api/auth/register', status_code=201)
 def register(data: Signup, response: Response, db=Depends(db_session)):
+    block_in_demo()
     user = User(id=uid(), name=data.name.strip(), email=data.email, password=bcrypt.hashpw(data.password.encode(), bcrypt.gensalt(rounds=12)).decode())
     db.add(user)
     try:
@@ -156,20 +166,36 @@ def login(data: Login, response: Response, db=Depends(db_session)):
     matched = password_matches(data.password, user.password if user else DUMMY_HASH)
     if not user or not matched or not user.active:
         raise HTTPException(401, 'E-mail ou senha inválidos')
+    if DEMO and user.role == 'admin':
+        raise HTTPException(403, 'A administração só pode ser acessada no computador local.')
     audit(db, user.id, 'session.login')
+    db.commit()
+    set_session(response, user)
+    return public_user(user)
+
+@app.post('/api/auth/demo')
+def demo_login(response: Response, db=Depends(db_session)):
+    if not DEMO or not DEMO_EMAIL:
+        raise HTTPException(404, 'Não encontrado')
+    user = db.scalar(select(User).where(User.email == DEMO_EMAIL, User.active == True, User.role != 'admin'))
+    if not user:
+        raise HTTPException(503, 'Conta de demonstração indisponível')
+    audit(db, user.id, 'session.login.demo')
     db.commit()
     set_session(response, user)
     return public_user(user)
 
 @app.post('/api/auth/logout')
 def logout(response: Response, user=Depends(current_user), db=Depends(db_session)):
-    user.token_version += 1
-    db.commit()
+    if not DEMO:  # the shared demo account must not end other visitors' sessions
+        user.token_version += 1
+        db.commit()
     response.delete_cookie(COOKIE, path='/')
     return {'ok':True}
 
 @app.post('/api/auth/forgot')
 def forgot(data: EmailRequest, db=Depends(db_session)):
+    block_in_demo()
     user = db.scalar(select(User).where(User.email == data.email.strip().lower(), User.active == True))
     if user:
         token = secrets.token_urlsafe(32)
@@ -204,6 +230,7 @@ def forgot(data: EmailRequest, db=Depends(db_session)):
 
 @app.post('/api/auth/reset')
 def reset_password(data: ResetRequest, db=Depends(db_session)):
+    block_in_demo()
     token_hash = hashlib.sha256(data.token.encode()).hexdigest()
     # Atomic delete-returning ensures reset tokens can only be consumed once.
     user_id = db.execute(delete(Reset).where(Reset.token_hash == token_hash, Reset.expires > int(time.time())).returning(Reset.user_id)).scalar_one_or_none()
@@ -328,6 +355,7 @@ def erase_user(db, user):
 
 @app.delete('/api/privacy/account')
 def delete_account(data: PasswordRequest, response: Response, user=Depends(current_user), db=Depends(db_session)):
+    block_in_demo()
     if not password_matches(data.password, user.password):
         raise HTTPException(403, 'Senha incorreta')
     erase_user(db, user)

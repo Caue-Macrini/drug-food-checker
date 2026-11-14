@@ -221,3 +221,26 @@ def test_library_excludes_archived_records(client):
         assert library(db)['counts']=={'drugs':3,'foods':3,'associations':5,'sources':1}
         assert library(db,'levotiroxina')['total']==0
         db.rollback()
+
+def test_demo_mode_blocks_signup_admin_recovery_and_deletion(client, monkeypatch):
+    import main
+    user, email = signup(client, 'visitante')
+    admin_user, admin_email = signup(client, 'admindemo')
+    with Session() as db:
+        db.get(User, admin_user['id']).role = 'admin'
+        db.commit()
+    client.post('/api/auth/logout', json={})
+    monkeypatch.setattr(main, 'DEMO', True)
+    monkeypatch.setattr(main, 'DEMO_EMAIL', email)
+    assert client.get('/api/health').json()['demo'] is True
+    assert client.post('/api/auth/register', json={'name': 'Nova Pessoa', 'email': 'nova@example.com', 'password': 'Senha-segura-123', 'consent': True}).status_code == 403
+    assert client.post('/api/auth/forgot', json={'email': email}).status_code == 403
+    assert client.post('/api/auth/login', json={'email': admin_email, 'password': 'Senha-segura-123'}).status_code == 403
+    logged = client.post('/api/auth/demo', json={})
+    assert logged.status_code == 200 and logged.json()['email'] == email and logged.json()['demo'] is True
+    assert client.get('/api/admin/overview').status_code == 403
+    assert client.request('DELETE', '/api/privacy/account', json={'password': 'Senha-segura-123'}).status_code == 403
+    assert client.post('/api/check', json=pair(client)).status_code == 200
+
+def test_demo_login_is_disabled_outside_demo_mode(client):
+    assert client.post('/api/auth/demo', json={}).status_code == 404
