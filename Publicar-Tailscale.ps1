@@ -16,7 +16,7 @@ $accounts = Get-Content -LiteralPath (Join-Path $runPath 'ACESSOS-APRESENTACAO.t
 $demoEmail = ([regex]'E-mail:\s*(\S+)').Match(($accounts -csplit 'Visitante')[1]).Groups[1].Value
 
 $env:SMTP_HOST = ''; $env:SMTP_PORT = ''
-$env:APP_ORIGIN = $publicUrl
+$env:APP_ORIGIN = "https://drugfood.painel.host,$publicUrl"
 $env:APP_ENV = 'production'
 $env:DEMO_MODE = 'true'
 $env:DEMO_EMAIL = $demoEmail

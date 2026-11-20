@@ -26,7 +26,9 @@ if not SECRET:
     SECRET = secret_path.read_text().strip()
 if len(SECRET) < 32:
     raise RuntimeError('JWT_SECRET deve ter pelo menos 32 caracteres')
-ORIGIN = os.getenv('APP_ORIGIN', 'http://127.0.0.1:5173')
+# APP_ORIGIN may list several comma-separated origins (e.g. own domain and Tailscale); the first is canonical (links in e-mails).
+ORIGINS = [o.strip().rstrip('/') for o in os.getenv('APP_ORIGIN', 'http://127.0.0.1:5173').split(',') if o.strip()]
+ORIGIN = ORIGINS[0]
 # Public demonstration instance: no sign-up, no password recovery, no administration and no account deletion.
 DEMO = os.getenv('DEMO_MODE') == 'true'
 DEMO_EMAIL = os.getenv('DEMO_EMAIL', '').strip().lower()
@@ -35,7 +37,7 @@ DEMO_BLOCKED = 'Indisponível no ambiente público de demonstração. Use a cont
 def block_in_demo():
     if DEMO:
         raise HTTPException(403, DEMO_BLOCKED)
-if PRODUCTION and not ORIGIN.startswith('https://'):
+if PRODUCTION and not all(o.startswith('https://') for o in ORIGINS):
     raise RuntimeError('APP_ORIGIN deve usar HTTPS em produção')
 COOKIE = 'dfc_session'
 logger = logging.getLogger('drugfood')
@@ -59,7 +61,7 @@ async def protections(request: Request, call_next):
     if request.url.path.startswith('/api'):
         if request.method not in ('GET', 'HEAD', 'OPTIONS'):
             origin = request.headers.get('origin')
-            if (origin and origin != ORIGIN) or request.headers.get('sec-fetch-site') == 'cross-site':
+            if (origin and origin not in ORIGINS) or request.headers.get('sec-fetch-site') == 'cross-site':
                 return JSONResponse({'detail': 'Origem não permitida'}, status_code=403)
             if not request.headers.get('content-type', '').startswith('application/json'):
                 return JSONResponse({'detail': 'Envie application/json'}, status_code=415)
